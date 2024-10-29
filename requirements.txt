@@ -4,3 +4,4 @@ streamlit_option_menu
 streamlit_modal
 openpyxl
 spire.xls
+locale
