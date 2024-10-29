@@ -39,7 +39,7 @@ st.html("""
 
 
 
-locale.setlocale(locale.LC_TIME, 'it_IT')
+#locale.setlocale(locale.LC_TIME, 'it_IT')
 
 def converti_data(data_string):
     # Converte la stringa in un oggetto datetime
