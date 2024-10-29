@@ -1,0 +1,60 @@
+{
+    "giornata": 1,
+    "squadra": "CIRCOLO CANOTTIERI",
+    "home_away": "Casa",
+    "risultato": "1-0",
+    "formazione": [
+        "MATTIA AGOSTINI",
+        "MIRKO BARONE ",
+        "FRANCESCO BOCCHINO",
+        "VALERIO CAGNUCCI ",
+        "FLAVIO CECCHINI ",
+        "MAYO DE FEO ",
+        "MIRKO DI OTTAVIO ",
+        "SEBASTIANO GAZZELLA ",
+        "SIMONE GIRALDA",
+        "ARON PABINIAK",
+        "GIANMARIA PASQUALI ",
+        "GIORDANO PERCONTI",
+        "FLAVIO PIDALA'",
+        "PIERO PUGLIATTI",
+        "DAVIDE SAUTARIELLO",
+        "MATTEO TEMPERINI",
+        "MATTEO SPLENDORI ",
+        "LORENZO GRASSO",
+        "",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "FRANCESCO BOCCHINO",
+            "sub_out": "MAYO DE FEO ",
+            "time_sub": 55
+        },
+        {
+            "sub_in": "MIRKO DI OTTAVIO ",
+            "sub_out": "VALERIO CAGNUCCI ",
+            "time_sub": 55
+        },
+        {
+            "sub_in": "FLAVIO CECCHINI ",
+            "sub_out": "SIMONE GIRALDA",
+            "time_sub": 65
+        }
+    ],
+    "ammonizioni": [],
+    "espulsioni": [],
+    "goal": [
+        "MATTIA AGOSTINI"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "GIANMARCO RUSSI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "DIEGO PERFETTO ",
+            "motivo": "SCELTA TECNICA"
+        }
+    ]
+}
