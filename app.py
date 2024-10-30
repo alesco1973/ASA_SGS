@@ -20,6 +20,7 @@ import openpyxl
 from spire.xls import *
 from spire.xls.common import *
 
+
 st.set_page_config(
     page_title="ASA - Stagione 2024/25",
     page_icon="logo_2.ico",  
@@ -39,8 +40,7 @@ st.html("""
 
 
 
-#locale.setlocale(locale.LC_TIME, 'it_IT')
-
+locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
     # Converte la stringa in un oggetto datetime
     dt = datetime.strptime(data_string, "\"%Y-%m-%dT%H:%M:%S\"")
@@ -54,7 +54,7 @@ def download_link(object_to_download, download_filename, download_link_text):
     Genera un link per il download di un oggetto binario.
     """
     if isinstance(object_to_download, bytes):
-        pass
+        b64 = base64.b64encode(object_to_download).decode()
     else:
         object_to_download = object_to_download.encode()
 
@@ -203,12 +203,11 @@ def mostra_e_modifica_json(file_path, directory):
             workbook_spire.SaveToFile(pdf_file_name, FileFormat.PDF)
             workbook_spire.Dispose()
 
-            # Genera il link di download per il PDF
-            with open(pdf_file_name, 'rb') as f:
-                pdf_buffer = BytesIO(f.read())
-            download_link_html = download_link(pdf_buffer.getvalue(), pdf_file_name, 'Clicca qui per scaricare il file PDF')
+            # Genera il link di download per il excel
+            with open(name_xlsx, 'rb') as f:
+                excel_buffer = BytesIO(f.read())
+            download_link_html = download_link(excel_buffer.getvalue(), name_xlsx, 'Clicca qui per scaricare il file Excel')
             st.markdown(download_link_html, unsafe_allow_html=True)
-
 
 
 
@@ -357,26 +356,26 @@ def gestione_rosa():
 
             # Add a button to save changes
 
-            with st.expander("Aggiungi/Modifica/Elimina un giocatore"):
-                row_1 = '''
-                    Puoi modificare un giocatore direttamente nella tabella e cliccando, successivamente, sul pulsante 'Salva modifiche'.
-                '''
-                row_2 = '''
-                    Puoi eliminare un giocatore andando a spuntarlo, in corrispondenza del quadratino alla sua sinistra, e cliccando sull'icona 'cestino' che 
-                    compare in alto a destra. Per salvare le modifiche cliccare su 'Salva modifiche'. 
-                '''
-                row_3 = '''
-                    Puoi aggiungere un nuovo giocatore direttamente nella tabella e cliccando, successivamente, sul pulsante 'Salva modifiche'.
-                '''
-                st.markdown(row_3)
-                st.markdown(row_1)
-                st.markdown(row_2)
+            st.text("Aggiungi/Modifica/Elimina un giocatore")
+            row_1 = '''
+                Puoi modificare un giocatore direttamente nella tabella e cliccando, successivamente, sul pulsante 'Salva modifiche'.
+            '''
+            row_2 = '''
+                Puoi eliminare un giocatore andando a spuntarlo, in corrispondenza del quadratino alla sua sinistra, e cliccando sull'icona 'cestino' che 
+                compare in alto a destra. Per salvare le modifiche cliccare su 'Salva modifiche'. 
+            '''
+            row_3 = '''
+                Puoi aggiungere un nuovo giocatore direttamente nella tabella e cliccando, successivamente, sul pulsante 'Salva modifiche'.
+            '''
+            st.markdown(row_3)
+            st.markdown(row_1)
+            st.markdown(row_2)
 
-                if st.button('Salva modifiche'):
-                    edited_df.to_csv(mister_info['file'], sep=";", index=False)
-                    st.success('Modifica effettuata!')
-                    st.session_state.df = edited_df
-                    st.rerun()
+            if st.button('Salva modifiche'):
+                edited_df.to_csv(mister_info['file'], sep=";", index=False)
+                st.success('Modifica effettuata!')
+                st.session_state.df = edited_df
+                st.rerun()
             
 
         elif selected == "Presenze":
@@ -632,12 +631,17 @@ def gestione_rosa():
                         workbook_spire.SaveToFile(pdf_file_name, FileFormat.PDF)
                         workbook_spire.Dispose()
 
-                        
-                        # Genera il link di download per il PDF
-                        with open(pdf_file_name, 'rb') as f:
-                            pdf_buffer = BytesIO(f.read())
-                        download_link_html = download_link(pdf_buffer.getvalue(), pdf_file_name, 'Clicca qui per scaricare il file PDF')
+                        # Genera il link di download per il file Excel
+                        with open(fname, 'rb') as f:
+                            excel_buffer = BytesIO(f.read())
+                        download_link_html = download_link(excel_buffer.getvalue(), fname, 'Clicca qui per scaricare il file Excel')
                         st.markdown(download_link_html, unsafe_allow_html=True)
+                        
+                        # # Genera il link di download per il PDF
+                        # with open(pdf_file_name, 'rb') as f:
+                        #     pdf_buffer = BytesIO(f.read())
+                        # download_link_html = download_link(pdf_buffer.getvalue(), pdf_file_name, 'Clicca qui per scaricare il file PDF')
+                        # st.markdown(download_link_html, unsafe_allow_html=True)
                     else:
                         st.error("Per favore, inserisci un nome per il file.")
 
@@ -852,16 +856,35 @@ def gestione_rosa():
                 # Crea un DataFrame per il grafico a barre
                 if column == 'presenze':
                     df['rapporto'] = (df[column])*100/(n_file)
+                    chart_data = pd.DataFrame({
+                        column: df[column],
+                        'Rapporto (%) su totale minuti': df['rapporto']
+                    }, index=df['giocatore'])
+                    # Visualizza il grafico a barre
+                    st.bar_chart(chart_data, horizontal=True)
                 elif column == 'minuti giocati':
                     df['rapporto'] = (df[column])*100/(minuti*n_file)
-
-                chart_data = pd.DataFrame({
-                    column: df[column],
-                    'Rapporto (%) su totale minuti': df['rapporto']
-                }, index=df['giocatore'])
+                    chart_data = pd.DataFrame({
+                        column: df[column],
+                        'Rapporto (%) su totale minuti': df['rapporto']
+                    }, index=df['giocatore'])
+                    # Visualizza il grafico a barre
+                    st.bar_chart(chart_data, horizontal=True)
+                elif column == 'generale':
+                    chart_data = pd.DataFrame(
+                        {
+                            "giocatore": df['giocatore'],
+                            "partite": df['partite'],
+                            "presenze": df['presenze'],
+                            "titolare": df['titolare'],
+                            "sub_out": df['sub_out'],
+                            "sub_in": df['sub_in'],
+                        }
+                    )
+                    st.bar_chart(chart_data, x="giocatore", y=["presenze", "titolare", "sub_out", "sub_in"], x_label="Informazioni presenze", color="partite", horizontal=True)
                 
-                # Visualizza il grafico a barre
-                st.bar_chart(chart_data, horizontal=True)
+
+
 
 
             # Funzione per creare un grafico a barre per il confronto tra due giocatori
@@ -899,7 +922,7 @@ def gestione_rosa():
                 time_sub = [sub["time_sub"] for sub in match_data["substitutions"]]
                 next_9 = match_data["formazione"][11:20]
                 non_convocati = [player["giocatore"] for player in match_data["non_convocati"]]
-
+                #data['partite'] = n_file
                 # Aggiungi i giocatori della formazione
                 for player in first_11:
                     if player in sub_in:
@@ -907,6 +930,9 @@ def gestione_rosa():
                             data[player] = {
                                 "presenze": 1,
                                 "giocatore": player,
+                                "titolare": 1,
+                                "sub_out": 1,
+                                "sub_in": 0,
                                 "minuti giocati": time_sub[sub_in.index(player)],
                                 "ammonizioni": 0,
                                 "espulsioni": 0,
@@ -916,11 +942,16 @@ def gestione_rosa():
                         else:
                             data[player]["minuti giocati"] += time_sub[sub_in.index(player)]
                             data[player]["presenze"] += 1
+                            data[player]["titolare"] += 1
+                            data[player]["sub_out"] += 1
                     else:
                         if player not in data:
                             data[player] = {
                                 "presenze": 1,
                                 "giocatore": player,
+                                "titolare": 1,
+                                "sub_out": 0,
+                                "sub_in": 0,                                
                                 "minuti giocati": minuti,
                                 "ammonizioni": 0,
                                 "espulsioni": 0,
@@ -930,6 +961,7 @@ def gestione_rosa():
                         else:
                             data[player]["minuti giocati"] += minuti
                             data[player]["presenze"] += 1
+                            data[player]["titolare"] += 1
 
                 # Aggiungi i giocatori dalla panchina
                 for player in next_9:
@@ -938,6 +970,9 @@ def gestione_rosa():
                             data[player] = {
                                 "presenze": 1,
                                 "giocatore": player,
+                                "titolare": 0,
+                                "sub_out": 0,
+                                "sub_in": 1,
                                 "minuti giocati": minuti - time_sub[sub_out.index(player)],
                                 "ammonizioni": 0,
                                 "espulsioni": 0,
@@ -947,12 +982,17 @@ def gestione_rosa():
                         else:
                             data[player]["minuti giocati"] += (minuti - time_sub[sub_out.index(player)])
                             data[player]["presenze"] += 1
+                            data[player]["sub_in"] += 1
+
 
                     else:
                         if player not in data:
                             data[player] = {
                                 "presenze": 0,
                                 "giocatore": player,
+                                "titolare": 0,
+                                "sub_out": 0,
+                                "sub_in": 0,                                
                                 "minuti giocati": 0,
                                 "ammonizioni": 0,
                                 "espulsioni": 0,
@@ -963,24 +1003,25 @@ def gestione_rosa():
                             data[player]["minuti giocati"] += 0
                             data[player]["presenze"] += 0
 
+
                 # Aggiungi i giocatori ammoniti
                 for player in match_data["ammonizioni"]:
                     if player not in data:
-                        data[player] = {"presenze": 0, "giocatore": player, "minuti giocati": 0, "ammonizioni": 1, "espulsioni": 0, "goal": 0, "non convocazione": 0}
+                        data[player] = {"presenze": 0, "giocatore": player, "titolare": 0, "sub_out": 0, "sub_in": 0, "minuti giocati": 0, "ammonizioni": 1, "espulsioni": 0, "goal": 0, "non convocazione": 0}
                     else:
                         data[player]["ammonizioni"] += 1
 
                 # Aggiungi i giocatori espulsi
                 for player in match_data["espulsioni"]:
                     if player not in data:
-                        data[player] = {"presenze": 0, "giocatore": player, "minuti giocati": 0, "ammonizioni": 0, "espulsioni": 1, "goal": 0, "non convocazione": 0}
+                        data[player] = {"presenze": 0, "giocatore": player, "titolare": 0, "sub_out": 0, "sub_in": 0, "minuti giocati": 0, "ammonizioni": 0, "espulsioni": 1, "goal": 0, "non convocazione": 0}
                     else:
                         data[player]["espulsioni"] += 1
 
                 # Aggiungi i giocatori che hanno segnato
                 for player in match_data["goal"]:
                     if player not in data:
-                         data[player] = {"presenze": 0, "giocatore": player, "minuti giocati": 0, "ammonizioni": 0, "espulsioni": 0, "goal": 1, "non convocazione": 0}
+                         data[player] = {"presenze": 0, "giocatore": player, "minuti giocati": 0, "titolare": 0, "sub_out": 0, "sub_in": 0, "ammonizioni": 0, "espulsioni": 0, "goal": 1, "non convocazione": 0}
                     else:
                         data[player]["goal"] += 1
 
@@ -988,13 +1029,14 @@ def gestione_rosa():
                 for non_convocato in match_data["non_convocati"]:
                     player = non_convocato["giocatore"]
                     if player not in data:
-                        data[player] = {"presenze": 0, "giocatore": player, "minuti giocati": 0, "ammonizioni": 0, "espulsioni": 0, "goal": 0, "non convocazione": 1}
+                        data[player] = {"presenze": 0, "giocatore": player, "minuti giocati": 0, "titolare": 0, "sub_out": 0, "sub_in": 0, "ammonizioni": 0, "espulsioni": 0, "goal": 0, "non convocazione": 1}
                     else:
                         data[player]["non convocazione"] += 1
 
 
             # Creazione del dataframe
-            df_report = pd.DataFrame.from_dict(data, orient='index', columns=["giocatore", "presenze", "minuti giocati", "ammonizioni", "espulsioni", "goal", "non convocazione"])
+            df_report = pd.DataFrame.from_dict(data, orient='index', columns=["giocatore", "presenze", "titolare", "sub_out", "sub_in", "minuti giocati", "ammonizioni", "espulsioni", "goal", "non convocazione"])
+            df_report.insert(1, 'partite', n_file)
 
             # Visualizza la tabella
             st.subheader("Tabella Giocatori")
@@ -1008,7 +1050,7 @@ def gestione_rosa():
             
             # Calcola il rapporto
             stat = st.selectbox('Seleziona la statistica da visualizzare', 
-                                    ['presenze', 'minuti giocati'])
+                                    ['presenze', 'minuti giocati', 'generale'])
             df_report['minuti_p'] = ((df_report['minuti giocati'])*100/(minuti * n_file)).apply(lambda x: f"{x:,.2f}".replace('.', ','))
             df_report['presenze_p'] = ((df_report['presenze'])*100/(df_report['presenze']) * 100).apply(lambda x: f"{x:,.2f}".replace('.', ','))
             # Crea il grafico a barre per la statistica selezionata
