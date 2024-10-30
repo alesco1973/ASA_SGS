@@ -3,4 +3,4 @@ st_social_media_links
 streamlit_option_menu
 streamlit_modal
 openpyxl
-spire.xls
+Spire.Xls
