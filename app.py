@@ -40,7 +40,7 @@ st.html("""
 
 
 
-#locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
+locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
     # Converte la stringa in un oggetto datetime
     dt = datetime.strptime(data_string, "\"%Y-%m-%dT%H:%M:%S\"")
@@ -92,7 +92,7 @@ def mostra_contenuto_json(file_path):
     st.json(data)
 
 # Funzione per visualizzare e modificare il contenuto dei file JSON in una finestra modale
-def mostra_e_modifica_json(file_path, directory):
+def mostra_e_modifica_json(file_path, directory, cat):
     file_complete = os.path.basename(file_path)
     nfile, _ = os.path.splitext(file_complete)
 
@@ -164,7 +164,7 @@ def mostra_e_modifica_json(file_path, directory):
                 workbook = openpyxl.Workbook()
 
 
-            txt_cell = f"CONVOCAZIONI {data['nome_mister']}"
+            txt_cell = f"CONVOCAZIONI {cat}"
             sheet = workbook.active
             sheet['C8'] = txt_cell
             sheet['C10'] = data['squadra']
@@ -678,7 +678,7 @@ def gestione_rosa():
                             
                         # Mostra e modifica il contenuto del file JSON selezionato
                         st.write(f"Visualizza e modifica il contenuto del file: {file_path}")
-                        mostra_e_modifica_json(file_path, acronimo)
+                        mostra_e_modifica_json(file_path, acronimo, mister_info['mister'])
                 else:
                     st.subheader("Non ci sono convocazioni")
                     
