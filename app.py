@@ -40,7 +40,7 @@ st.html("""
 
 
 
-#locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
+locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
     # Converte la stringa in un oggetto datetime
     dt = datetime.strptime(data_string, "\"%Y-%m-%dT%H:%M:%S\"")
@@ -195,13 +195,13 @@ def mostra_e_modifica_json(file_path, directory):
             with open(name_xlsx, 'wb') as f:
                 f.write(buffer.getvalue())
 
-            # Converti il file Excel in PDF
-            pdf_file_name = f'{name_xlsx}.pdf'
-            workbook_spire = Workbook()
-            workbook_spire.LoadFromFile(name_xlsx)
-            workbook_spire.ConverterSetting.SheetFitToPage = True
-            workbook_spire.SaveToFile(pdf_file_name, FileFormat.PDF)
-            workbook_spire.Dispose()
+            # # Converti il file Excel in PDF
+            # pdf_file_name = f'{name_xlsx}.pdf'
+            # workbook_spire = Workbook()
+            # workbook_spire.LoadFromFile(name_xlsx)
+            # workbook_spire.ConverterSetting.SheetFitToPage = True
+            # workbook_spire.SaveToFile(pdf_file_name, FileFormat.PDF)
+            # workbook_spire.Dispose()
 
             # Genera il link di download per il excel
             with open(name_xlsx, 'rb') as f:
@@ -624,12 +624,12 @@ def gestione_rosa():
 
                         # Converti il file Excel in PDF
 
-                        pdf_file_name = f'{fname}.pdf'
-                        workbook_spire = Workbook()
-                        workbook_spire.LoadFromFile(fname)
-                        workbook_spire.ConverterSetting.SheetFitToPage = True
-                        workbook_spire.SaveToFile(pdf_file_name, FileFormat.PDF)
-                        workbook_spire.Dispose()
+                        # pdf_file_name = f'{fname}.pdf'
+                        # workbook_spire = Workbook()
+                        # workbook_spire.LoadFromFile(fname)
+                        # workbook_spire.ConverterSetting.SheetFitToPage = True
+                        # workbook_spire.SaveToFile(pdf_file_name, FileFormat.PDF)
+                        # workbook_spire.Dispose()
 
                         # Genera il link di download per il file Excel
                         with open(fname, 'rb') as f:
