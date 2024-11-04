@@ -40,7 +40,7 @@ st.html("""
 
 
 
-#locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
+locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
     # Converte la stringa in un oggetto datetime
     dt = datetime.strptime(data_string, "\"%Y-%m-%dT%H:%M:%S\"")
@@ -248,6 +248,7 @@ def get_mister_info(username, mister_data):
             return allenatore
     return None
 
+
 def gestione_rosa():
     # Inserimento credenziali per la gestione
     st.title("Gestione della Rosa")
@@ -277,6 +278,9 @@ def gestione_rosa():
         if mister_info:
                 st.write(f"Accesso Effettuato, {st.session_state.username}")
                 # assegnare il nome del file
+                if st.button("Logout"):
+                            st.session_state.logged_in = False
+                            st.rerun()
 
                 df = pd.read_csv(mister_info['file'], delimiter=';')  # Specifica il delimitatore
                 registro = mister_info['registro']
@@ -799,7 +803,8 @@ def gestione_rosa():
                     espulsioni = []
                     for i in range(num_esp):  # Supponiamo un massimo di 2 espulsioni
                         esp_player = st.selectbox(f"Espulsione {i + 1}", convocazione["componenti_squadra"], key=f"espulsione_{i}")
-                        espulsioni.append(esp_player)
+                        time_esp = st.number_input(f"Minuto dell'espulsione {i + 1}", min_value=0, max_value=100, step=1, key=f"time_esp_{i}")
+                        espulsioni.append({"esp_player": esp_player, "time_esp": time_esp})
 
                     # Goal
                     num_gol = st.number_input("Numero di goal", min_value=0, max_value=20, step=1, key="gol")
@@ -834,7 +839,7 @@ def gestione_rosa():
 
                     # Memorizza nel file JSON
                     if st.button("Salva Report"):
-                        file_complete = os.path.basename(st.session_state.selected_file)
+                        file_complete = os.path.join(selected_convocazione)
                         nfile, _ = os.path.splitext(file_complete)
                         report_match = reportistica + nfile + '.json'
 
@@ -1017,6 +1022,7 @@ def gestione_rosa():
                         data[player] = {"presenze": 0, "giocatore": player, "titolare": 0, "sub_out": 0, "sub_in": 0, "minuti giocati": 0, "ammonizioni": 0, "espulsioni": 1, "goal": 0, "non convocazione": 0}
                     else:
                         data[player]["espulsioni"] += 1
+                        data[player]["minuti giocati"] += (minuti - time_esp[espulsioni.index(player)])
 
                 # Aggiungi i giocatori che hanno segnato
                 for player in match_data["goal"]:
