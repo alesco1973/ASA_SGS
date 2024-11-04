@@ -40,7 +40,7 @@ st.html("""
 
 
 
-#locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
+locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
     # Converte la stringa in un oggetto datetime
     dt = datetime.strptime(data_string, "\"%Y-%m-%dT%H:%M:%S\"")
@@ -776,10 +776,9 @@ def gestione_rosa():
                         available_players.remove(selected_player)
 
                     # Numero di sostituzioni
+                    st.subheader(":blue[_Sostituzioni_]", divider="blue")
                     num_subs = st.number_input("Numero di Sostituzioni", min_value=0, max_value=11, step=1, key="subs")
-
                     # Sostituzioni
-                    st.subheader("Sostituzioni")
                     substitutions = []
                     for i in range(num_subs):
                         sub_in = st.selectbox(f"Giocatore sostituito {i + 1}", convocazione["componenti_squadra"], key=f"sub_in_{i}")
@@ -788,18 +787,16 @@ def gestione_rosa():
                         substitutions.append({"sub_in": sub_in, "sub_out": sub_out, "time_sub": time_sub})
 
                     # Ammonizioni
+                    st.subheader(":orange[_Ammonizioni_]", divider="orange")
                     num_am = st.number_input("Numero di ammonizioni", min_value=0, max_value=20, step=1, key="amm")
-
-                    st.subheader("Ammonizioni")
                     ammonizioni = []
                     for i in range(num_am):  # Supponiamo un massimo di 5 ammonizioni
                         am_player = st.selectbox(f"Ammonizione {i + 1}", convocazione["componenti_squadra"], key=f"ammonizione_{i}")
                         ammonizioni.append(am_player)
 
                     # Espulsioni
-                    num_esp = st.number_input("Numero di ammonizioni", min_value=0, max_value=20, step=1, key="esp")
-
-                    st.subheader("Espulsioni")
+                    st.subheader(":orange[_Espulsioni_]", divider="red")
+                    num_esp = st.number_input("Numero di espulsioni", min_value=0, max_value=20, step=1, key="esp")
                     espulsioni = []
                     for i in range(num_esp):  # Supponiamo un massimo di 2 espulsioni
                         esp_player = st.selectbox(f"Espulsione {i + 1}", convocazione["componenti_squadra"], key=f"espulsione_{i}")
@@ -807,16 +804,15 @@ def gestione_rosa():
                         espulsioni.append({"esp_player": esp_player, "time_esp": time_esp})
 
                     # Goal
-                    num_gol = st.number_input("Numero di goal", min_value=0, max_value=20, step=1, key="gol")
-                    
-                    st.subheader("Goal")
+                    st.subheader(":green[_Gol_]", divider="green")
+                    num_gol = st.number_input("Numero di goal", min_value=0, max_value=20, step=1, key="gol")                   
                     goal = []
                     for i in range(num_gol):  # Supponiamo un massimo di 5 goal
                         goal_player = st.selectbox(f"Goal {i + 1}", convocazione["componenti_squadra"], key=f"goal_{i}")
                         goal.append(goal_player)
 
                     # Non Convocati
-                    st.subheader("Non Convocati")
+                    st.subheader(":gray[_Non Convocati_]", divider="gray")
                     non_convocati = []
                     motivi = ["INFORTUNATO", "SCELTA TECNICA", "MALATTIA", "NON ALLENATO", "NON DISPONIBILE"]
                     for player in convocazione["non_convocati"].split(", "):
@@ -927,6 +923,7 @@ def gestione_rosa():
                 time_sub = [sub["time_sub"] for sub in match_data["substitutions"]]
                 next_9 = match_data["formazione"][11:20]
                 non_convocati = [player["giocatore"] for player in match_data["non_convocati"]]
+            
                 #data['partite'] = n_file
                 # Aggiungi i giocatori della formazione
                 for player in first_11:
@@ -1018,11 +1015,34 @@ def gestione_rosa():
 
                 # Aggiungi i giocatori espulsi
                 for player in match_data["espulsioni"]:
-                    if player not in data:
-                        data[player] = {"presenze": 0, "giocatore": player, "titolare": 0, "sub_out": 0, "sub_in": 0, "minuti giocati": 0, "ammonizioni": 0, "espulsioni": 1, "goal": 0, "non convocazione": 0}
+                    esp_player = player['esp_player']
+                    time_esp = player['time_esp']
+                                     
+                    if esp_player in sub_in:
+                        if esp_player not in data:
+                            min_giocati = time_sub[sub_in.index(player)] - time_esp
+                            data[esp_player] = {
+                                "presenze": 1,
+                                "giocatore": esp_player,
+                                "titolare": 1,
+                                "sub_out": 1,
+                                "sub_in": 0,
+                                "minuti giocati": min_giocati,
+                                "ammonizioni": 0,
+                                "espulsioni": 1,
+                                "goal": 0,
+                                "non convocazione": 0
+                            }
+                        else:
+                            min_giocati = data[esp_player]["minuti giocati"] - time_sub[sub_in.index(player)]
+                            data[esp_player]["minuti giocati"] += (min_giocati)
+                            data[esp_player]["espulsioni"] += 1
                     else:
-                        data[player]["espulsioni"] += 1
-                        data[player]["minuti giocati"] += (minuti - time_esp[espulsioni.index(player)])
+
+                        data[esp_player]["espulsioni"] += 1
+                        min_giocati = data[esp_player]["minuti giocati"] - 80
+                        st.text(min_giocati)
+                        data[esp_player]["minuti giocati"] = (min_giocati + time_esp)
 
                 # Aggiungi i giocatori che hanno segnato
                 for player in match_data["goal"]:
