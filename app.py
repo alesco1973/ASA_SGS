@@ -1040,7 +1040,7 @@ def gestione_rosa():
                     else:
 
                         data[esp_player]["espulsioni"] += 1
-                        min_giocati = data[esp_player]["minuti giocati"] - 80
+                        min_giocati = data[esp_player]["minuti giocati"] - minuti
                         st.text(min_giocati)
                         data[esp_player]["minuti giocati"] = (min_giocati + time_esp)
 

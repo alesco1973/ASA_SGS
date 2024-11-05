@@ -1,0 +1,94 @@
+{
+    "giornata": 5,
+    "squadra": "FONTE MERAVIGLIOSA",
+    "home_away": "Fuori Casa",
+    "risultato": "1-2",
+    "formazione": [
+        "GIANMARCO PERRONI",
+        "ANTONIO KUKAJ ",
+        "PIETRO LISANTI",
+        "PAOLO CIOCCOLONI",
+        "FLODION MEHQEMEJA",
+        "EMILIANO NESTA",
+        "MATTIA COLASANTI",
+        "SIMONE BABI",
+        "GABRIELE BUCCI ",
+        "MATTEO PICCINETTI",
+        "DIEGO SANTILLI",
+        "MAURIZIO CINQUEPALMI",
+        "MARCO PAGGETTI",
+        "GIORDANO BELLEI ",
+        "FILIPPO GORINI",
+        "FRANCESCO BERSANTI",
+        "NICCOLO' CONTINI",
+        "ALESSANDRO GALIMI",
+        "AMEDEO PANNICELLI",
+        "TITO MOZZI"
+    ],
+    "substitutions": [
+        {
+            "sub_in": "PIETRO LISANTI",
+            "sub_out": "NICCOLO' CONTINI",
+            "time_sub": 72
+        },
+        {
+            "sub_in": "MATTIA COLASANTI",
+            "sub_out": "ALESSANDRO GALIMI",
+            "time_sub": 74
+        },
+        {
+            "sub_in": "GABRIELE BUCCI ",
+            "sub_out": "AMEDEO PANNICELLI",
+            "time_sub": 64
+        },
+        {
+            "sub_in": "SIMONE BABI",
+            "sub_out": "FILIPPO GORINI",
+            "time_sub": 55
+        },
+        {
+            "sub_in": "DIEGO SANTILLI",
+            "sub_out": "FRANCESCO BERSANTI",
+            "time_sub": 55
+        }
+    ],
+    "ammonizioni": [
+        "PIETRO LISANTI",
+        "FLODION MEHQEMEJA"
+    ],
+    "espulsioni": [
+        {
+            "esp_player": "PAOLO CIOCCOLONI",
+            "time_esp": 80
+        }
+    ],
+    "goal": [
+        "GABRIELE BUCCI "
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "ALESSANDRO ASAMSONESEI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "MATTEO MORAMARCO",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LEONARDO SCIPIONE ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "ALESSANDRO PORCARELLI ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LUDOVICO MAGGIULLI ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "EDOARDO BRACCI",
+            "motivo": "INFORTUNATO"
+        }
+    ]
+}

@@ -1,0 +1,92 @@
+{
+    "giornata": 2,
+    "squadra": "TOR SAPIENZA",
+    "home_away": "Casa",
+    "risultato": "0-1",
+    "formazione": [
+        "ALESSANDRO PORCARELLI ",
+        "ANTONIO KUKAJ ",
+        "PIETRO LISANTI",
+        "PAOLO CIOCCOLONI",
+        "MARCO PAGGETTI",
+        "GIORDANO BELLEI ",
+        "MATTIA COLASANTI",
+        "SIMONE BABI",
+        "ALESSANDRO GALIMI",
+        "MATTEO PICCINETTI",
+        "FILIPPO GORINI",
+        "MAURIZIO CINQUEPALMI",
+        "ALESSANDRO ASAMSONESEI",
+        "FRANCESCO BERSANTI",
+        "NICCOLO' CONTINI",
+        "MATTEO MORAMARCO",
+        "EMILIANO NESTA",
+        "GABRIELE BUCCI ",
+        "DIEGO SANTILLI",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "PIETRO LISANTI",
+            "sub_out": "NICCOLO' CONTINI",
+            "time_sub": 63
+        },
+        {
+            "sub_in": "PAOLO CIOCCOLONI",
+            "sub_out": "MATTEO MORAMARCO",
+            "time_sub": 45
+        },
+        {
+            "sub_in": "GIORDANO BELLEI ",
+            "sub_out": "EMILIANO NESTA",
+            "time_sub": 45
+        },
+        {
+            "sub_in": "MATTIA COLASANTI",
+            "sub_out": "GABRIELE BUCCI ",
+            "time_sub": 64
+        },
+        {
+            "sub_in": "ALESSANDRO GALIMI",
+            "sub_out": "DIEGO SANTILLI",
+            "time_sub": 84
+        }
+    ],
+    "ammonizioni": [
+        "MATTEO PICCINETTI",
+        "PAOLO CIOCCOLONI",
+        "FILIPPO GORINI"
+    ],
+    "espulsioni": [],
+    "goal": [],
+    "non_convocati": [
+        {
+            "giocatore": "FLODION MEHQEMEJA",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "TITO MOZZI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "GIANMARCO PERRONI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LEONARDO SCIPIONE ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LUDOVICO MAGGIULLI ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "AMEDEO PANNICELLI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "EDOARDO BRACCI",
+            "motivo": "INFORTUNATO"
+        }
+    ]
+}

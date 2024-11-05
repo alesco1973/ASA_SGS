@@ -1,0 +1,89 @@
+{
+    "giornata": 3,
+    "squadra": "OTTAVIA",
+    "home_away": "Fuori Casa",
+    "risultato": "1-2",
+    "formazione": [
+        "ALESSANDRO PORCARELLI ",
+        "ANTONIO KUKAJ ",
+        "EDOARDO BRACCI",
+        "PAOLO CIOCCOLONI",
+        "MARCO PAGGETTI",
+        "FLODION MEHQEMEJA",
+        "MATTEO MORAMARCO",
+        "SIMONE BABI",
+        "GABRIELE BUCCI ",
+        "MATTEO PICCINETTI",
+        "FILIPPO GORINI",
+        "GIANMARCO PERRONI",
+        "EMILIANO NESTA",
+        "ALESSANDRO ASAMSONESEI",
+        "FRANCESCO BERSANTI",
+        "NICCOLO' CONTINI",
+        "AMEDEO PANNICELLI",
+        "TITO MOZZI",
+        "MATTIA COLASANTI",
+        "DIEGO SANTILLI"
+    ],
+    "substitutions": [
+        {
+            "sub_in": "EDOARDO BRACCI",
+            "sub_out": "NICCOLO' CONTINI",
+            "time_sub": 82
+        },
+        {
+            "sub_in": "PAOLO CIOCCOLONI",
+            "sub_out": "DIEGO SANTILLI",
+            "time_sub": 68
+        },
+        {
+            "sub_in": "MATTEO MORAMARCO",
+            "sub_out": "MATTIA COLASANTI",
+            "time_sub": 56
+        },
+        {
+            "sub_in": "GABRIELE BUCCI ",
+            "sub_out": "AMEDEO PANNICELLI",
+            "time_sub": 64
+        },
+        {
+            "sub_in": "FILIPPO GORINI",
+            "sub_out": "ALESSANDRO ASAMSONESEI",
+            "time_sub": 75
+        }
+    ],
+    "ammonizioni": [
+        "EDOARDO BRACCI",
+        "MARCO PAGGETTI"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "MATTEO PICCINETTI"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "GIORDANO BELLEI ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "ALESSANDRO GALIMI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "PIETRO LISANTI",
+            "motivo": "SCELTA TECNICA"
+        },
+        {
+            "giocatore": "LEONARDO SCIPIONE ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LUDOVICO MAGGIULLI ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MAURIZIO CINQUEPALMI",
+            "motivo": "INFORTUNATO"
+        }
+    ]
+}
