@@ -1,0 +1,32 @@
+{
+    "giornata": 1,
+    "squadra": "POGGIO MIRTETO",
+    "data_ora_incontro": "\"2024-09-08T12:22:00\"",
+    "denominazione_campo": "",
+    "ora_raduno": "12:22:00",
+    "componenti_squadra": [
+        "ALESSANDRO BARONE",
+        "STEFANO PICCONI",
+        "SIMONE DOMENICI",
+        "GIUSEPPE D'IGNAZIO",
+        "FEDERICO TEMPESTILLI",
+        "LORENZO CATERINOZZI",
+        "FLAVIO COSTANTINI",
+        "GIGI MICCICHE'",
+        "ANDREA ABRUZZETTI",
+        "ANDREA RUSSO",
+        "LORENZO BECCHETTI",
+        "KAJLJ BARBARA",
+        "EDOARDO BRACCI",
+        "DANIELE BARILARO",
+        "GIORGIO BIANCONI",
+        "LORENZO FORTUNATO",
+        "PAOLO D'ALESSANDRO",
+        "JORDI DE LUCA",
+        "MANUEL GUIDARELLI",
+        "ANGELO FEDELE"
+    ],
+    "non_convocati": "ANGELO BELFIORI, MATTEO BORGIA, FEDERICO BROCATO, EDOARDO CICCANTI, LUCA COLAGROSSI, EMANUELE COMMODARI, ALESSIO CRISPOLDI, LUCA DI CARLO, RICCARDO GIANSERRA, FILIPPO NESTONNI, DAVIDE OLEARI, VALERIO PERINI, DIEGO LUCIANI",
+    "nome_mister": "LUIGI MICCIO",
+    "nome_dirigente": ""
+}
