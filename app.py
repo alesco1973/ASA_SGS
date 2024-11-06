@@ -40,7 +40,7 @@ st.html("""
 
 
 st.text(locale.getlocale())
-locale.setlocale(locale.LC_ALL, 'it_IT')
+locale.setlocale(locale.LC_ALL, 'en_US')
 def converti_data(data_string):
     # Converte la stringa in un oggetto datetime
     dt = datetime.strptime(data_string, "\"%Y-%m-%dT%H:%M:%S\"")
