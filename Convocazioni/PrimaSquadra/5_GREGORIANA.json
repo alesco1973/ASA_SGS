@@ -1,0 +1,32 @@
+{
+    "giornata": 5,
+    "squadra": "GREGORIANA",
+    "data_ora_incontro": "\"2024-10-06T08:39:00\"",
+    "denominazione_campo": "",
+    "ora_raduno": "08:39:00",
+    "componenti_squadra": [
+        "KAJLJ BARBARA",
+        "STEFANO PICCONI",
+        "SIMONE DOMENICI",
+        "GIUSEPPE D'IGNAZIO",
+        "LORENZO FORTUNATO",
+        "DANIELE BARILARO",
+        "GIGI MICCICHE'",
+        "FEDERICO TEMPESTILLI",
+        "ANDREA RUSSO",
+        "PAOLO D'ALESSANDRO",
+        "LORENZO BECCHETTI",
+        "ALESSANDRO BARONE",
+        "LORENZO CATERINOZZI",
+        "EMANUELE COMMODOARI",
+        "ALESSIO CRISPOLDI",
+        "EDOARDO BRACCI",
+        "ANGELO BELFIORI",
+        "VALERIO PERINI",
+        "RICCARDO GIANSERRA",
+        "MANUEL GUIDARELLI"
+    ],
+    "non_convocati": "ANDREA ABRUZZETTI, GIORGIO BIANCONI, MATTEO BORGIA, FEDERICO BROCATO, EDOARDO CICCANTI, LUCA COLAGROSSI, FLAVIO COSTANTINI, JORDI DE LUCA, LUCA DI CARLO, ANGELO FEDELE, FILIPPO NESTONNI, DAVIDE OLEARI, DIEGO LUCIANI, MANUEL GIORDANO",
+    "nome_mister": "LUIGI MICCIO",
+    "nome_dirigente": ""
+}

@@ -1,0 +1,123 @@
+{
+    "giornata": 7,
+    "squadra": "REAL SAN BASILIO",
+    "home_away": "Casa",
+    "risultato": "3-2",
+    "recupero": 5,
+    "formazione": [
+        "ALESSANDRO BARONE",
+        "STEFANO PICCONI",
+        "SIMONE DOMENICI",
+        "GIUSEPPE D'IGNAZIO",
+        "LORENZO FORTUNATO",
+        "LORENZO CATERINOZZI",
+        "JORDI DE LUCA",
+        "GIGI MICCICHE'",
+        "ANDREA RUSSO",
+        "PAOLO D'ALESSANDRO",
+        "LORENZO BECCHETTI",
+        "KAJLJ BARBARA",
+        "LUCA DI CARLO",
+        "FEDERICO TEMPESTILLI",
+        "ANGELO BELFIORI",
+        "FLAVIO COSTANTINI",
+        "FEDERICO BROCATO",
+        "ALESSIO CRISPOLDI",
+        "MANUEL GUIDARELLI",
+        "EMANUELE COMMODOARI"
+    ],
+    "substitutions": [
+        {
+            "sub_in": "SIMONE DOMENICI",
+            "sub_out": "EMANUELE COMMODOARI",
+            "time_sub": 67
+        },
+        {
+            "sub_in": "JORDI DE LUCA",
+            "sub_out": "ANGELO BELFIORI",
+            "time_sub": 73
+        },
+        {
+            "sub_in": "GIGI MICCICHE'",
+            "sub_out": "ALESSIO CRISPOLDI",
+            "time_sub": 90
+        },
+        {
+            "sub_in": "PAOLO D'ALESSANDRO",
+            "sub_out": "FLAVIO COSTANTINI",
+            "time_sub": 63
+        },
+        {
+            "sub_in": "LORENZO BECCHETTI",
+            "sub_out": "FEDERICO TEMPESTILLI",
+            "time_sub": 67
+        }
+    ],
+    "ammonizioni": [
+        "SIMONE DOMENICI"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "ANDREA RUSSO",
+        "ANDREA RUSSO",
+        "JORDI DE LUCA"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "ANDREA ABRUZZETTI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "DANIELE BARILARO",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "GIORGIO BIANCONI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MATTEO BORGIA",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "EDOARDO BRACCI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "EDOARDO CICCANTI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LUCA COLAGROSSI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "ANGELO FEDELE",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "RICCARDO GIANSERRA",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "FILIPPO NESTONNI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "DAVIDE OLEARI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "VALERIO PERINI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "DIEGO LUCIANI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MANUEL GIORDANO",
+            "motivo": "INFORTUNATO"
+        }
+    ]
+}

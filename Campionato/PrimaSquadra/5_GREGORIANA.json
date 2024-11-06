@@ -1,0 +1,125 @@
+{
+    "giornata": 5,
+    "squadra": "GREGORIANA",
+    "home_away": "Casa",
+    "risultato": "3-2",
+    "recupero": 0,
+    "formazione": [
+        "KAJLJ BARBARA",
+        "STEFANO PICCONI",
+        "SIMONE DOMENICI",
+        "GIUSEPPE D'IGNAZIO",
+        "LORENZO FORTUNATO",
+        "DANIELE BARILARO",
+        "GIGI MICCICHE'",
+        "FEDERICO TEMPESTILLI",
+        "ANDREA RUSSO",
+        "PAOLO D'ALESSANDRO",
+        "LORENZO BECCHETTI",
+        "ALESSANDRO BARONE",
+        "LORENZO CATERINOZZI",
+        "EMANUELE COMMODOARI",
+        "ALESSIO CRISPOLDI",
+        "EDOARDO BRACCI",
+        "ANGELO BELFIORI",
+        "VALERIO PERINI",
+        "RICCARDO GIANSERRA",
+        "MANUEL GUIDARELLI"
+    ],
+    "substitutions": [
+        {
+            "sub_in": "STEFANO PICCONI",
+            "sub_out": "LORENZO CATERINOZZI",
+            "time_sub": 82
+        },
+        {
+            "sub_in": "SIMONE DOMENICI",
+            "sub_out": "ANGELO BELFIORI",
+            "time_sub": 75
+        },
+        {
+            "sub_in": "GIGI MICCICHE'",
+            "sub_out": "MANUEL GUIDARELLI",
+            "time_sub": 69
+        },
+        {
+            "sub_in": "PAOLO D'ALESSANDRO",
+            "sub_out": "EMANUELE COMMODOARI",
+            "time_sub": 55
+        },
+        {
+            "sub_in": "LORENZO BECCHETTI",
+            "sub_out": "ALESSIO CRISPOLDI",
+            "time_sub": 55
+        }
+    ],
+    "ammonizioni": [
+        "LORENZO FORTUNATO",
+        "PAOLO D'ALESSANDRO",
+        "LORENZO BECCHETTI"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "GIGI MICCICHE'",
+        "ANDREA RUSSO",
+        "ANDREA RUSSO"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "ANDREA ABRUZZETTI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "GIORGIO BIANCONI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MATTEO BORGIA",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "FEDERICO BROCATO",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "EDOARDO CICCANTI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LUCA COLAGROSSI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "FLAVIO COSTANTINI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "JORDI DE LUCA",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LUCA DI CARLO",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "ANGELO FEDELE",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "FILIPPO NESTONNI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "DAVIDE OLEARI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "DIEGO LUCIANI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MANUEL GIORDANO",
+            "motivo": "INFORTUNATO"
+        }
+    ]
+}
