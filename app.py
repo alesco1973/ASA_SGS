@@ -39,8 +39,8 @@ st.html("""
         """)
 
 
-# st.text(locale.getlocale())
-# locale.setlocale(locale.LC_ALL, 'en_US')
+
+locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
     # Converte la stringa in un oggetto datetime
     dt = datetime.strptime(data_string, "\"%Y-%m-%dT%H:%M:%S\"")
@@ -858,22 +858,28 @@ def gestione_rosa():
             def create_bar_chart(df, column, n_file, minuti):
                 # Crea un DataFrame per il grafico a barre
                 if column == 'presenze':
-                    df['rapporto'] = (df[column])*100/(n_file)
+                    st.warning("⬅️ Visualizza il rapporto tra le giornate trascorse e le partite effettivamente giocate.")
+                    #st.text("Visualizza il rapporto tra le giornate trascorse e le partite effettivamente giocate")
+                    df['rapporto'] = (df[column])*100/(df['partite'])
                     chart_data = pd.DataFrame({
-                        column: df[column],
-                        'Rapporto (%) su totale minuti': df['rapporto']
+                        "Presenze": df['presenze'],
+                        "Numero giornate": df['partite']
                     }, index=df['giocatore'])
+                    chart_data = chart_data.sort_values(by="Presenze", ascending=False)
                     # Visualizza il grafico a barre
                     st.bar_chart(chart_data, horizontal=True)
                 elif column == 'minuti giocati':
-                    df['rapporto'] = (df[column])*100/(minuti*n_file)
+                    st.warning("⬅️ Visualizza il rapporto tra i minuti totali giocabili e i minuti effettivamente giocati in %.")
+                    minuti_totali = df['partite']*minuti
+                    df['rapporto'] = (df['presenze'])*minuti*100/(minuti*df['partite'])
                     chart_data = pd.DataFrame({
-                        column: df[column],
-                        'Rapporto (%) su totale minuti': df['rapporto']
+                        'Minuti totali': minuti_totali,
+                        'Rapporto (%) su minuti totali': df['rapporto']
                     }, index=df['giocatore'])
                     # Visualizza il grafico a barre
                     st.bar_chart(chart_data, horizontal=True)
                 elif column == 'generale':
+                    st.warning("⬅️ Visualizza le partite da titolare, quelle in cui è stato sostituito (sub_out), quelle in cui è subentrato (sub_in), sulle presenze effettive.")
                     chart_data = pd.DataFrame(
                         {
                             "giocatore": df['giocatore'],
@@ -885,6 +891,21 @@ def gestione_rosa():
                         }
                     )
                     st.bar_chart(chart_data, x="giocatore", y=["presenze", "titolare", "sub_out", "sub_in"], x_label="Informazioni presenze", color="partite", horizontal=True)
+                elif column == 'minuti giocati/convocazioni':
+                    st.warning("⬅️ Visualizza il rapporto tra i minuti giocabili, basato sul numero di partite in cui è stato convocato, e i minuti effettivi giocati.")
+                    convocazioni = df['partite'] - df['non convocazione']
+                    minutaggio = minuti*convocazioni
+                    df['rapporto'] = (df['minuti giocati'])*100/minutaggio
+                    chart_data = pd.DataFrame(
+                        {
+                            "giocatore": df['giocatore'],
+                            "convocazioni": convocazioni,
+                            "minutaggio": minutaggio,
+                            "Rapporto": df['rapporto']
+                        }
+                    )
+                    st.bar_chart(chart_data, x="giocatore", y=["convocazioni", "minutaggio", "Rapporto"], x_label="Rapporto minuti giocati/totali convocazione", color="convocazioni")
+                    
                 
 
 
@@ -1049,7 +1070,7 @@ def gestione_rosa():
 
                         data[esp_player]["espulsioni"] += 1
                         min_giocati = data[esp_player]["minuti giocati"] - minuti
-                        #st.text(min_giocati)
+                        st.text(min_giocati)
                         data[esp_player]["minuti giocati"] = (min_giocati + time_esp)
 
                 # Aggiungi i giocatori che hanno segnato
@@ -1084,7 +1105,7 @@ def gestione_rosa():
             
             # Calcola il rapporto
             stat = st.selectbox('Seleziona la statistica da visualizzare', 
-                                    ['presenze', 'minuti giocati', 'generale'])
+                                    ['presenze', 'minuti giocati', 'minuti giocati/convocazioni', 'generale'])
             df_report['minuti_p'] = ((df_report['minuti giocati'])*100/(minuti * n_file)).apply(lambda x: f"{x:,.2f}".replace('.', ','))
             df_report['presenze_p'] = ((df_report['presenze'])*100/(df_report['presenze']) * 100).apply(lambda x: f"{x:,.2f}".replace('.', ','))
             # Crea il grafico a barre per la statistica selezionata
