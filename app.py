@@ -1070,7 +1070,7 @@ def gestione_rosa():
 
                         data[esp_player]["espulsioni"] += 1
                         min_giocati = data[esp_player]["minuti giocati"] - minuti
-                        st.text(min_giocati)
+                        #st.text(min_giocati)
                         data[esp_player]["minuti giocati"] = (min_giocati + time_esp)
 
                 # Aggiungi i giocatori che hanno segnato
