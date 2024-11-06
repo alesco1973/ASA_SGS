@@ -871,7 +871,7 @@ def gestione_rosa():
                 elif column == 'minuti giocati':
                     st.warning("⬅️ Visualizza il rapporto tra i minuti totali giocabili e i minuti effettivamente giocati in %.")
                     minuti_totali = df['partite']*minuti
-                    df['rapporto'] = (df['presenze'])*minuti*100/(df['partite'])
+                    df['rapporto'] = (df['minuti giocati'])*100/(df['minuti_totali'])
                     chart_data = pd.DataFrame({
                         'Minuti totali': minuti_totali,
                         'Rapporto (%) su minuti totali': df['rapporto']
