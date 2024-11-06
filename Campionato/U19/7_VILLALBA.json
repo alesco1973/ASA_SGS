@@ -1,0 +1,97 @@
+{
+    "giornata": 7,
+    "squadra": "VILLALBA",
+    "home_away": "Fuori Casa",
+    "risultato": "0-1",
+    "recupero": 4,
+    "formazione": [
+        "GIANMARCO PERRONI",
+        "ANTONIO KUKAJ ",
+        "EDOARDO BRACCI",
+        "FILIPPO GORINI",
+        "EMILIANO NESTA",
+        "MARCO PAGGETTI",
+        "NICCOLO' CONTINI",
+        "SIMONE BABI",
+        "GABRIELE BUCCI ",
+        "MATTEO PICCINETTI",
+        "ALESSANDRO GALIMI",
+        "ALESSANDRO PORCARELLI ",
+        "LEONARDO SCIPIONE ",
+        "GIORDANO BELLEI ",
+        "MATTEO MORAMARCO",
+        "TITO MOZZI",
+        "FLODION MEHQEMEJA",
+        "",
+        "",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "FILIPPO GORINI",
+            "sub_out": "LEONARDO SCIPIONE ",
+            "time_sub": 77
+        },
+        {
+            "sub_in": "NICCOLO' CONTINI",
+            "sub_out": "TITO MOZZI",
+            "time_sub": 85
+        },
+        {
+            "sub_in": "GABRIELE BUCCI ",
+            "sub_out": "MATTEO MORAMARCO",
+            "time_sub": 77
+        },
+        {
+            "sub_in": "ALESSANDRO GALIMI",
+            "sub_out": "GIORDANO BELLEI ",
+            "time_sub": 90
+        }
+    ],
+    "ammonizioni": [
+        "MATTEO PICCINETTI",
+        "LEONARDO SCIPIONE "
+    ],
+    "espulsioni": [],
+    "goal": [
+        "GIANMARCO PERRONI"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "ALESSANDRO ASAMSONESEI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "FRANCESCO BERSANTI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "PAOLO CIOCCOLONI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "PIETRO LISANTI",
+            "motivo": "SCELTA TECNICA"
+        },
+        {
+            "giocatore": "MATTIA COLASANTI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "DIEGO SANTILLI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LUDOVICO MAGGIULLI ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MAURIZIO CINQUEPALMI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "AMEDEO PANNICELLI",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}

@@ -1,0 +1,93 @@
+{
+    "giornata": 8,
+    "squadra": "ROMULEA",
+    "home_away": "Casa",
+    "risultato": "1-2",
+    "recupero": 0,
+    "formazione": [
+        "GIANMARCO PERRONI",
+        "ANTONIO KUKAJ ",
+        "EDOARDO BRACCI",
+        "FILIPPO GORINI",
+        "EMILIANO NESTA",
+        "MARCO PAGGETTI",
+        "NICCOLO' CONTINI",
+        "SIMONE BABI",
+        "GABRIELE BUCCI ",
+        "MATTEO MORAMARCO",
+        "ALESSANDRO GALIMI",
+        "MAURIZIO CINQUEPALMI",
+        "GIORDANO BELLEI ",
+        "ALESSANDRO ASAMSONESEI",
+        "PAOLO CIOCCOLONI",
+        "DANIEL PERLIN",
+        "TITO MOZZI",
+        "AMEDEO PANNICELLI",
+        "MATTIA COLASANTI",
+        "LEONARDO SCIPIONE "
+    ],
+    "substitutions": [
+        {
+            "sub_in": "FILIPPO GORINI",
+            "sub_out": "PAOLO CIOCCOLONI",
+            "time_sub": 48
+        },
+        {
+            "sub_in": "EMILIANO NESTA",
+            "sub_out": "GIORDANO BELLEI ",
+            "time_sub": 73
+        },
+        {
+            "sub_in": "NICCOLO' CONTINI",
+            "sub_out": "MATTIA COLASANTI",
+            "time_sub": 58
+        },
+        {
+            "sub_in": "SIMONE BABI",
+            "sub_out": "ALESSANDRO ASAMSONESEI",
+            "time_sub": 58
+        },
+        {
+            "sub_in": "ALESSANDRO GALIMI",
+            "sub_out": "AMEDEO PANNICELLI",
+            "time_sub": 73
+        }
+    ],
+    "ammonizioni": [
+        "NICCOLO' CONTINI"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "MATTEO MORAMARCO"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "FRANCESCO BERSANTI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "PIETRO LISANTI",
+            "motivo": "SCELTA TECNICA"
+        },
+        {
+            "giocatore": "FLODION MEHQEMEJA",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MATTEO PICCINETTI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "DIEGO SANTILLI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "ALESSANDRO PORCARELLI ",
+            "motivo": "SCELTA TECNICA"
+        },
+        {
+            "giocatore": "LUDOVICO MAGGIULLI ",
+            "motivo": "INFORTUNATO"
+        }
+    ]
+}

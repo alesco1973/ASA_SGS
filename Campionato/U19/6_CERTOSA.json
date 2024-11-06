@@ -1,0 +1,92 @@
+{
+    "giornata": 6,
+    "squadra": "CERTOSA",
+    "home_away": "Casa",
+    "risultato": "2-2",
+    "recupero": 5,
+    "formazione": [
+        "GIANMARCO PERRONI",
+        "ANTONIO KUKAJ ",
+        "EDOARDO BRACCI",
+        "FILIPPO GORINI",
+        "FLODION MEHQEMEJA",
+        "MARCO PAGGETTI",
+        "MATTIA COLASANTI",
+        "SIMONE BABI",
+        "GABRIELE BUCCI ",
+        "MATTEO PICCINETTI",
+        "ALESSANDRO GALIMI",
+        "MAURIZIO CINQUEPALMI",
+        "EMILIANO NESTA",
+        "ALESSANDRO ASAMSONESEI",
+        "GIORDANO BELLEI ",
+        "MATTEO MORAMARCO",
+        "NICCOLO' CONTINI",
+        "AMEDEO PANNICELLI",
+        "LEONARDO SCIPIONE ",
+        "TITO MOZZI"
+    ],
+    "substitutions": [
+        {
+            "sub_in": "FILIPPO GORINI",
+            "sub_out": "TITO MOZZI",
+            "time_sub": 88
+        },
+        {
+            "sub_in": "GABRIELE BUCCI ",
+            "sub_out": "AMEDEO PANNICELLI",
+            "time_sub": 64
+        },
+        {
+            "sub_in": "SIMONE BABI",
+            "sub_out": "FILIPPO GORINI",
+            "time_sub": 72
+        },
+        {
+            "sub_in": "ALESSANDRO GALIMI",
+            "sub_out": "LEONARDO SCIPIONE ",
+            "time_sub": 78
+        }
+    ],
+    "ammonizioni": [
+        "MARCO PAGGETTI",
+        "MATTEO PICCINETTI",
+        "ALESSANDRO GALIMI"
+    ],
+    "espulsioni": [
+        {
+            "esp_player": "MATTIA COLASANTI",
+            "time_esp": 65
+        }
+    ],
+    "goal": [
+        "ALESSANDRO GALIMI",
+        "MATTEO PICCINETTI"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "FRANCESCO BERSANTI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "PAOLO CIOCCOLONI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "PIETRO LISANTI",
+            "motivo": "SCELTA TECNICA"
+        },
+        {
+            "giocatore": "DIEGO SANTILLI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "ALESSANDRO PORCARELLI ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LUDOVICO MAGGIULLI ",
+            "motivo": "INFORTUNATO"
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "giornata": 9,
+    "squadra": "ATLETICO 2000",
+    "home_away": "Fuori Casa",
+    "risultato": "1-1",
+    "recupero": 0,
+    "formazione": [
+        "MAURIZIO CINQUEPALMI",
+        "ANTONIO KUKAJ ",
+        "EDOARDO BRACCI",
+        "PAOLO CIOCCOLONI",
+        "GIORDANO BELLEI ",
+        "MARCO PAGGETTI",
+        "MATTIA COLASANTI",
+        "SIMONE BABI",
+        "GABRIELE BUCCI ",
+        "MATTEO PICCINETTI",
+        "MATTEO MORAMARCO",
+        "ALESSANDRO PORCARELLI ",
+        "EMILIANO NESTA",
+        "ALESSANDRO ASAMSONESEI",
+        "FILIPPO GORINI",
+        "DIEGO SANTILLI",
+        "NICCOLO' CONTINI",
+        "ALESSANDRO GALIMI",
+        "TITO MOZZI",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "MATTIA COLASANTI",
+            "sub_out": "TITO MOZZI",
+            "time_sub": 74
+        },
+        {
+            "sub_in": "SIMONE BABI",
+            "sub_out": "ALESSANDRO GALIMI",
+            "time_sub": 70
+        }
+    ],
+    "ammonizioni": [
+        "GIORDANO BELLEI ",
+        "MARCO PAGGETTI",
+        "MATTEO PICCINETTI"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "MATTEO PICCINETTI"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "FRANCESCO BERSANTI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "PIETRO LISANTI",
+            "motivo": "SCELTA TECNICA"
+        },
+        {
+            "giocatore": "FLODION MEHQEMEJA",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "GIANMARCO PERRONI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "LEONARDO SCIPIONE ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LUDOVICO MAGGIULLI ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "AMEDEO PANNICELLI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "DANIEL PERLIN",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}
