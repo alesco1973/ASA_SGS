@@ -1,0 +1,32 @@
+{
+    "giornata": 2,
+    "squadra": "GORILLA",
+    "data_ora_incontro": "\"2024-10-27T09:08:00\"",
+    "denominazione_campo": "",
+    "ora_raduno": "09:08:00",
+    "componenti_squadra": [
+        "FEDERICO CHIANI ",
+        "MAXIM ROSSI",
+        "DANIEL PERLINI",
+        "ANDREI COMAN ",
+        "FRANCESCO TINTIS",
+        "DIEGO PALAMIDES",
+        "GERARDO PENTA",
+        "TOMMASO FIENI ",
+        "AMEDEO PANNICELLI",
+        "ANDREA FRANCO ",
+        "ANDREA MELIS",
+        "MAURIZIO CINQUEPALMI",
+        "YURI LONGO",
+        "GABRIELE DEL CASTELLO",
+        "MATTEO BIANCHI",
+        "CHRISTIAN REVELANT",
+        "TOMMASO PRESTA",
+        "RAFFAELLO RIZZO",
+        "ALESSANRO SERINO",
+        ""
+    ],
+    "non_convocati": "CHRISTIAN GIAFFREDA, LORENZO GRIMALDI, CHRISTIAN TATTI, ARTEM TKACHENKO",
+    "nome_mister": "MAURIZIO PASCALI",
+    "nome_dirigente": ""
+}

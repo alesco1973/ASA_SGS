@@ -1,0 +1,63 @@
+{
+    "giornata": 1,
+    "squadra": "SANTA LUCIA",
+    "home_away": "Fuori Casa",
+    "risultato": "0-5",
+    "recupero": 0,
+    "formazione": [
+        "MAURIZIO CINQUEPALMI",
+        "YURI LONGO",
+        "DIEGO PALAMIDES",
+        "GERARDO PENTA",
+        "MATTEO BIANCHI",
+        "TOMMASO FIENI ",
+        "FRANCESCO TINTIS",
+        "DANIEL PERLINI",
+        "AMEDEO PANNICELLI",
+        "CHRISTIAN TATTI",
+        "ANDREA MELIS",
+        "FEDERICO CHIANI ",
+        "ANDREI COMAN ",
+        "RAFFAELLO RIZZO",
+        "MAXIM ROSSI",
+        "CHRISTIAN REVELANT",
+        "ALESSANRO SERINO",
+        "GABRIELE DEL CASTELLO",
+        "ANDREA FRANCO ",
+        "TOMMASO PRESTA"
+    ],
+    "substitutions": [
+        {
+            "sub_in": "YURI LONGO",
+            "sub_out": "ANDREI COMAN ",
+            "time_sub": 77
+        }
+    ],
+    "ammonizioni": [
+        "GERARDO PENTA",
+        "CHRISTIAN TATTI",
+        "GABRIELE DEL CASTELLO"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "AMEDEO PANNICELLI",
+        "AMEDEO PANNICELLI",
+        "ANDREA MELIS",
+        "DANIEL PERLINI",
+        "RAFFAELLO RIZZO"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "CHRISTIAN GIAFFREDA",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LORENZO GRIMALDI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "ARTEM TKACHENKO",
+            "motivo": "INFORTUNATO"
+        }
+    ]
+}

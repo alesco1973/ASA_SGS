@@ -1,0 +1,88 @@
+{
+    "giornata": 2,
+    "squadra": "GORILLA",
+    "home_away": "Casa",
+    "risultato": "4-2",
+    "recupero": 5,
+    "formazione": [
+        "FEDERICO CHIANI ",
+        "MAXIM ROSSI",
+        "DANIEL PERLINI",
+        "ANDREI COMAN ",
+        "FRANCESCO TINTIS",
+        "DIEGO PALAMIDES",
+        "GERARDO PENTA",
+        "TOMMASO FIENI ",
+        "AMEDEO PANNICELLI",
+        "ANDREA FRANCO ",
+        "ANDREA MELIS",
+        "MAURIZIO CINQUEPALMI",
+        "YURI LONGO",
+        "GABRIELE DEL CASTELLO",
+        "MATTEO BIANCHI",
+        "CHRISTIAN REVELANT",
+        "TOMMASO PRESTA",
+        "RAFFAELLO RIZZO",
+        "ALESSANRO SERINO",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "ANDREI COMAN ",
+            "sub_out": "YURI LONGO",
+            "time_sub": 53
+        },
+        {
+            "sub_in": "DIEGO PALAMIDES",
+            "sub_out": "ALESSANRO SERINO",
+            "time_sub": 83
+        },
+        {
+            "sub_in": "GERARDO PENTA",
+            "sub_out": "CHRISTIAN REVELANT",
+            "time_sub": 53
+        },
+        {
+            "sub_in": "AMEDEO PANNICELLI",
+            "sub_out": "GABRIELE DEL CASTELLO",
+            "time_sub": 90
+        },
+        {
+            "sub_in": "ANDREA MELIS",
+            "sub_out": "RAFFAELLO RIZZO",
+            "time_sub": 83
+        }
+    ],
+    "ammonizioni": [
+        "DANIEL PERLINI",
+        "GERARDO PENTA",
+        "AMEDEO PANNICELLI",
+        "ANDREA MELIS",
+        "ALESSANRO SERINO"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "ANDREA FRANCO ",
+        "AMEDEO PANNICELLI",
+        "GERARDO PENTA",
+        "AMEDEO PANNICELLI"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "CHRISTIAN GIAFFREDA",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LORENZO GRIMALDI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "CHRISTIAN TATTI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "ARTEM TKACHENKO",
+            "motivo": "INFORTUNATO"
+        }
+    ]
+}

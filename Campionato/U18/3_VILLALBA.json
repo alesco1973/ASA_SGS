@@ -1,0 +1,78 @@
+{
+    "giornata": 3,
+    "squadra": "VILLALBA",
+    "home_away": "Casa",
+    "risultato": "0-2",
+    "recupero": 0,
+    "formazione": [
+        "MAURIZIO CINQUEPALMI",
+        "GERARDO PENTA",
+        "TOMMASO FIENI ",
+        "DIEGO PALAMIDES",
+        "MATTEO BIANCHI",
+        "FRANCESCO TINTIS",
+        "ANDREA FRANCO ",
+        "DANIEL PERLINI",
+        "AMEDEO PANNICELLI",
+        "CHRISTIAN TATTI",
+        "YURI LONGO",
+        "FEDERICO CHIANI ",
+        "ANDREI COMAN ",
+        "ANDREA MELIS",
+        "RAFFAELLO RIZZO",
+        "ALESSANRO SERINO",
+        "ARTEM TKACHENKO",
+        "MAXIM ROSSI",
+        "CHRISTIAN REVELANT",
+        "GABRIELE DEL CASTELLO"
+    ],
+    "substitutions": [
+        {
+            "sub_in": "DIEGO PALAMIDES",
+            "sub_out": "ALESSANRO SERINO",
+            "time_sub": 51
+        },
+        {
+            "sub_in": "MATTEO BIANCHI",
+            "sub_out": "CHRISTIAN REVELANT",
+            "time_sub": 51
+        },
+        {
+            "sub_in": "AMEDEO PANNICELLI",
+            "sub_out": "RAFFAELLO RIZZO",
+            "time_sub": 53
+        },
+        {
+            "sub_in": "CHRISTIAN TATTI",
+            "sub_out": "ARTEM TKACHENKO",
+            "time_sub": 51
+        },
+        {
+            "sub_in": "YURI LONGO",
+            "sub_out": "ANDREI COMAN ",
+            "time_sub": 45
+        }
+    ],
+    "ammonizioni": [
+        "GERARDO PENTA",
+        "CHRISTIAN TATTI",
+        "ANDREA FRANCO ",
+        "CHRISTIAN REVELANT"
+    ],
+    "espulsioni": [],
+    "goal": [],
+    "non_convocati": [
+        {
+            "giocatore": "CHRISTIAN GIAFFREDA",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "LORENZO GRIMALDI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "TOMMASO PRESTA",
+            "motivo": "SCELTA TECNICA"
+        }
+    ]
+}
