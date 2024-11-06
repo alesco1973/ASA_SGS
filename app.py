@@ -1114,7 +1114,7 @@ def gestione_rosa():
 
             # Seleziona i giocatori da confrontare
             statistica = st.selectbox('Seleziona la statistica da visualizzare', 
-                                    ['presenze', 'minuti giocati'], key='stat')            
+                                    ['presenze', 'minuti giocati', 'minuti giocati/convocazioni', 'generale'], key='stat')            
             # player1 = st.selectbox('Seleziona il primo giocatore', df_report['giocatore'])
             # player2 = st.selectbox('Seleziona il secondo giocatore', df_report['giocatore'])
 
