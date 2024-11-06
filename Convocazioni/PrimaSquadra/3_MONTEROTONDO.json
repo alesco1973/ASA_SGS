@@ -1,0 +1,32 @@
+{
+    "giornata": 3,
+    "squadra": "MONTEROTONDO",
+    "data_ora_incontro": "\"2024-09-22T07:26:00\"",
+    "denominazione_campo": "",
+    "ora_raduno": "07:26:00",
+    "componenti_squadra": [
+        "ALESSANDRO BARONE",
+        "STEFANO PICCONI",
+        "SIMONE DOMENICI",
+        "GIUSEPPE D'IGNAZIO",
+        "LORENZO FORTUNATO",
+        "LORENZO CATERINOZZI",
+        "GIGI MICCICHE'",
+        "FEDERICO TEMPESTILLI",
+        "ANDREA ABRUZZETTI",
+        "ANDREA RUSSO",
+        "LORENZO BECCHETTI",
+        "KAJLJ BARBARA",
+        "DANIELE BARILARO",
+        "EDOARDO BRACCI",
+        "EDOARDO CICCANTI",
+        "ALESSIO CRISPOLDI",
+        "PAOLO D'ALESSANDRO",
+        "JORDI DE LUCA",
+        "ANGELO FEDELE",
+        "MANUEL GUIDARELLI"
+    ],
+    "non_convocati": "ANGELO BELFIORI, GIORGIO BIANCONI, MATTEO BORGIA, FEDERICO BROCATO, LUCA COLAGROSSI, EMANUELE COMMODARI, FLAVIO COSTANTINI, LUCA DI CARLO, RICCARDO GIANSERRA, FILIPPO NESTONNI, DAVIDE OLEARI, VALERIO PERINI, DIEGO LUCIANI",
+    "nome_mister": "LUIGI MICCIO",
+    "nome_dirigente": ""
+}
