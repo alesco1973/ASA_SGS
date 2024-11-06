@@ -40,7 +40,7 @@ st.html("""
 
 
 
-#locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
+locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
     # Converte la stringa in un oggetto datetime
     dt = datetime.strptime(data_string, "\"%Y-%m-%dT%H:%M:%S\"")
@@ -360,7 +360,7 @@ def gestione_rosa():
 
             # Add a button to save changes
 
-            st.text("Aggiungi/Modifica/Elimina un giocatore")
+            st.write(":blue[Aggiungi/Modifica/Elimina un giocatore]")
             row_1 = '''
                 Puoi modificare un giocatore direttamente nella tabella e cliccando, successivamente, sul pulsante 'Salva modifiche'.
             '''
@@ -765,6 +765,7 @@ def gestione_rosa():
                     squadra = st.text_input("Squadra Avversaria", convocazione['squadra'])
                     home_away = st.selectbox("Casa/Fuori Casa", ["Casa", "Fuori Casa"])
                     risultato = st.text_input("Risultato")
+                    recupero = st.number_input("Eventuali minuti di recupero concesso", min_value=0, step=1)
 
                     # Formazione
                     st.subheader("Formazione")
@@ -825,6 +826,7 @@ def gestione_rosa():
                         "squadra": squadra,
                         "home_away": home_away,
                         "risultato": risultato,
+                        "recupero": recupero,
                         "formazione": formazione,
                         "substitutions": substitutions,
                         "ammonizioni": ammonizioni,
@@ -923,45 +925,49 @@ def gestione_rosa():
                 time_sub = [sub["time_sub"] for sub in match_data["substitutions"]]
                 next_9 = match_data["formazione"][11:20]
                 non_convocati = [player["giocatore"] for player in match_data["non_convocati"]]
-            
+                recupero = match_data['recupero']
                 #data['partite'] = n_file
                 # Aggiungi i giocatori della formazione
                 for player in first_11:
                     if player in sub_in:
                         if player not in data:
+                            time_play = time_sub[sub_in.index(player)] + recupero
                             data[player] = {
                                 "presenze": 1,
                                 "giocatore": player,
                                 "titolare": 1,
                                 "sub_out": 1,
                                 "sub_in": 0,
-                                "minuti giocati": time_sub[sub_in.index(player)],
+                                "minuti giocati": time_play,
                                 "ammonizioni": 0,
                                 "espulsioni": 0,
                                 "goal": 0,
                                 "non convocazione": 0
                             }
                         else:
-                            data[player]["minuti giocati"] += time_sub[sub_in.index(player)]
+                            time_play = time_sub[sub_in.index(player)] + recupero
+                            data[player]["minuti giocati"] += time_play
                             data[player]["presenze"] += 1
                             data[player]["titolare"] += 1
                             data[player]["sub_out"] += 1
                     else:
                         if player not in data:
+                            time_play = minuti + recupero
                             data[player] = {
                                 "presenze": 1,
                                 "giocatore": player,
                                 "titolare": 1,
                                 "sub_out": 0,
                                 "sub_in": 0,                                
-                                "minuti giocati": minuti,
+                                "minuti giocati": time_play,
                                 "ammonizioni": 0,
                                 "espulsioni": 0,
                                 "goal": 0,
                                 "non convocazione": 0
                             }
                         else:
-                            data[player]["minuti giocati"] += minuti
+                            time_play = minuti + recupero
+                            data[player]["minuti giocati"] += time_play
                             data[player]["presenze"] += 1
                             data[player]["titolare"] += 1
 
@@ -969,20 +975,22 @@ def gestione_rosa():
                 for player in next_9:
                     if player in sub_out:
                         if player not in data:
+                            time_play = minuti - time_sub[sub_out.index(player)] + recupero
                             data[player] = {
                                 "presenze": 1,
                                 "giocatore": player,
                                 "titolare": 0,
                                 "sub_out": 0,
                                 "sub_in": 1,
-                                "minuti giocati": minuti - time_sub[sub_out.index(player)],
+                                "minuti giocati": time_play,
                                 "ammonizioni": 0,
                                 "espulsioni": 0,
                                 "goal": 0,
                                 "non convocazione": 0
                             }
                         else:
-                            data[player]["minuti giocati"] += (minuti - time_sub[sub_out.index(player)])
+                            time_play = minuti - time_sub[sub_out.index(player)] + recupero
+                            data[player]["minuti giocati"] += time_play
                             data[player]["presenze"] += 1
                             data[player]["sub_in"] += 1
 
@@ -1118,14 +1126,14 @@ def impostazioni():
 # ---------- SIDEBAR ----------
 # Navigazione tra le pagine
 pages = {
-    "Home": homepage,
-    "Gestione Rosa": gestione_rosa,
+    "Scuola Calcio": homepage,
+    "Prima Squadra e SGS": gestione_rosa,
     "Impostazioni": impostazioni
 }
 
 with st.sidebar:
-    selection = option_menu("Main Menu", ["Home", "Gestione Rosa",'Impostazioni'], 
-        icons=['house', '', 'gear'], menu_icon="cast", default_index=1)
+    selection = option_menu("Main Menu", ["Scuola Calcio", "Prima Squadra e SGS",'Impostazioni'], 
+        icons=['', '', 'gear'], menu_icon="cast", default_index=1)
 
 
     social_media_links = [
