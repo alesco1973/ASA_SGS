@@ -685,7 +685,7 @@ def gestione_rosa():
                         mostra_e_modifica_json(file_path, acronimo, mister_info['mister'])
                         with open(file_path, "rb") as file:
                             btn = st.download_button(
-                                label="Scarica il report",
+                                label="Scarica la convocazione",
                                 data=file,
                                 file_name=selected_file,
                                 mime="application/json"
