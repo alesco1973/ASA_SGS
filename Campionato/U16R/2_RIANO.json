@@ -1,0 +1,77 @@
+{
+    "giornata": 2,
+    "squadra": "RIANO",
+    "home_away": "Casa",
+    "risultato": "3-0",
+    "recupero": 5,
+    "formazione": [
+        "CRISTIAN DE VINCENTIS",
+        "JACOPO PANTINI",
+        "GIULIO POGGIOLI",
+        "DAVID MATASEL ",
+        "ADRIANO VENAFRA",
+        "MATTIA PATASCE",
+        "ALESSIO VEGLIANTI",
+        "MATTIA SCOPEL ",
+        "EDOARDO D'AULERIO",
+        "SEBASTIANO LAI",
+        "CHRISTIAN BELLAROSA",
+        "TITO AL HAVARI",
+        "GIOVANNI BOCCIA",
+        "MASSIMO      CIMARELLI",
+        "VALERIO CONTI",
+        "CRISTIANO MIGENI",
+        "LORENZO MIGENI",
+        "ALEXANDRU MOISE",
+        "",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "GIULIO POGGIOLI",
+            "sub_out": "LORENZO MIGENI",
+            "time_sub": 61
+        },
+        {
+            "sub_in": "ADRIANO VENAFRA",
+            "sub_out": "VALERIO CONTI",
+            "time_sub": 80
+        },
+        {
+            "sub_in": "EDOARDO D'AULERIO",
+            "sub_out": "GIOVANNI BOCCIA",
+            "time_sub": 76
+        },
+        {
+            "sub_in": "SEBASTIANO LAI",
+            "sub_out": "ALEXANDRU MOISE",
+            "time_sub": 61
+        },
+        {
+            "sub_in": "CHRISTIAN BELLAROSA",
+            "sub_out": "CRISTIANO MIGENI",
+            "time_sub": 49
+        }
+    ],
+    "ammonizioni": [],
+    "espulsioni": [],
+    "goal": [
+        "SEBASTIANO LAI",
+        "CRISTIANO MIGENI",
+        "EDOARDO D'AULERIO"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "GIACOMO CICCARELLA ",
+            "motivo": "MALATTIA"
+        },
+        {
+            "giocatore": "ARTHUR ROBLES",
+            "motivo": "NON ALLENATO"
+        },
+        {
+            "giocatore": "JOSEPH MARCHETTA",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}

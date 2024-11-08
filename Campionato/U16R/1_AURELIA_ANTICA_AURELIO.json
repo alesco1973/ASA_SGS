@@ -1,0 +1,64 @@
+{
+    "giornata": 1,
+    "squadra": "AURELIA ANTICA AURELIO",
+    "home_away": "Fuori Casa",
+    "risultato": "0-2",
+    "recupero": 5,
+    "formazione": [
+        "TITO AL HAVARI",
+        "VALERIO CONTI",
+        "GIACOMO CICCARELLA ",
+        "MATTIA SCOPEL ",
+        "JACOPO PANTINI",
+        "ADRIANO VENAFRA",
+        "MASSIMO      CIMARELLI",
+        "ALESSIO VEGLIANTI",
+        "EDOARDO D'AULERIO",
+        "SEBASTIANO LAI",
+        "CHRISTIAN BELLAROSA",
+        "CRISTIAN DE VINCENTIS",
+        "DAVID MATASEL ",
+        "CRISTIANO MIGENI",
+        "ALEXANDRU MOISE",
+        "MATTIA PATASCE",
+        "GIULIO POGGIOLI",
+        "ARTHUR ROBLES",
+        "",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "VALERIO CONTI",
+            "sub_out": "DAVID MATASEL ",
+            "time_sub": 66
+        },
+        {
+            "sub_in": "MATTIA SCOPEL ",
+            "sub_out": "ARTHUR ROBLES",
+            "time_sub": 66
+        },
+        {
+            "sub_in": "ADRIANO VENAFRA",
+            "sub_out": "MATTIA PATASCE",
+            "time_sub": 76
+        },
+        {
+            "sub_in": "CHRISTIAN BELLAROSA",
+            "sub_out": "ALEXANDRU MOISE",
+            "time_sub": 58
+        }
+    ],
+    "ammonizioni": [],
+    "espulsioni": [],
+    "goal": [],
+    "non_convocati": [
+        {
+            "giocatore": "JOSEPH MARCHETTA",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "LORENZO MIGENI",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}

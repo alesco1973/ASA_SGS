@@ -1,0 +1,82 @@
+{
+    "giornata": 5,
+    "squadra": "TOR DI QUINTO",
+    "home_away": "Fuori Casa",
+    "risultato": "1-5",
+    "recupero": 5,
+    "formazione": [
+        "TITO AL HAVARI",
+        "GIACOMO CICCARELLA ",
+        "JACOPO PANTINI",
+        "ALESSIO VEGLIANTI",
+        "VALERIO CONTI",
+        "ADRIANO VENAFRA",
+        "MASSIMO      CIMARELLI",
+        "MATTIA SCOPEL ",
+        "EDOARDO D'AULERIO",
+        "ALEXANDRU MOISE",
+        "GIULIO POGGIOLI",
+        "DIEGO PERFETTO",
+        "CHRISTIAN BELLAROSA",
+        "SEBASTIANO LAI",
+        "DAVID MATASEL ",
+        "CRISTIANO MIGENI",
+        "LORENZO MIGENI",
+        "ARTHUR ROBLES",
+        "",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "GIACOMO CICCARELLA ",
+            "sub_out": "CRISTIANO MIGENI",
+            "time_sub": 65
+        },
+        {
+            "sub_in": "JACOPO PANTINI",
+            "sub_out": "LORENZO MIGENI",
+            "time_sub": 70
+        },
+        {
+            "sub_in": "ALESSIO VEGLIANTI",
+            "sub_out": "CHRISTIAN BELLAROSA",
+            "time_sub": 65
+        },
+        {
+            "sub_in": "MATTIA SCOPEL ",
+            "sub_out": "SEBASTIANO LAI",
+            "time_sub": 49
+        },
+        {
+            "sub_in": "GIULIO POGGIOLI",
+            "sub_out": "MATTIA SCOPEL ",
+            "time_sub": 40
+        }
+    ],
+    "ammonizioni": [
+        "VALERIO CONTI",
+        "MATTIA SCOPEL "
+    ],
+    "espulsioni": [],
+    "goal": [
+        "MASSIMO      CIMARELLI"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "CRISTIAN DE VINCENTIS",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MATTIA PATASCE",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "JOSEPH MARCHETTA",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "GIOVANNI BOCCIA",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}
