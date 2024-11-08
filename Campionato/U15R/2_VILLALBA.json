@@ -1,0 +1,78 @@
+{
+    "giornata": 2,
+    "squadra": "VILLALBA",
+    "home_away": "Casa",
+    "risultato": "1-0",
+    "recupero": 0,
+    "formazione": [
+        "ARON PABINIAK",
+        "MIRKO BARONE ",
+        "LORENZO GRASSO",
+        "FLAVIO PIDALA'",
+        "MATTIA AGOSTINI",
+        "GIANMARIA PASQUALI ",
+        "SEBASTIANO GAZZELLA ",
+        "GIORDANO PERCONTI",
+        "FRANCESCO BOCCHINO",
+        "MATTEO TEMPERINI",
+        "SIMONE GIRALDA",
+        "DIEGO PERFETTO ",
+        "VALERIO CAGNUCCI ",
+        "LORENZO CAU",
+        "MAYO DE FEO ",
+        "MIRKO DI OTTAVIO ",
+        "ALESSIO IGLIOZZI",
+        "FLAVIO MOZZI",
+        "",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "FLAVIO PIDALA'",
+            "sub_out": "VALERIO CAGNUCCI ",
+            "time_sub": 62
+        },
+        {
+            "sub_in": "SEBASTIANO GAZZELLA ",
+            "sub_out": "FLAVIO MOZZI",
+            "time_sub": 56
+        },
+        {
+            "sub_in": "FRANCESCO BOCCHINO",
+            "sub_out": "MIRKO DI OTTAVIO ",
+            "time_sub": 64
+        },
+        {
+            "sub_in": "MATTEO TEMPERINI",
+            "sub_out": "ALESSIO IGLIOZZI",
+            "time_sub": 62
+        }
+    ],
+    "ammonizioni": [],
+    "espulsioni": [],
+    "goal": [
+        "FRANCESCO BOCCHINO"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "FLAVIO CECCHINI ",
+            "motivo": "NON ALLENATO"
+        },
+        {
+            "giocatore": "PIERO PUGLIATTI",
+            "motivo": "NON ALLENATO"
+        },
+        {
+            "giocatore": "GIANMARCO RUSSI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "DAVIDE SAUTARIELLO",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MATTEO SPLENDORI ",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}

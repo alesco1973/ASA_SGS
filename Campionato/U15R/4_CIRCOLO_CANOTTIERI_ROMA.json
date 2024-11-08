@@ -1,0 +1,77 @@
+{
+    "giornata": 4,
+    "squadra": "CIRCOLO CANOTTIERI ROMA",
+    "home_away": "Fuori Casa",
+    "risultato": "2-1",
+    "recupero": 5,
+    "formazione": [
+        "ARON PABINIAK",
+        "MIRKO BARONE ",
+        "VALERIO CAGNUCCI ",
+        "GIORDANO PERCONTI",
+        "MATTIA AGOSTINI",
+        "GIANMARIA PASQUALI ",
+        "SIMONE GIRALDA",
+        "FLAVIO PIDALA'",
+        "FRANCESCO BOCCHINO",
+        "MIRKO DI OTTAVIO ",
+        "SEBASTIANO GAZZELLA ",
+        "DIEGO PERFETTO ",
+        "LORENZO CAU",
+        "FLAVIO CECCHINI ",
+        "MAYO DE FEO ",
+        "LORENZO GRASSO",
+        "ALESSIO IGLIOZZI",
+        "FLAVIO MOZZI",
+        "MATTEO TEMPERINI",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "FLAVIO PIDALA'",
+            "sub_out": "LORENZO CAU",
+            "time_sub": 63
+        },
+        {
+            "sub_in": "FRANCESCO BOCCHINO",
+            "sub_out": "ALESSIO IGLIOZZI",
+            "time_sub": 67
+        },
+        {
+            "sub_in": "MIRKO DI OTTAVIO ",
+            "sub_out": "MATTEO TEMPERINI",
+            "time_sub": 45
+        },
+        {
+            "sub_in": "SEBASTIANO GAZZELLA ",
+            "sub_out": "FLAVIO CECCHINI ",
+            "time_sub": 52
+        }
+    ],
+    "ammonizioni": [
+        "ARON PABINIAK"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "FRANCESCO BOCCHINO",
+        "FRANCESCO BOCCHINO"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "PIERO PUGLIATTI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "GIANMARCO RUSSI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "DAVIDE SAUTARIELLO",
+            "motivo": "SCELTA TECNICA"
+        },
+        {
+            "giocatore": "MATTEO SPLENDORI ",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}

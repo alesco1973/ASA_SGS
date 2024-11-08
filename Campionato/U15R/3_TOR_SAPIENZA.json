@@ -1,0 +1,81 @@
+{
+    "giornata": 3,
+    "squadra": "TOR SAPIENZA",
+    "home_away": "Casa",
+    "risultato": "1-3",
+    "recupero": 0,
+    "formazione": [
+        "ARON PABINIAK",
+        "MIRKO BARONE ",
+        "LORENZO GRASSO",
+        "FLAVIO PIDALA'",
+        "MATTIA AGOSTINI",
+        "GIANMARIA PASQUALI ",
+        "SIMONE GIRALDA",
+        "GIORDANO PERCONTI",
+        "FRANCESCO BOCCHINO",
+        "MATTEO TEMPERINI",
+        "FLAVIO CECCHINI ",
+        "DAVIDE SAUTARIELLO",
+        "VALERIO CAGNUCCI ",
+        "MAYO DE FEO ",
+        "MIRKO DI OTTAVIO ",
+        "SEBASTIANO GAZZELLA ",
+        "ALESSIO IGLIOZZI",
+        "FLAVIO MOZZI",
+        "DIEGO PERFETTO ",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "MIRKO BARONE ",
+            "sub_out": "VALERIO CAGNUCCI ",
+            "time_sub": 40
+        },
+        {
+            "sub_in": "LORENZO GRASSO",
+            "sub_out": "MAYO DE FEO ",
+            "time_sub": 51
+        },
+        {
+            "sub_in": "GIANMARIA PASQUALI ",
+            "sub_out": "ALESSIO IGLIOZZI",
+            "time_sub": 51
+        },
+        {
+            "sub_in": "MATTEO TEMPERINI",
+            "sub_out": "FLAVIO MOZZI",
+            "time_sub": 60
+        },
+        {
+            "sub_in": "FLAVIO CECCHINI ",
+            "sub_out": "SEBASTIANO GAZZELLA ",
+            "time_sub": 35
+        }
+    ],
+    "ammonizioni": [
+        "SIMONE GIRALDA"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "FLAVIO CECCHINI "
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "PIERO PUGLIATTI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "GIANMARCO RUSSI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MATTEO SPLENDORI ",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "LORENZO CAU",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}

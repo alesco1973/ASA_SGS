@@ -1,0 +1,83 @@
+{
+    "giornata": 1,
+    "squadra": "CORTINA SPORTING CLUB",
+    "home_away": "Fuori Casa",
+    "risultato": "3-4",
+    "recupero": 0,
+    "formazione": [
+        "DIEGO PERFETTO ",
+        "VALERIO CAGNUCCI ",
+        "PIERO PUGLIATTI",
+        "FLAVIO PIDALA'",
+        "MATTIA AGOSTINI",
+        "GIANMARIA PASQUALI ",
+        "MAYO DE FEO ",
+        "SIMONE GIRALDA",
+        "FRANCESCO BOCCHINO",
+        "MIRKO DI OTTAVIO ",
+        "SEBASTIANO GAZZELLA ",
+        "DAVIDE SAUTARIELLO",
+        "MIRKO BARONE ",
+        "FLAVIO CECCHINI ",
+        "LORENZO GRASSO",
+        "GIORDANO PERCONTI",
+        "MATTEO TEMPERINI",
+        "FLAVIO MOZZI",
+        "ALESSIO IGLIOZZI",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "VALERIO CAGNUCCI ",
+            "sub_out": "MIRKO BARONE ",
+            "time_sub": 45
+        },
+        {
+            "sub_in": "MAYO DE FEO ",
+            "sub_out": "FLAVIO CECCHINI ",
+            "time_sub": 35
+        },
+        {
+            "sub_in": "FRANCESCO BOCCHINO",
+            "sub_out": "FLAVIO MOZZI",
+            "time_sub": 57
+        },
+        {
+            "sub_in": "MIRKO DI OTTAVIO ",
+            "sub_out": "GIORDANO PERCONTI",
+            "time_sub": 45
+        },
+        {
+            "sub_in": "SEBASTIANO GAZZELLA ",
+            "sub_out": "MATTEO TEMPERINI",
+            "time_sub": 50
+        }
+    ],
+    "ammonizioni": [
+        "MATTEO TEMPERINI"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "FRANCESCO BOCCHINO",
+        "FLAVIO CECCHINI ",
+        "FRANCESCO BOCCHINO"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "ARON PABINIAK",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "GIANMARCO RUSSI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MATTEO SPLENDORI ",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "LORENZO CAU",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}
