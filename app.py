@@ -732,6 +732,14 @@ def gestione_rosa():
                     # Mostra e modifica il contenuto del file JSON selezionato
                     st.write(f"Visualizza e modifica il contenuto del file: {file_path}")
                     report_json(file_path, reportistica)
+                    # Aggiungi un pulsante per il download del file
+                    with open(file_path, "rb") as file:
+                        btn = st.download_button(
+                            label="Scarica il report",
+                            data=file,
+                            file_name=selected_file,
+                            mime="application/json"
+                        )
 
                 # cols = st.columns(len(files))
                 # for idx, file in enumerate(files):
