@@ -1,0 +1,67 @@
+{
+    "giornata": 1,
+    "squadra": "AZ SPORT",
+    "home_away": "Casa",
+    "risultato": "3-5",
+    "recupero": 0,
+    "formazione": [
+        "ALESSIO SPOGNARDI",
+        "GIULIO CENCIONI",
+        "DANIELE CONTE",
+        "LORENZO STARA",
+        "FRANCESCO FOCHETTI",
+        "FRANCESCO PARADISI",
+        "DIEGO ADOLINI",
+        "ALESSANDRO PRITELLI",
+        "LEONARDO MANCINI",
+        "DIEGO FERRERI",
+        "EDOARDO TROIA",
+        "MATTIA RICKELMY",
+        "GABRIELE LENZA ",
+        "GIACOMO CECI",
+        "MASSIMO SEVERINI ",
+        "MASSIMO MARCELLO C.",
+        "GABRIELE PETRUNGARO",
+        "FGABRIELE GAZZULLI",
+        "VALERIO CATAPANO",
+        "ENRICO ZOPPI"
+    ],
+    "substitutions": [
+        {
+            "sub_in": "DANIELE CONTE",
+            "sub_out": "ENRICO ZOPPI",
+            "time_sub": 45
+        },
+        {
+            "sub_in": "LORENZO STARA",
+            "sub_out": "VALERIO CATAPANO",
+            "time_sub": 59
+        },
+        {
+            "sub_in": "LEONARDO MANCINI",
+            "sub_out": "FGABRIELE GAZZULLI",
+            "time_sub": 56
+        },
+        {
+            "sub_in": "EDOARDO TROIA",
+            "sub_out": "GABRIELE LENZA ",
+            "time_sub": 43
+        }
+    ],
+    "ammonizioni": [
+        "GIULIO CENCIONI",
+        "DIEGO FERRERI"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "FRANCESCO FOCHETTI",
+        "ALESSANDRO PRITELLI",
+        "LEONARDO MANCINI"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "MATTEO COLOMBINI",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}

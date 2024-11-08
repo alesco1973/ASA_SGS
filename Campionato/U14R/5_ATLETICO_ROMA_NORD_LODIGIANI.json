@@ -1,0 +1,68 @@
+{
+    "giornata": 5,
+    "squadra": "ATLETICO ROMA NORD LODIGIANI",
+    "home_away": "Casa",
+    "risultato": "2-2",
+    "recupero": 0,
+    "formazione": [
+        "ALESSIO SPOGNARDI",
+        "GIULIO CENCIONI",
+        "MARTINO DAVOLI",
+        "DIEGO ADOLINI",
+        "FRANCESCO FOCHETTI",
+        "FRANCESCO PARADISI",
+        "DIEGO FERRERI",
+        "ALESSANDRO PRITELLI",
+        "LEONARDO MANCINI",
+        "EDOARDO TROIA",
+        "DANIELE CONTE",
+        "MATTIA RICKELMY",
+        "LORENZO STARA",
+        "MASSIMO MARCELLO C.",
+        "GIACOMO CECI",
+        "MASSIMO SEVERINI ",
+        "GABRIELE PETRUNGARO",
+        "FGABRIELE GAZZULLI",
+        "VALERIO CATAPANO",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "DIEGO ADOLINI",
+            "sub_out": "MASSIMO MARCELLO C.",
+            "time_sub": 64
+        },
+        {
+            "sub_in": "EDOARDO TROIA",
+            "sub_out": "MASSIMO SEVERINI ",
+            "time_sub": 41
+        },
+        {
+            "sub_in": "DANIELE CONTE",
+            "sub_out": "VALERIO CATAPANO",
+            "time_sub": 44
+        }
+    ],
+    "ammonizioni": [
+        "GIULIO CENCIONI"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "DIEGO FERRERI",
+        "VALERIO CATAPANO"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "GABRIELE LENZA ",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "ENRICO ZOPPI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "MATTEO COLOMBINI",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}

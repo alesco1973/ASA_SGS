@@ -1,0 +1,53 @@
+{
+    "giornata": 3,
+    "squadra": "TOR DI QUINTO",
+    "home_away": "Casa",
+    "risultato": "1-1",
+    "recupero": 0,
+    "formazione": [
+        "ALESSIO SPOGNARDI",
+        "GIULIO CENCIONI",
+        "LORENZO STARA",
+        "DIEGO ADOLINI",
+        "FRANCESCO FOCHETTI",
+        "FRANCESCO PARADISI",
+        "DIEGO FERRERI",
+        "ALESSANDRO PRITELLI",
+        "LEONARDO MANCINI",
+        "EDOARDO TROIA",
+        "DANIELE CONTE",
+        "MATTIA RICKELMY",
+        "GIACOMO CECI",
+        "GABRIELE LENZA ",
+        "MASSIMO MARCELLO C.",
+        "MASSIMO SEVERINI ",
+        "GABRIELE PETRUNGARO",
+        "FGABRIELE GAZZULLI",
+        "VALERIO CATAPANO",
+        "MARTINO DAVOLI"
+    ],
+    "substitutions": [
+        {
+            "sub_in": "LORENZO STARA",
+            "sub_out": "MARTINO DAVOLI",
+            "time_sub": 47
+        }
+    ],
+    "ammonizioni": [
+        "FRANCESCO PARADISI"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "ALESSANDRO PRITELLI"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "ENRICO ZOPPI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "MATTEO COLOMBINI",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}

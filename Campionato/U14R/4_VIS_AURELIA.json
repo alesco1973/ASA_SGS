@@ -1,0 +1,62 @@
+{
+    "giornata": 4,
+    "squadra": "VIS AURELIA",
+    "home_away": "Casa",
+    "risultato": "0-2",
+    "recupero": 5,
+    "formazione": [
+        "ALESSIO SPOGNARDI",
+        "GIULIO CENCIONI",
+        "LORENZO STARA",
+        "DIEGO ADOLINI",
+        "FRANCESCO FOCHETTI",
+        "FRANCESCO PARADISI",
+        "MASSIMO MARCELLO C.",
+        "ALESSANDRO PRITELLI",
+        "LEONARDO MANCINI",
+        "EDOARDO TROIA",
+        "DANIELE CONTE",
+        "MATTIA RICKELMY",
+        "GIACOMO CECI",
+        "VALERIO CATAPANO",
+        "DIEGO FERRERI",
+        "MASSIMO SEVERINI ",
+        "GABRIELE PETRUNGARO",
+        "FGABRIELE GAZZULLI",
+        "MARTINO DAVOLI",
+        "GABRIELE LENZA "
+    ],
+    "substitutions": [
+        {
+            "sub_in": "LORENZO STARA",
+            "sub_out": "MARTINO DAVOLI",
+            "time_sub": 50
+        },
+        {
+            "sub_in": "MASSIMO MARCELLO C.",
+            "sub_out": "FGABRIELE GAZZULLI",
+            "time_sub": 50
+        },
+        {
+            "sub_in": "LEONARDO MANCINI",
+            "sub_out": "GABRIELE PETRUNGARO",
+            "time_sub": 63
+        }
+    ],
+    "ammonizioni": [
+        "DIEGO ADOLINI",
+        "ALESSANDRO PRITELLI"
+    ],
+    "espulsioni": [],
+    "goal": [],
+    "non_convocati": [
+        {
+            "giocatore": "ENRICO ZOPPI",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MATTEO COLOMBINI",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}

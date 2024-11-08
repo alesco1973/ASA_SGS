@@ -1,0 +1,80 @@
+{
+    "giornata": 2,
+    "squadra": "RIANO",
+    "home_away": "Fuori Casa",
+    "risultato": "0-5",
+    "recupero": 0,
+    "formazione": [
+        "ALESSIO SPOGNARDI",
+        "GIULIO CENCIONI",
+        "GABRIELE LENZA ",
+        "DIEGO ADOLINI",
+        "FRANCESCO FOCHETTI",
+        "FRANCESCO PARADISI",
+        "EDOARDO TROIA",
+        "ALESSANDRO PRITELLI",
+        "LEONARDO MANCINI",
+        "DIEGO FERRERI",
+        "ENRICO ZOPPI",
+        "MATTIA RICKELMY",
+        "GIACOMO CECI",
+        "MASSIMO MARCELLO C.",
+        "VALERIO CATAPANO",
+        "FGABRIELE GAZZULLI",
+        "GABRIELE PETRUNGARO",
+        "MARTINO DAVOLI",
+        "",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "GABRIELE LENZA ",
+            "sub_out": "MARTINO DAVOLI",
+            "time_sub": 40
+        },
+        {
+            "sub_in": "FRANCESCO PARADISI",
+            "sub_out": "GIACOMO CECI",
+            "time_sub": 64
+        },
+        {
+            "sub_in": "EDOARDO TROIA",
+            "sub_out": "MASSIMO MARCELLO C.",
+            "time_sub": 40
+        },
+        {
+            "sub_in": "LEONARDO MANCINI",
+            "sub_out": "GABRIELE PETRUNGARO",
+            "time_sub": 64
+        },
+        {
+            "sub_in": "DIEGO FERRERI",
+            "sub_out": "FGABRIELE GAZZULLI",
+            "time_sub": 45
+        }
+    ],
+    "ammonizioni": [
+        "GABRIELE LENZA ",
+        "ALESSANDRO PRITELLI"
+    ],
+    "espulsioni": [],
+    "goal": [],
+    "non_convocati": [
+        {
+            "giocatore": "MATTEO COLOMBINI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "DANIELE CONTE",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "LORENZO STARA",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "MASSIMO SEVERINI ",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}
