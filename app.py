@@ -683,6 +683,13 @@ def gestione_rosa():
                         # Mostra e modifica il contenuto del file JSON selezionato
                         st.write(f"Visualizza e modifica il contenuto del file: {file_path}")
                         mostra_e_modifica_json(file_path, acronimo, mister_info['mister'])
+                        with open(file_path, "rb") as file:
+                            btn = st.download_button(
+                                label="Scarica il report",
+                                data=file,
+                                file_name=selected_file,
+                                mime="application/json"
+                            )                        
                 else:
                     st.subheader("Non ci sono convocazioni")
                     
