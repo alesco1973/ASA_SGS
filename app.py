@@ -365,7 +365,7 @@ def gestione_rosa():
                     commit_message = st.text_input("Messaggio di commit", "Il tuo messaggio di commit")
                     st.success("Giocatore aggiunto con successo!")
                     git_commit_and_push(commit_message)
-                    st.rerun()
+                    #st.rerun()
 
 
 
