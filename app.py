@@ -56,7 +56,7 @@ def git_commit_and_push(repo_url, commit_message, branch='main'):
         origin.push(branch) 
         st.text("Commit e push eseguiti con successo!") 
     except Exception as e: 
-        st.text(f"Errore durante il commit e push: {e}"
+        st.text(f"Errore durante il commit e push: {e}")
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
