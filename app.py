@@ -257,7 +257,7 @@ def aggiungi_giocatore():
     st.success("Giocatore aggiunto con successo!")
     st.table(df)
 
-_DIR = "/workspaces/ASA_SGS/"
+_DIR = "https://github.com/alesco1973/ASA_SGS/tree/84567ae08ee7e7c490c185ad3f485cb00f1b22c4/"
 _DIR_CS = "/workspaces/ASA_SGS/data"
 def get_mister_info(username, mister_data):
     for allenatore in mister_data['allenatore']:
@@ -302,7 +302,7 @@ def gestione_rosa():
                 file_path = _DIR + mister_info['file']
                 absolute_path = os.path.abspath(file_path)
                 st.write(f"Percorso assoluto del file: {absolute_path}")
-                
+
                 df = pd.read_csv(_DIR + mister_info['file'], delimiter=';')  # Specifica il delimitatore
                 registro = mister_info['registro']
                 minuti = mister_info['minuti']
