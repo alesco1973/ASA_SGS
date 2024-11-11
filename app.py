@@ -44,7 +44,7 @@ def access_github_repo(repo_url, local_dir):
     repo = git.Repo.clone_from(repo_url, local_dir)
     
     # Configura le credenziali
-    with repo.git.custom_environment(GIT_USERNAME=alesco197, GIT_PASSWORD="@Ali$$io1973):
+    with repo.git.custom_environment(GIT_USERNAME=alesco197, GIT_PASSWORD="@Ali$$io1973'):
         # Aggiungi i file al commit
         repo.git.add(A=True)
         
