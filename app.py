@@ -362,10 +362,9 @@ def gestione_rosa():
                     
                     # Salva il DataFrame aggiornato nel file CSV
                     df.to_csv(mister_info['file'], index=False, sep=';')
-                    commit_message = st.text_input("Messaggio di commit", "Il tuo messaggio di commit")
+
                     st.success("Giocatore aggiunto con successo!")
-                    git_commit_and_push(commit_message)
-                    #st.rerun()
+                    st.rerun()
 
 
 
@@ -396,6 +395,8 @@ def gestione_rosa():
                 edited_df.to_csv(mister_info['file'], sep=";", index=False)
                 st.success('Modifica effettuata!')
                 st.session_state.df = edited_df
+                commit_message = st.text_input("Messaggio di commit", "Il tuo messaggio di commit")
+                git_commit_and_push(commit_message)
                 st.rerun()
             
 
