@@ -259,9 +259,9 @@ def aggiungi_giocatore():
     st.success("Giocatore aggiunto con successo!")
     st.table(df)
 
-_DIR = "/wokspaces/ASA_SGS/"
-_DIR_CS = "/workspaces/ASA_SGS/data"
-repo_path = "https://github.com/alesco1973/ASA_SGS/"
+#_DIR = "/wokspaces/ASA_SGS/"
+#_DIR_CS = "/workspaces/ASA_SGS/data"
+#repo_path = "https://github.com/alesco1973/ASA_SGS/"
 
 def get_mister_info(username, mister_data):
     for allenatore in mister_data['allenatore']:
@@ -276,6 +276,7 @@ def gestione_rosa():
     repo = git.Repo(".", search_parent_directories=True) 
     st.text("Location "+ repo.working_tree_dir)
     st.text("Remote: " + repo.remote("origin").url)
+    repo_path = repo.working_tree_dir
     # Form di login
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
