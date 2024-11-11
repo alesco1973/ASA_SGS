@@ -262,6 +262,9 @@ def aggiungi_giocatore():
 _DIR = "/wokspaces/ASA_SGS/"
 _DIR_CS = "/workspaces/ASA_SGS/data"
 repo_path = "https://github.com/alesco1973/ASA_SGS/"
+repo = git.Repo(".", search_parent_directories=True) 
+st.text("Location "+ repo.working_tree_dir)
+st.text("Remote: " + repo.remote("origin").url)
 
 def get_mister_info(username, mister_data):
     for allenatore in mister_data['allenatore']:
