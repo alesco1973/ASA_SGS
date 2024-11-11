@@ -298,7 +298,7 @@ def gestione_rosa():
                 if st.button("Logout"):
                             st.session_state.logged_in = False
                             st.rerun()
-
+                st.text(_DIR + mister_info['file'])
                 df = pd.read_csv(_DIR + mister_info['file'], delimiter=';')  # Specifica il delimitatore
                 registro = mister_info['registro']
                 minuti = mister_info['minuti']
