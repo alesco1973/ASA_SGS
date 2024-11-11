@@ -47,8 +47,8 @@ def git_commit_and_push(commit_message):
         
         # Effettua il commit con il messaggio fornito
         subprocess.run(["git", "commit", "-m", commit_message], check=True)
-
-        # Effettua il commit con il messaggio fornito
+        
+        # Effettua il commit 
         subprocess.run(["git", "push", "https://github.com/alesco1973/ASA_SGS.git"], check=True)        
        
         st.text("Commit e push effettuati con successo!")
@@ -395,9 +395,8 @@ def gestione_rosa():
                 edited_df.to_csv(mister_info['file'], sep=";", index=False)
                 st.success('Modifica effettuata!')
                 st.session_state.df = edited_df
-                commit_message = st.text_input("Messaggio di commit", "Il tuo messaggio di commit")
-                git_commit_and_push(commit_message)
-                #st.rerun()
+                git_commit_and_push("Modifiche salvate tramite Streamlit")                
+                st.rerun()
             
 
         elif selected == "Presenze":
