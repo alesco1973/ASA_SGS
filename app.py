@@ -39,24 +39,21 @@ st.html("""
         """)
 
 
-def git_commit_and_push(repo_url, commit_message, branch='main'): 
-    try: # Controlla se la directory esiste 
-        if not os.path.exists(repo_path): 
-            raise Exception(f"Il percorso {repo_path} non esiste.") 
-        # Accesso alla repository locale 
-        repo = Repo(repo_path) 
-        if repo.bare: 
-            raise Exception(f"La directory {repo_path} non sembra essere una repository Git.") 
-        # Aggiungi tutti i cambiamenti 
-        repo.git.add(A=True) 
-        # Commit dei cambiamenti 
-        repo.index.commit(commit_message) 
-        # Push dei cambiamenti al repository remoto 
-        origin = repo.remote(name='origin') 
-        origin.push(branch) 
-        st.text("Commit e push eseguiti con successo!") 
-    except Exception as e: 
-        st.text(f"Errore durante il commit e push: {e}")
+def access_github_repo(repo_url, local_dir):
+    # Clona la repository
+    repo = git.Repo.clone_from(repo_url, local_dir)
+    
+    # Configura le credenziali
+    with repo.git.custom_environment(GIT_USERNAME=alesco197, GIT_PASSWORD="@Ali$$io1973):
+        # Aggiungi i file al commit
+        repo.git.add(A=True)
+        
+        # Effettua il commit
+        repo.index.commit("Commit message")
+        
+        # Effettua il push
+        origin = repo.remote(name='origin')
+        origin.push()
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
@@ -260,7 +257,8 @@ def aggiungi_giocatore():
 
 #_DIR = "/wokspaces/ASA_SGS/"
 #_DIR_CS = "/workspaces/ASA_SGS/data"
-#repo_path = "https://github.com/alesco1973/ASA_SGS/"
+repo_path = "https://github.com/alesco1973/ASA_SGS.git"
+local_dir = 'C:/asa_sgs'
 
 def get_mister_info(username, mister_data):
     for allenatore in mister_data['allenatore']:
@@ -404,7 +402,7 @@ def gestione_rosa():
                 edited_df.to_csv(mister_info['file'], sep=";", index=False)
                 st.success('Modifica effettuata!')
                 #st.session_state.df = edited_df
-                git_commit_and_push(repo_path, commit_message)
+                access_github_repo(repo_url, local_dir)
                 #st.rerun()
             
 
@@ -456,7 +454,7 @@ def gestione_rosa():
                     else:
                         with open(filename, 'w') as file:
                             json.dump(new_data, file, indent=4)
-                    git_commit_and_push(repo_path, commit_message)        
+                    #git_commit_and_push(repo_path, commit_message)        
                     st.success("Presenze salvate con successo!")
             except Exception as e:
                 st.error(f"Errore durante la lettura del file CSV: {e}") 
@@ -673,7 +671,7 @@ def gestione_rosa():
                         #     pdf_buffer = BytesIO(f.read())
                         # download_link_html = download_link(pdf_buffer.getvalue(), pdf_file_name, 'Clicca qui per scaricare il file PDF')
                         # st.markdown(download_link_html, unsafe_allow_html=True)
-                        git_commit_and_push(repo_path, commit_message)
+                        # git_commit_and_push(repo_path, commit_message)
 
                     else:
                         st.error("Per favore, inserisci un nome per il file.")
