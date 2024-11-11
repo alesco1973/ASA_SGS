@@ -51,10 +51,10 @@ def git_commit_and_push(commit_message):
         # Effettua il commit con il messaggio fornito
         subprocess.run(["git", "push", "https://github.com/alesco1973/ASA_SGS.git"], check=True)        
        
-        print("Commit e push effettuati con successo!")
+        st.text("Commit e push effettuati con successo!")
 
     except subprocess.CalledProcessError as e:
-        print(f"Errore durante l'esecuzione del comando: {e}")
+         st.text(f"Errore durante l'esecuzione del comando: {e}")
 
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
