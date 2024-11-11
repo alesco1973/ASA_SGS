@@ -299,6 +299,10 @@ def gestione_rosa():
                             st.session_state.logged_in = False
                             st.rerun()
                 st.text(_DIR + mister_info['file'])
+                file_path = _DIR + mister_info['file']
+                absolute_path = os.path.abspath(file_path)
+                st.write(f"Percorso assoluto del file: {absolute_path}")
+                
                 df = pd.read_csv(_DIR + mister_info['file'], delimiter=';')  # Specifica il delimitatore
                 registro = mister_info['registro']
                 minuti = mister_info['minuti']
