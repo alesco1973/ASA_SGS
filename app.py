@@ -19,7 +19,7 @@ import zipfile
 import openpyxl
 from spire.xls import *
 from spire.xls.common import *
-import subprocess
+import git
 
 st.set_page_config(
     page_title="ASA - Stagione 2024/25",
@@ -39,22 +39,24 @@ st.html("""
         """)
 
 
-#def commit e push modifiche
-def git_commit_and_push(commit_message):
+def git_commit_and_push(repo_path, commit_message):
     try:
+        # Apri la repository
+        repo = git.Repo(repo_path)
+        
         # Aggiungi tutti i file modificati e nuovi
-        subprocess.run(["git", "add", "."], check=True)
+        repo.git.add(A=True)
         
         # Effettua il commit con il messaggio fornito
-        subprocess.run(["git", "commit", "-m", commit_message], check=True)
+        repo.index.commit(commit_message)
         
-        # Effettua il commit 
-        subprocess.run(["git", "push", "https://github.com/alesco1973/ASA_SGS.git"], check=True)        
-       
-        st.text("Commit e push effettuati con successo!")
-
-    except subprocess.CalledProcessError as e:
-         st.text(f"Errore durante l'esecuzione del comando: {e}")
+        # Sincronizza le modifiche con il repository remoto
+        origin = repo.remote(name='origin')
+        origin.push()
+        
+        st.success("Commit e push effettuati con successo!")
+    except Exception as e:
+        st.error(f"Errore durante l'esecuzione del comando: {e}")
 
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
@@ -299,11 +301,7 @@ def gestione_rosa():
                             st.session_state.logged_in = False
                             st.rerun()
 
-                file_path = _DIR + mister_info['file']
-                absolute_path = os.path.abspath(file_path)
-                st.write(f"Percorso assoluto del file: {absolute_path}")
-
-                df = pd.read_csv(_DIR + mister_info['file'], delimiter=';')  # Specifica il delimitatore
+                df = pd.read_csv(mister_info['file'], delimiter=';')  # Specifica il delimitatore
                 registro = mister_info['registro']
                 minuti = mister_info['minuti']
                 acronimo = 'Convocazioni/' + mister_info['acronimo'] + '/'
@@ -396,10 +394,12 @@ def gestione_rosa():
             st.markdown(row_2)
 
             if st.button('Salva modifiche'):
-                edited_df.to_csv(_DIR + mister_info['file'], sep=";", index=False)
+                edited_df.to_csv(mister_info['file'], sep=";", index=False)
                 st.success('Modifica effettuata!')
                 #st.session_state.df = edited_df
-                git_commit_and_push("Modifiche salvate tramite Streamlit")                
+                repo_path = st.text_input("Percorso alla repository", "/workspaces/ASA_SGS/")
+                commit_message = st.text_input("Messaggio di commit", "Il tuo messaggio di commit")                
+                git_commit_and_push(repo_path, "Commit success!")
                 st.rerun()
             
 
