@@ -397,7 +397,7 @@ def gestione_rosa():
                 st.session_state.df = edited_df
                 commit_message = st.text_input("Messaggio di commit", "Il tuo messaggio di commit")
                 git_commit_and_push(commit_message)
-                st.rerun()
+                #st.rerun()
             
 
         elif selected == "Presenze":
