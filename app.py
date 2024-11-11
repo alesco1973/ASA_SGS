@@ -39,13 +39,9 @@ st.html("""
         """)
 
 
-def git_commit_and_push(repo_url, local_path, commit_message, branch='main'): 
-    try: # Se la repository locale non esiste, clonala 
-        if not os.path.exists(local_path): 
-            print(f"Clonazione della repository {repo_url}...") 
-            Repo.clone_from(repo_url, local_path) 
-        # Accesso alla repository locale 
-        repo = Repo(local_path) 
+def git_commit_and_push(repo_url, commit_message, branch='main'): 
+    try: # Accesso alla repository locale 
+        repo = Repo(repo_path) 
         assert not repo.bare 
         
         # Aggiungi tutti i cambiamenti 
@@ -54,14 +50,10 @@ def git_commit_and_push(repo_url, local_path, commit_message, branch='main'):
         # Commit dei cambiamenti 
         repo.index.commit(commit_message) 
 
-        # Configura le credenziali per il push 
-        origin = repo.remote(name='origin')
-        origin.set_url(repo_url) 
-        
         # Push dei cambiamenti al repository remoto 
-        st.text(f"Esecuzione del push dei cambiamenti al branch {branch}...") 
-        origin.push(refspec=branch) 
-
+        origin = repo.remote(name='origin') 
+        origin.push(branch) 
+    
         st.text("Commit e push eseguiti con successo!") 
     except Exception as e: 
         st.text(f"Errore durante il commit e push: {e}")
