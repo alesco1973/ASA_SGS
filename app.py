@@ -40,23 +40,22 @@ st.html("""
 
 
 def git_commit_and_push(repo_url, commit_message, branch='main'): 
-    try: # Accesso alla repository locale 
+    try: # Controlla se la directory esiste 
+        if not os.path.exists(repo_path): 
+            raise Exception(f"Il percorso {repo_path} non esiste.") 
+        # Accesso alla repository locale 
         repo = Repo(repo_path) 
-        assert not repo.bare 
-        
+        if repo.bare: 
+            raise Exception(f"La directory {repo_path} non sembra essere una repository Git.") 
         # Aggiungi tutti i cambiamenti 
         repo.git.add(A=True) 
-        
         # Commit dei cambiamenti 
         repo.index.commit(commit_message) 
-
         # Push dei cambiamenti al repository remoto 
-        origin = repo.remote(name='origin') 
-        origin.push(branch) 
-    
+        origin = repo.remote(name='origin') origin.push(branch) 
         st.text("Commit e push eseguiti con successo!") 
     except Exception as e: 
-        st.text(f"Errore durante il commit e push: {e}")
+        st.text(f"Errore durante il commit e push: {e}"
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
