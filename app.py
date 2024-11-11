@@ -261,7 +261,7 @@ def aggiungi_giocatore():
 
 _DIR = "/wokspaces/ASA_SGS/"
 _DIR_CS = "/workspaces/ASA_SGS/data"
-repo_path = st.text_input("Percorso alla repository", "/workspaces/ASA_SGS/")
+repo_path = st.text_input("https://github.com/alesco1973/ASA_SGS/")
 
 def get_mister_info(username, mister_data):
     for allenatore in mister_data['allenatore']:
