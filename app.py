@@ -364,7 +364,7 @@ def gestione_rosa():
                     df.to_csv(mister_info['file'], index=False, sep=';')
 
                     st.success("Giocatore aggiunto con successo!")
-                    st.rerun()
+                    #st.rerun()
 
 
 
