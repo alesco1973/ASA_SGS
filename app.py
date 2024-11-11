@@ -39,7 +39,7 @@ st.html("""
         """)
 
 
-def commit_and_push(repo_url, local_path, commit_message, branch='main'): 
+def git_commit_and_push(repo_url, local_path, commit_message, branch='main'): 
     try: # Se la repository locale non esiste, clonala 
         if not os.path.exists(local_path): 
             print(f"Clonazione della repository {repo_url}...") 
