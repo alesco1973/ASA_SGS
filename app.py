@@ -261,6 +261,8 @@ def aggiungi_giocatore():
 
 _DIR = "/wokspaces/ASA_SGS/"
 _DIR_CS = "/workspaces/ASA_SGS/data"
+repo_path = st.text_input("Percorso alla repository", "/workspaces/ASA_SGS/")
+
 def get_mister_info(username, mister_data):
     for allenatore in mister_data['allenatore']:
         if allenatore['mister'] == username:
@@ -397,7 +399,6 @@ def gestione_rosa():
                 edited_df.to_csv(mister_info['file'], sep=";", index=False)
                 st.success('Modifica effettuata!')
                 #st.session_state.df = edited_df
-                repo_path = st.text_input("Percorso alla repository", "/workspaces/ASA_SGS/")
                 commit_message = st.text_input("Messaggio di commit", "Il tuo messaggio di commit")                
                 git_commit_and_push(repo_path, "Commit success!")
                 st.rerun()
