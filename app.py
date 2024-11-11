@@ -45,7 +45,8 @@ def commit_and_push(repo_url, local_path, commit_message, branch='main'):
             print(f"Clonazione della repository {repo_url}...") 
             Repo.clone_from(repo_url, local_path) 
         # Accesso alla repository locale 
-        repo = Repo(local_path) assert not repo.bare 
+        repo = Repo(local_path) 
+        assert not repo.bare 
         
         # Aggiungi tutti i cambiamenti 
         repo.git.add(A=True) 
