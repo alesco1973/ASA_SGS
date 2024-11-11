@@ -402,9 +402,9 @@ def gestione_rosa():
                 edited_df.to_csv(mister_info['file'], sep=";", index=False)
                 st.success('Modifica effettuata!')
                 #st.session_state.df = edited_df
-                commit_message = st.text_input("Messaggio di commit", "Il tuo messaggio di commit")                
+                #commit_message = st.text_input("Messaggio di commit", "Il tuo messaggio di commit")                
                 git_commit_and_push(repo_path, "Commit success!")
-                st.rerun()
+                #st.rerun()
             
 
         elif selected == "Presenze":
