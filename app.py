@@ -451,6 +451,7 @@ def gestione_rosa():
                     else:
                         with open(filename, 'w') as file:
                             json.dump(new_data, file, indent=4)
+                    git_commit_and_push(repo_path, "Commit success!")        
                     st.success("Presenze salvate con successo!")
             except Exception as e:
                 st.error(f"Errore durante la lettura del file CSV: {e}") 
@@ -667,6 +668,8 @@ def gestione_rosa():
                         #     pdf_buffer = BytesIO(f.read())
                         # download_link_html = download_link(pdf_buffer.getvalue(), pdf_file_name, 'Clicca qui per scaricare il file PDF')
                         # st.markdown(download_link_html, unsafe_allow_html=True)
+                        git_commit_and_push(repo_path, "Commit success!")
+
                     else:
                         st.error("Per favore, inserisci un nome per il file.")
 
@@ -880,7 +883,7 @@ def gestione_rosa():
                         st.write(report_match)
                         with open(report_match, 'w') as f:
                             json.dump(report_partita, f, indent=4)
-
+                        git_commit_and_push(repo_path, "Commit success!")
                         st.write("Report Partita:", report_partita)
                         st.success("Report salvato!")
             else:
