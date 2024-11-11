@@ -39,6 +39,22 @@ st.html("""
         """)
 
 
+#def commit e push modifiche
+def git_commit_and_push(commit_message):
+    try:
+        # Aggiungi tutti i file modificati e nuovi
+        subprocess.run(["git", "add", "."], check=True)
+        
+        # Effettua il commit con il messaggio fornito
+        subprocess.run(["git", "commit", "-m", commit_message], check=True)
+
+        # Effettua il commit con il messaggio fornito
+        subprocess.run(["git", "push", "https://github.com/alesco1973/ASA_SGS.git"], check=True)        
+       
+        print("Commit e push effettuati con successo!")
+
+    except subprocess.CalledProcessError as e:
+        print(f"Errore durante l'esecuzione del comando: {e}")
 
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
@@ -348,7 +364,7 @@ def gestione_rosa():
                     df.to_csv(mister_info['file'], index=False, sep=';')
                     
                     st.success("Giocatore aggiunto con successo!")
-
+                    git_commit_and_push(commit_message)
                     st.rerun()
 
 
