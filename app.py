@@ -402,7 +402,7 @@ def gestione_rosa():
                 edited_df.to_csv(mister_info['file'], sep=";", index=False)
                 st.success('Modifica effettuata!')
                 #st.session_state.df = edited_df
-                access_github_repo(repo_url, local_dir)
+                access_github_repo(repo_path, local_dir)
                 #st.rerun()
             
 
