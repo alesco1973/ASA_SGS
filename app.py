@@ -269,21 +269,19 @@ def get_mister_info(username, mister_data):
     return None
 
 commit_message = "Commit success!"     
-
+# URL della tua repository GitHub 
+if os.name == 'nt': # Windows 
+    repo_path = 'C:\\asa_sgs' 
+elif os.name == 'posix': 
+    if os.uname().sysname == 'Linux': # Linux 
+        repo_path = '/home/asa_sgs' 
+    elif os.uname().sysname == 'Darwin': 
+        # macOS 
+        repo_path = '/Users/asa_sgs'
+        
 def gestione_rosa():
     # Inserimento credenziali per la gestione
-    st.title("Gestione della Rosa")
-    repo_url = 'https://github.com/topolino72/pippo72.git' 
-    # URL della tua repository GitHub 
-    if os.name == 'nt': # Windows 
-        repo_path = 'C:\\asa_sgs' 
-    elif os.name == 'posix': 
-        if os.uname().sysname == 'Linux': # Linux 
-            repo_path = '/home/asa_sgs' 
-        elif os.uname().sysname == 'Darwin': 
-            # macOS 
-            repo_path = '/Users/asa_sgs'
-    
+    st.title("Gestione della Rosa")  
     
     # Form di login
     if "logged_in" not in st.session_state:
