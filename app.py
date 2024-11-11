@@ -19,7 +19,7 @@ import zipfile
 import openpyxl
 from spire.xls import *
 from spire.xls.common import *
-import git
+from git import Repo
 
 st.set_page_config(
     page_title="ASA - Stagione 2024/25",
