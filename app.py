@@ -394,7 +394,7 @@ def gestione_rosa():
             if st.button('Salva modifiche'):
                 edited_df.to_csv("/workspaces/ASA_SGS/" + mister_info['file'], sep=";", index=False)
                 st.success('Modifica effettuata!')
-                st.session_state.df = edited_df
+                #st.session_state.df = edited_df
                 git_commit_and_push("Modifiche salvate tramite Streamlit")                
                 st.rerun()
             
