@@ -2906,5 +2906,213 @@
                 "presente": "A"
             }
         ]
+    },
+    "2024-11-08": {
+        "presenze": [
+            {
+                "id": 0,
+                "nome": "Edoardo",
+                "cognome": "BALESTRIERI",
+                "presente": "A"
+            },
+            {
+                "id": 1,
+                "nome": "Giovanni",
+                "cognome": "BOCCIA",
+                "presente": "P"
+            },
+            {
+                "id": 2,
+                "nome": "Lorenzo",
+                "cognome": "CAPANNOLO",
+                "presente": "P"
+            },
+            {
+                "id": 3,
+                "nome": "Michele",
+                "cognome": "CARUSO",
+                "presente": "P"
+            },
+            {
+                "id": 4,
+                "nome": "Riccardo",
+                "cognome": "CASTELLANI",
+                "presente": "P"
+            },
+            {
+                "id": 5,
+                "nome": "Mattia",
+                "cognome": "CASTELLUCCI",
+                "presente": "P"
+            },
+            {
+                "id": 6,
+                "nome": "Gabriele",
+                "cognome": "CAU",
+                "presente": "P"
+            },
+            {
+                "id": 7,
+                "nome": "Lorenzo",
+                "cognome": "CAU",
+                "presente": "P"
+            },
+            {
+                "id": 8,
+                "nome": "Gabriele",
+                "cognome": "CESANDRI",
+                "presente": "P"
+            },
+            {
+                "id": 9,
+                "nome": "Vincenzo",
+                "cognome": "CIRILLO",
+                "presente": "P"
+            },
+            {
+                "id": 10,
+                "nome": "Enea",
+                "cognome": "COLANGELI",
+                "presente": "P"
+            },
+            {
+                "id": 11,
+                "nome": "Matteo ",
+                "cognome": "FERRAUTI",
+                "presente": "P"
+            },
+            {
+                "id": 12,
+                "nome": "Julian",
+                "cognome": "GENTILI",
+                "presente": "A"
+            },
+            {
+                "id": 13,
+                "nome": "Jacopo",
+                "cognome": "GENTILI",
+                "presente": "P"
+            },
+            {
+                "id": 14,
+                "nome": "Gabriele",
+                "cognome": "GIANNOPOLO",
+                "presente": "P"
+            },
+            {
+                "id": 15,
+                "nome": "Alessio",
+                "cognome": "IGLIOZZI",
+                "presente": "P"
+            },
+            {
+                "id": 16,
+                "nome": "Gianni",
+                "cognome": "LO PICCOLO",
+                "presente": "P"
+            },
+            {
+                "id": 17,
+                "nome": "Pietro",
+                "cognome": "MANCINI",
+                "presente": "P"
+            },
+            {
+                "id": 18,
+                "nome": "Bruno",
+                "cognome": "MARRUCCI",
+                "presente": "P"
+            },
+            {
+                "id": 19,
+                "nome": "Cristiano",
+                "cognome": "MIGENI",
+                "presente": "IND"
+            },
+            {
+                "id": 20,
+                "nome": "Lorenzo",
+                "cognome": "MIGENI",
+                "presente": "IND"
+            },
+            {
+                "id": 21,
+                "nome": "Flavio",
+                "cognome": "MOZZI",
+                "presente": "P"
+            },
+            {
+                "id": 22,
+                "nome": "Edoardo",
+                "cognome": "PALANCA",
+                "presente": "A"
+            },
+            {
+                "id": 23,
+                "nome": "Davide",
+                "cognome": "PENNACCHINI",
+                "presente": "P"
+            },
+            {
+                "id": 24,
+                "nome": "Daniele",
+                "cognome": "PICARIELLO",
+                "presente": "P"
+            },
+            {
+                "id": 25,
+                "nome": "Lorenzo",
+                "cognome": "RABBI",
+                "presente": "P"
+            },
+            {
+                "id": 26,
+                "nome": "Davide",
+                "cognome": "RIFERZI",
+                "presente": "P"
+            },
+            {
+                "id": 27,
+                "nome": "Mathias",
+                "cognome": "NICOLETTI",
+                "presente": "P"
+            },
+            {
+                "id": 28,
+                "nome": "Tommaso",
+                "cognome": "BACIU",
+                "presente": "P"
+            },
+            {
+                "id": 29,
+                "nome": "Valerio",
+                "cognome": "CAGNUCCI",
+                "presente": "IND"
+            },
+            {
+                "id": 30,
+                "nome": "Mirko",
+                "cognome": "BARONE",
+                "presente": "IND"
+            },
+            {
+                "id": 31,
+                "nome": "Eyan",
+                "cognome": "ELWANY",
+                "presente": "A"
+            },
+            {
+                "id": 32,
+                "nome": "Damiano",
+                "cognome": "SILVESTRI",
+                "presente": "A"
+            },
+            {
+                "id": 33,
+                "nome": "Luca",
+                "cognome": "SERAFINI",
+                "presente": "P"
+            }
+        ]
     }
 }
