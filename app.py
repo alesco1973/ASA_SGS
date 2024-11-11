@@ -39,25 +39,31 @@ st.html("""
         """)
 
 
-def git_commit_and_push(repo_path, commit_message):
-    try:
-        # Apri la repository
-        repo = git.Repo(repo_path)
+def commit_and_push(repo_url, local_path, commit_message, branch='main'): 
+    try: # Se la repository locale non esiste, clonala 
+        if not os.path.exists(local_path): 
+            print(f"Clonazione della repository {repo_url}...") 
+            Repo.clone_from(repo_url, local_path) 
+        # Accesso alla repository locale 
+        repo = Repo(local_path) assert not repo.bare 
         
-        # Aggiungi tutti i file modificati e nuovi
-        repo.git.add(A=True)
+        # Aggiungi tutti i cambiamenti 
+        repo.git.add(A=True) 
         
-        # Effettua il commit con il messaggio fornito
-        repo.index.commit(commit_message)
-        
-        # Sincronizza le modifiche con il repository remoto
-        origin = repo.remote(name='origin')
-        origin.push()
-        
-        st.success("Commit e push effettuati con successo!")
-    except Exception as e:
-        st.error(f"Errore durante l'esecuzione del comando: {e}")
+        # Commit dei cambiamenti 
+        repo.index.commit(commit_message) 
 
+        # Configura le credenziali per il push 
+        origin = repo.remote(name='origin')
+        origin.set_url(repo_url) 
+        
+        # Push dei cambiamenti al repository remoto 
+        st.text(f"Esecuzione del push dei cambiamenti al branch {branch}...") 
+        origin.push(refspec=branch) 
+
+        st.text("Commit e push eseguiti con successo!") 
+    except Exception as e: 
+        st.text(f"Errore durante il commit e push: {e}")
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
@@ -273,10 +279,18 @@ def get_mister_info(username, mister_data):
 def gestione_rosa():
     # Inserimento credenziali per la gestione
     st.title("Gestione della Rosa")
-    repo = git.Repo(".", search_parent_directories=True) 
-    st.text("Location "+ repo.working_tree_dir)
-    st.text("Remote: " + repo.remote("origin").url)
-    repo_path = repo.working_tree_dir
+    repo_url = 'https://github.com/topolino72/pippo72.git' 
+    # URL della tua repository GitHub 
+    if os.name == 'nt': # Windows 
+        repo_path = 'C:\\asa_sgs' 
+    elif os.name == 'posix': 
+        if os.uname().sysname == 'Linux': # Linux 
+            repo_path = '/home/asa_sgs' 
+        elif os.uname().sysname == 'Darwin': 
+            # macOS 
+            repo_path = '/Users/asa_sgs'
+    
+    
     # Form di login
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
