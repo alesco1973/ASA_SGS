@@ -257,8 +257,8 @@ def aggiungi_giocatore():
     st.success("Giocatore aggiunto con successo!")
     st.table(df)
 
-_DIR = "data/"
-
+_DIR = "/workspaces/ASA_SGS/"
+_DIR_CS = "/workspaces/ASA_SGS/data"
 def get_mister_info(username, mister_data):
     for allenatore in mister_data['allenatore']:
         if allenatore['mister'] == username:
@@ -299,7 +299,7 @@ def gestione_rosa():
                             st.session_state.logged_in = False
                             st.rerun()
 
-                df = pd.read_csv(mister_info['file'], delimiter=';')  # Specifica il delimitatore
+                df = pd.read_csv(_DIR + mister_info['file'], delimiter=';')  # Specifica il delimitatore
                 registro = mister_info['registro']
                 minuti = mister_info['minuti']
                 acronimo = 'Convocazioni/' + mister_info['acronimo'] + '/'
@@ -392,7 +392,7 @@ def gestione_rosa():
             st.markdown(row_2)
 
             if st.button('Salva modifiche'):
-                edited_df.to_csv("/workspaces/ASA_SGS/" + mister_info['file'], sep=";", index=False)
+                edited_df.to_csv(_DIR + mister_info['file'], sep=";", index=False)
                 st.success('Modifica effettuata!')
                 #st.session_state.df = edited_df
                 git_commit_and_push("Modifiche salvate tramite Streamlit")                
