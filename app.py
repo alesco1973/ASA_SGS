@@ -52,7 +52,8 @@ def git_commit_and_push(repo_url, commit_message, branch='main'):
         # Commit dei cambiamenti 
         repo.index.commit(commit_message) 
         # Push dei cambiamenti al repository remoto 
-        origin = repo.remote(name='origin') origin.push(branch) 
+        origin = repo.remote(name='origin') 
+        origin.push(branch) 
         st.text("Commit e push eseguiti con successo!") 
     except Exception as e: 
         st.text(f"Errore durante il commit e push: {e}"
