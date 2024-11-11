@@ -19,7 +19,7 @@ import zipfile
 import openpyxl
 from spire.xls import *
 from spire.xls.common import *
-
+import subprocess
 
 st.set_page_config(
     page_title="ASA - Stagione 2024/25",
@@ -37,6 +37,7 @@ with col2:
 st.html("""
         <hr>
         """)
+
 
 
 
