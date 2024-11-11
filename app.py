@@ -271,7 +271,7 @@ def get_mister_info(username, mister_data):
 commit_message = "Commit success!"     
 # URL della tua repository GitHub 
 if os.name == 'nt': # Windows 
-    repo_path = os.path.join('C:', 'Users', os.getlogin(), 'Documents', 'asa_sgs') 
+    repo_path = os.path.join('C:', '/asa_sgs') 
 elif os.name == 'posix': # Linux e macOS 
     repo_path = os.path.join(os.path.expanduser('~'), 'Documents', 'asa_sgs')
         
