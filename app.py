@@ -19,7 +19,6 @@ import zipfile
 import openpyxl
 from spire.xls import *
 from spire.xls.common import *
-import git
 
 st.set_page_config(
     page_title="ASA - Stagione 2024/25",
@@ -38,25 +37,6 @@ st.html("""
         <hr>
         """)
 
-
-def git_commit_and_push(repo_path, commit_message):
-    try:
-        # Apri la repository
-        repo = git.Repo(repo_path)
-        
-        # Aggiungi tutti i file modificati e nuovi
-        repo.git.add(A=True)
-        
-        # Effettua il commit con il messaggio fornito
-        repo.index.commit(commit_message)
-        
-        # Sincronizza le modifiche con il repository remoto
-        origin = repo.remote(name='origin')
-        origin.push()
-        
-        st.success("Commit e push effettuati con successo!")
-    except Exception as e:
-        st.error(f"Errore durante l'esecuzione del comando: {e}")
 
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
@@ -259,9 +239,8 @@ def aggiungi_giocatore():
     st.success("Giocatore aggiunto con successo!")
     st.table(df)
 
-_DIR = "/wokspaces/ASA_SGS/"
-_DIR_CS = "/workspaces/ASA_SGS/data"
-repo_path = "/workspaces/ASA_SGS/"
+# _DIR = "/wokspaces/ASA_SGS/"
+# _DIR_CS = "/workspaces/ASA_SGS/data"
 
 def get_mister_info(username, mister_data):
     for allenatore in mister_data['allenatore']:
@@ -400,7 +379,6 @@ def gestione_rosa():
                 st.success('Modifica effettuata!')
                 #st.session_state.df = edited_df
                 commit_message = st.text_input("Messaggio di commit", "Il tuo messaggio di commit")                
-                git_commit_and_push(repo_path, "Commit success!")
                 st.rerun()
             
 
@@ -452,7 +430,6 @@ def gestione_rosa():
                     else:
                         with open(filename, 'w') as file:
                             json.dump(new_data, file, indent=4)
-                    git_commit_and_push(repo_path, "Commit success!")        
                     st.success("Presenze salvate con successo!")
             except Exception as e:
                 st.error(f"Errore durante la lettura del file CSV: {e}") 
@@ -669,7 +646,6 @@ def gestione_rosa():
                         #     pdf_buffer = BytesIO(f.read())
                         # download_link_html = download_link(pdf_buffer.getvalue(), pdf_file_name, 'Clicca qui per scaricare il file PDF')
                         # st.markdown(download_link_html, unsafe_allow_html=True)
-                        git_commit_and_push(repo_path, "Commit success!")
 
                     else:
                         st.error("Per favore, inserisci un nome per il file.")
@@ -884,7 +860,6 @@ def gestione_rosa():
                         st.write(report_match)
                         with open(report_match, 'w') as f:
                             json.dump(report_partita, f, indent=4)
-                        git_commit_and_push(repo_path, "Commit success!")
                         st.write("Report Partita:", report_partita)
                         st.success("Report salvato!")
             else:
