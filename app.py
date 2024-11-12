@@ -19,6 +19,7 @@ import zipfile
 import openpyxl
 from spire.xls import *
 from spire.xls.common import *
+#Questo è il file su cui lavorare
 
 st.set_page_config(
     page_title="ASA - Stagione 2024/25",
