@@ -1,0 +1,32 @@
+{
+    "giornata": 10,
+    "squadra": "MONTECELIO",
+    "data_ora_incontro": "\"2024-11-10T12:21:00\"",
+    "denominazione_campo": "",
+    "ora_raduno": "12:21:00",
+    "componenti_squadra": [
+        "ALESSANDRO BARONE",
+        "VALERIO PERINI",
+        "EMANUELE COMMODOARI",
+        "GIUSEPPE D'IGNAZIO",
+        "LORENZO FORTUNATO",
+        "DANIELE BARILARO",
+        "FLAVIO COSTANTINI",
+        "FEDERICO TEMPESTILLI",
+        "ANDREA RUSSO",
+        "PAOLO D'ALESSANDRO",
+        "GIGI MICCICHE'",
+        "KAJLJ BARBARA",
+        "LORENZO CATERINOZZI",
+        "LUCA DI CARLO",
+        "SIMONE DOMENICI",
+        "ANGELO BELFIORI",
+        "FEDERICO BROCATO",
+        "RICCARDO GIANSERRA",
+        "JORDI DE LUCA",
+        "MANUEL GUIDARELLI"
+    ],
+    "non_convocati": "ANDREA ABRUZZETTI, LORENZO BECCHETTI, GIORGIO BIANCONI, MATTEO BORGIA, EDOARDO BRACCI, EDOARDO CICCANTI, LUCA COLAGROSSI, ALESSIO CRISPOLDI, ANGELO FEDELE, FILIPPO NESTONNI, DAVIDE OLEARI, STEFANO PICCONI, DIEGO LUCIANI, MANUEL GIORDANO",
+    "nome_mister": "LUIGI MICCIO",
+    "nome_dirigente": ""
+}
