@@ -44,11 +44,16 @@ st.html("""
 
 def access_repository(repo_url, local_dir):
     try:
-        # Clona la repository nel directory locale
-        repo = git.Repo.clone_from(repo_url, local_dir)
-        st.text("Accesso alla repository eseguito")
+        # Clona la repository nel directory locale solo se non esiste già
+        if not os.path.exists(local_dir):
+            repo = git.Repo.clone_from(repo_url, local_dir)
+        else:
+            repo = git.Repo(local_dir)
+        print("Accesso alla repository eseguito")
+        return repo
     except Exception as e:
-        st.text(f"Errore durante l'accesso alla repository: {e}")
+        print(f"Errore durante l'accesso alla repository: {e}")
+        return None
 
 def commit_and_push(repo, commit_message):
     try:
