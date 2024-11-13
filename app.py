@@ -19,8 +19,11 @@ import zipfile
 import openpyxl
 from spire.xls import *
 from spire.xls.common import *
-#Questo è il file su cui lavorare
 
+import git
+
+
+#Questo è il file su cui lavorare
 st.set_page_config(
     page_title="ASA - Stagione 2024/25",
     page_icon="logo_2.ico",  
@@ -37,6 +40,15 @@ with col2:
 st.html("""
         <hr>
         """)
+
+
+def access_repository(repo_url, local_dir):
+    try:
+        # Clona la repository nel directory locale
+        repo = git.Repo.clone_from(repo_url, local_dir)
+        st.text("Accesso alla repository eseguito")
+    except Exception as e:
+        st.text(f"Errore durante l'accesso alla repository: {e}")
 
 
 
@@ -253,7 +265,10 @@ def get_mister_info(username, mister_data):
 def gestione_rosa():
     # Inserimento credenziali per la gestione
     st.title("Gestione della Rosa")
-    
+    # Accesso a github
+    repo_url = "https://github.com/pippo72/ASA_SGS.git"
+    local_dir = "./asa_sgs"
+    access_repository(repo_url, local_dir)
     # Form di login
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
