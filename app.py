@@ -68,7 +68,8 @@ def commit_and_push(repo, commit_message, token):
         st.text("Commit e push eseguiti con successo")
     except Exception as e:
         st.text(f"Errore durante il commit e push: {e}")
-        
+
+# funzione per il commit
 def commit_and_push(repo, commit_message):
     try:
         repo.git.add(A=True)  # Aggiunge tutti i file modificati e nuovi
