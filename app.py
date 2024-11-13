@@ -415,7 +415,7 @@ def gestione_rosa():
 
                     commit_message = "Update file"
                     commit_and_push(repo, commit_message)       
-                    st.rerun()
+                    #st.rerun()
                 
 
             elif selected == "Presenze":
