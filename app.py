@@ -266,7 +266,7 @@ def gestione_rosa():
     # Inserimento credenziali per la gestione
     st.title("Gestione della Rosa")
     # Accesso a github
-    repo_url = "https://github.com/pippo72/ASA_SGS.git"
+    repo_url = "https://github.com/alesco1973/ASA_SGS.git"
     local_dir = "./asa_sgs"
     access_repository(repo_url, local_dir)
     # Form di login
