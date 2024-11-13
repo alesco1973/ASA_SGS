@@ -55,6 +55,20 @@ def access_repository(repo_url, local_dir):
         st.text(f"Errore durante l'accesso alla repository: {e}")
         return None
 
+def commit_and_push(repo, commit_message, token):
+    try:
+        repo.git.add(A=True)  # Aggiunge tutti i file modificati e nuovi
+        repo.index.commit(commit_message)
+        origin = repo.remote(name='origin')
+        
+        # Configura l'URL remoto per includere il token
+        origin.set_url(f'https://{token}@github.com/tuo_username/tuo_repository.git')
+        
+        origin.push()
+        st.text("Commit e push eseguiti con successo")
+    except Exception as e:
+        st.text(f"Errore durante il commit e push: {e}")
+        
 def commit_and_push(repo, commit_message):
     try:
         repo.git.add(A=True)  # Aggiunge tutti i file modificati e nuovi
