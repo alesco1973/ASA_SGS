@@ -286,12 +286,12 @@ def get_mister_info(username, mister_data):
 repo_url = "https://github.com/alesco1973/ASA_SGS.git"
 local_dir = "C:/asa_sgs"
 credentials = load_credentials('config.json')
-st.text(credentials['username'])
-st.text(credentials['password'])
+usr = credentials['username']
+pwd = credentials['password']
 repo = access_repository(repo_url, local_dir)
 
 # Salva le credenziali nel Git Credential Manager
-subprocess.run(["git", "credential", "approve"], input=f"url=https://{credentials['username']}:{credentials['password']}@github.com\nusername={credentials['username']}\npassword={credentials['password']}\n", text=True, check=True)
+subprocess.run(["git", "credential", "approve"], input=f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n", text=True, check=True)
 
 def gestione_rosa():
     # Inserimento credenziali per la gestione
