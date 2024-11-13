@@ -50,8 +50,8 @@ def access_repository(repo_url, local_dir, credentials):
     try:
         # Clona la repository nel directory locale solo se non esiste già
         if not os.path.exists(local_dir):
-            repo_url_with_credentials = repo_url.replace("https://", f"https://{credentials['username']}:{credentials['password']}@")
-            repo = git.Repo.clone_from(repo_url_with_credentials, local_dir)
+            # repo_url_with_credentials = repo_url.replace("https://", f"https://{credentials['username']}:{credentials['password']}@")
+            repo = git.Repo.clone_from(repo_url, local_dir)
         else:
             repo = git.Repo(local_dir)
         st.text("Accesso alla repository eseguito")
