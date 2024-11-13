@@ -419,7 +419,7 @@ def gestione_rosa():
                     #st.session_state.df = edited_df
 
                     commit_message = "Update file"
-                    commit_and_push(repo, commit_message, credentials)       
+                    commit_and_push(repo, commit_message)       
                     #st.rerun()
                 
 
