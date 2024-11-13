@@ -289,7 +289,8 @@ credentials = load_credentials('config.json')
 usr = credentials['username']
 pwd = credentials['password']
 repo = access_repository(repo_url, local_dir)
-
+url = f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n"
+st.text(url)
 # Salva le credenziali nel Git Credential Manager
 subprocess.run(["git", "credential", "approve"], input=f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n", text=True, check=True)
 
