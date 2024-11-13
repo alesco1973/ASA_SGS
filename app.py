@@ -21,7 +21,7 @@ from spire.xls import *
 from spire.xls.common import *
 
 import git
-
+import subprocess    
 
 #Questo è il file su cui lavorare
 st.set_page_config(
@@ -50,6 +50,8 @@ def access_repository(repo_url, local_dir):
     try:
         # Clona la repository nel directory locale solo se non esiste già
         if not os.path.exists(local_dir):
+            # Configura il Git Credential Manager
+            subprocess.run(["git", "config", "--global", "credential.helper", "manager"], check=True)
             repo = git.Repo.clone_from(repo_url, local_dir)
         else:
             repo = git.Repo(local_dir)
