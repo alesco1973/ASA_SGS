@@ -49,9 +49,6 @@ def access_repository(repo_url, local_dir):
 
     try:
         subprocess.run(["git", "config", "--global", "credential.helper", "store"], check=True)
-        # Costruisce l'URL con le credenziali
-        # repo_url_with_credentials = repo_url.replace("https://", f"https://{credentials['username']}:{credentials['password']}@")
-
         # Clona la repository nel directory locale solo se non esiste già
         if not os.path.exists(local_dir):
             # Configura il Git Credential Manager
@@ -289,7 +286,8 @@ def get_mister_info(username, mister_data):
 repo_url = "https://github.com/alesco1973/ASA_SGS.git"
 local_dir = "C:/asa_sgs"
 credentials = load_credentials('config.json')
-
+st.text(credentials['username'])
+st.text(credentials['password'])
 repo = access_repository(repo_url, local_dir)
 
 # Salva le credenziali nel Git Credential Manager
