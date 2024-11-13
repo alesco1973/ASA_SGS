@@ -277,7 +277,7 @@ def get_mister_info(username, mister_data):
 
 
 repo_url = "https://github.com/alesco1973/ASA_SGS.git"
-local_dir = "C:/asa_sgs/"
+local_dir = "./asa_sgs/"
 repo = access_repository(repo_url, local_dir)
 
 def gestione_rosa():
