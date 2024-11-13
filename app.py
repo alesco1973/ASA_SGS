@@ -21,7 +21,6 @@ from spire.xls import *
 from spire.xls.common import *
 
 import git
-import subprocess
 
 
 #Questo è il file su cui lavorare
@@ -49,14 +48,9 @@ def load_credentials(file_path):
 def access_repository(repo_url, local_dir, credentials):
 
     try:
-        # Configura il Git Credential Manager
-        subprocess.run(["git", "config", "--global", "credential.helper", "manager"], check=True)
-
         # Clona la repository nel directory locale solo se non esiste già
         if not os.path.exists(local_dir):
-            repo_url_with_credentials = repo_url.replace("https://", f"https://{credentials['username']}:{credentials['password']}@")
-            # repo = git.Repo.clone_from(repo_url, local_dir)
-            repo = git.Repo.clone_from(repo_url_with_credentials, local_dir)
+            repo = git.Repo.clone_from(repo_url, local_dir)
         else:
             repo = git.Repo(local_dir)
         st.text("Accesso alla repository eseguito")
