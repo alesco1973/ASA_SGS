@@ -50,6 +50,15 @@ def access_repository(repo_url, local_dir):
     except Exception as e:
         st.text(f"Errore durante l'accesso alla repository: {e}")
 
+def commit_and_push(repo, commit_message):
+    try:
+        repo.git.add(A=True)  # Aggiunge tutti i file modificati e nuovi
+        repo.index.commit(commit_message)
+        origin = repo.remote(name='origin')
+        origin.push()
+        print("Commit e push eseguiti con successo")
+    except Exception as e:
+        print(f"Errore durante il commit e push: {e}")
 
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
@@ -269,6 +278,8 @@ def gestione_rosa():
     repo_url = "https://github.com/alesco1973/ASA_SGS.git"
     local_dir = "./asa_sgs"
     access_repository(repo_url, local_dir)
+
+
     # Form di login
     if "logged_in" not in st.session_state:
         st.session_state.logged_in = False
