@@ -49,10 +49,10 @@ def access_repository(repo_url, local_dir):
             repo = git.Repo.clone_from(repo_url, local_dir)
         else:
             repo = git.Repo(local_dir)
-        print("Accesso alla repository eseguito")
+        st.text("Accesso alla repository eseguito")
         return repo
     except Exception as e:
-        print(f"Errore durante l'accesso alla repository: {e}")
+        st.text(f"Errore durante l'accesso alla repository: {e}")
         return None
 
 def commit_and_push(repo, commit_message):
@@ -61,9 +61,9 @@ def commit_and_push(repo, commit_message):
         repo.index.commit(commit_message)
         origin = repo.remote(name='origin')
         origin.push()
-        print("Commit e push eseguiti con successo")
+        st.text("Commit e push eseguiti con successo")
     except Exception as e:
-        print(f"Errore durante il commit e push: {e}")
+        st.text(f"Errore durante il commit e push: {e}")
 
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
