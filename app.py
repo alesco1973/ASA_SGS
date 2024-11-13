@@ -45,6 +45,34 @@ def load_credentials(file_path):
     with open(file_path, 'r') as file:
         return json.load(file)
     
+
+import git
+import os
+
+def commit_and_push(repo_url, repo_path, commit_message, branch='main'):
+    try:
+        # Se la repository locale non esiste, clonala
+        if not os.path.exists(repo_path):
+            repo = git.Repo.clone_from(repo_url, repo_path)
+        else:
+            repo = git.Repo(repo_path)
+        
+        # Aggiungi tutti i cambiamenti
+        repo.git.add(A=True)
+        
+        # Commit dei cambiamenti
+        repo.index.commit(commit_message)
+        
+        # Push dei cambiamenti al repository remoto
+        origin = repo.remote(name='origin')
+        origin.push(refspec=f'{branch}:{branch}')
+        
+        print("Commit e push eseguiti con successo!")
+    except Exception as e:
+        print(f"Errore durante il commit e push: {e}")
+
+
+
 def access_repository(repo_url, local_dir):
 
     try:
@@ -283,11 +311,14 @@ def get_mister_info(username, mister_data):
             return allenatore
     return None
 
-repo_url = "https://github.com/alesco1973/ASA_SGS.git"
+#repo_url = "https://github.com/alesco1973/ASA_SGS.git"
 local_dir = "C:/asa_sgs"
 credentials = load_credentials('config.json')
 usr = credentials['username']
 pwd = credentials['password']
+
+repo_url = f"https://{usr}:{pwd}@git/ASA_SGS.it"
+
 repo = access_repository(repo_url, local_dir)
 url = f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n"
 st.text(url)
@@ -429,7 +460,10 @@ def gestione_rosa():
                         #st.session_state.df = edited_df
 
                         commit_message = "Update file"
-                        commit_and_push(repo, commit_message)       
+                        # Impostazioni della funzione
+                        # Esegui la funzione
+                        commit_and_push(repo_url, commit_message)
+                        # commit_and_push(repo, commit_message)       
                         #st.rerun()
                     
 
