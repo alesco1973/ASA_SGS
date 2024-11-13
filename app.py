@@ -45,18 +45,18 @@ def load_credentials(file_path):
     with open(file_path, 'r') as file:
         return json.load(file)
     
-def access_repository(repo_url, local_dir, credentials):
+def access_repository(repo_url, local_dir):
 
     try:
-        subprocess.run(["git", "config", "--global", "credential.helper", "manager"], check=True)
+        subprocess.run(["git", "config", "--global", "credential.helper", "store"], check=True)
         # Costruisce l'URL con le credenziali
-        repo_url_with_credentials = repo_url.replace("https://", f"https://{credentials['username']}:{credentials['password']}@")
+        # repo_url_with_credentials = repo_url.replace("https://", f"https://{credentials['username']}:{credentials['password']}@")
 
         # Clona la repository nel directory locale solo se non esiste già
         if not os.path.exists(local_dir):
             # Configura il Git Credential Manager
-            repo = git.Repo.clone_from(repo_url_with_credentials, local_dir)
-            #repo = git.Repo.clone_from(repo_url, local_dir)
+            # repo = git.Repo.clone_from(repo_url_with_credentials, local_dir)
+            repo = git.Repo.clone_from(repo_url, local_dir)
         else:
             repo = git.Repo(local_dir)
         st.text("Accesso alla repository eseguito")
@@ -65,13 +65,13 @@ def access_repository(repo_url, local_dir, credentials):
         st.text(f"Errore durante l'accesso alla repository: {e}")
         return None
 
-def commit_and_push(repo, commit_message, credentials):
+def commit_and_push(repo, commit_message):
     try:
         repo.git.add(A=True)  # Aggiunge tutti i file modificati e nuovi
         repo.index.commit(commit_message)
         origin = repo.remote(name='origin')
         # Configura l'URL remoto per includere le credenziali
-        origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/tuo_username/tuo_repository.git')
+        #origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/tuo_username/tuo_repository.git')
         origin.push()
         st.text("Commit e push eseguiti con successo")
     except Exception as e:
@@ -291,7 +291,8 @@ local_dir = "C:/asa_sgs"
 credentials = load_credentials('config.json')
 repo = access_repository(repo_url, local_dir, credentials)
 
-
+# Salva le credenziali nel Git Credential Manager
+subprocess.run(["git", "credential", "approve"], input=f"url=https://{credentials['username']}:{credentials['password']}@github.com\nusername={credentials['username']}\npassword={credentials['password']}\n", text=True, check=True)
 
 def gestione_rosa():
     # Inserimento credenziali per la gestione
@@ -428,7 +429,7 @@ def gestione_rosa():
                         #st.session_state.df = edited_df
 
                         commit_message = "Update file"
-                        commit_and_push(repo, commit_message, credentials)       
+                        commit_and_push(repo, commit_message)       
                         #st.rerun()
                     
 
