@@ -49,7 +49,7 @@ def load_credentials(file_path):
 import git
 import os
 
-def commit_and_push(repo_url, repo_path, commit_message, branch='main'):
+def commit_and_push(repo_url, repo_path, commit_file, commit_message, branch='main'):
     try:
         # Se la repository locale non esiste, clonala
         if not os.path.exists(repo_path):
@@ -58,7 +58,7 @@ def commit_and_push(repo_url, repo_path, commit_message, branch='main'):
             repo = git.Repo(repo_path)
         
         # Aggiungi tutti i cambiamenti
-        repo.git.add(A=True)
+        repo.git.add(commit_file)
         
         # Commit dei cambiamenti
         repo.index.commit(commit_message)
@@ -67,9 +67,9 @@ def commit_and_push(repo_url, repo_path, commit_message, branch='main'):
         origin = repo.remote(name='origin')
         origin.push(refspec=f'{branch}:{branch}')
         
-        print("Commit e push eseguiti con successo!")
+        st.text("Commit e push eseguiti con successo!")
     except Exception as e:
-        print(f"Errore durante il commit e push: {e}")
+        st.text(f"Errore durante il commit e push: {e}")
 
 
 
@@ -311,19 +311,19 @@ def get_mister_info(username, mister_data):
             return allenatore
     return None
 
-#repo_url = "https://github.com/alesco1973/ASA_SGS.git"
+repo_url = "https://github.com/alesco1973/ASA_SGS.git"
 local_dir = "./asa_sgs"
 credentials = load_credentials('config.json')
-usr = credentials['username']
-pwd = credentials['password']
+# usr = credentials['username']
+# pwd = credentials['password']
 
-repo_url = f"https://{usr}:{pwd}@git/ASA_SGS.it"
+#repo_url = f"https://{usr}:{pwd}@git/ASA_SGS.it"
 
 repo = access_repository(repo_url, local_dir)
-url = f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n"
+# url = f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n"
 # st.text(url)
 # Salva le credenziali nel Git Credential Manager
-subprocess.run(["git", "credential", "approve"], input=f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n", text=True, check=True)
+#subprocess.run(["git", "credential", "approve"], input=f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n", text=True, check=True)
 
 def gestione_rosa():
     # Inserimento credenziali per la gestione
@@ -462,7 +462,7 @@ def gestione_rosa():
                         commit_message = "Update file"
                         # Impostazioni della funzione
                         # Esegui la funzione
-                        # commit_and_push(repo_url, commit_message)
+                        commit_and_push(repo_url, commit_message, mister_info['file'])
                         # commit_and_push(repo, commit_message)       
                         #st.rerun()
                     
