@@ -462,7 +462,7 @@ def gestione_rosa():
                         commit_message = "Update file"
                         # Impostazioni della funzione
                         # Esegui la funzione
-                        commit_and_push(repo_url, commit_message, mister_info['file'])
+                        commit_and_push(repo_url, local_dir, mister_info['file'], commit_message)
                         # commit_and_push(repo, commit_message)       
                         #st.rerun()
                     
