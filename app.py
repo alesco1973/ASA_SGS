@@ -312,7 +312,7 @@ def get_mister_info(username, mister_data):
     return None
 
 #repo_url = "https://github.com/alesco1973/ASA_SGS.git"
-local_dir = "./asa_sgs"
+local_dir = "c:/asa_sgs"
 credentials = load_credentials('config.json')
 usr = credentials['username']
 pwd = credentials['password']
