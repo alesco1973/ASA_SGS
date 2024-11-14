@@ -64,9 +64,9 @@ def commit_and_push(repo_url, repo_path, commit_file, commit_message, branch='ma
         repo.index.commit(commit_message)
         
         # Push dei cambiamenti al repository remoto
-        repo.git.push("--set-upstream", "origin", branch)
-        # origin = repo.remote(name='origin')
-        # origin.push(refspec=f'{branch}:{branch}')
+        
+        origin = repo.remote(name='origin')
+        origin.push()
         
         st.text("Commit e push eseguiti con successo!")
     except Exception as e:
