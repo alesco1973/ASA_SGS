@@ -56,7 +56,7 @@ def commit_and_push(repo_url, repo_path, commit_file, commit_message, branch='ma
             repo = git.Repo.clone_from(repo_url, repo_path)
         else:
             repo = git.Repo(repo_path)
-        
+        st.text(commit_file)
         # Aggiungi tutti i cambiamenti
         repo.git.add(commit_file)
         
@@ -64,6 +64,7 @@ def commit_and_push(repo_url, repo_path, commit_file, commit_message, branch='ma
         repo.index.commit(commit_message)
         
         # Push dei cambiamenti al repository remoto
+        repo.git.push("--set-upstream", "origin", branch)
         # origin = repo.remote(name='origin')
         # origin.push(refspec=f'{branch}:{branch}')
         
