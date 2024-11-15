@@ -97,7 +97,7 @@ def commit_and_push(repo, file_commit, commit_message, credentials):
         repo.index.commit(commit_message)
         origin = repo.remote(name='origin')
         # Configura l'URL remoto per includere le credenziali
-        origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/alissio1973/ASA_SGS.git')
+        origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/alesco1973/ASA_SGS.git')
         origin.push()
         st.text("Commit e push eseguiti con successo")
     except Exception as e:
