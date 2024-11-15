@@ -330,8 +330,10 @@ local_dir = "c:/asa_sgs"
 credentials = load_credentials('config.json')
 token = "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"
 repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
+
 # Percorso assoluto per il file .git-credentials
 credentials_path = os.path.expanduser("~/.git-credentials")
+st.text(credentials_path)
 
 # usr = credentials['username']
 # pwd = credentials['password']
