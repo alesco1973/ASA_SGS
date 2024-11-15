@@ -3326,12 +3326,6 @@
                 "nome": "Valerio",
                 "cognome": "CONTI",
                 "presente": "A"
-            },
-            {
-                "id": 35,
-                "nome": "Damiano",
-                "cognome": "SILVESTRI",
-                "presente": "A"
             }
         ]
     },
@@ -3545,12 +3539,6 @@
                 "id": 34,
                 "nome": "Valerio",
                 "cognome": "CONTI",
-                "presente": "A"
-            },
-            {
-                "id": 35,
-                "nome": "Damiano",
-                "cognome": "SILVESTRI",
                 "presente": "A"
             }
         ]
