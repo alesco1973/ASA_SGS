@@ -91,13 +91,13 @@ def access_repository(repo_url, local_dir):
         st.text(f"Errore durante l'accesso alla repository: {e}")
         return None
 
-def commit_and_push(repo, file_commit, commit_message):
+def commit_and_push(repo, file_commit, commit_message, credentials):
     try:
         repo.git.add(file_commit)  # Aggiunge tutti i file modificati e nuovi
         repo.index.commit(commit_message)
         origin = repo.remote(name='origin')
         # Configura l'URL remoto per includere le credenziali
-        #origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/tuo_username/tuo_repository.git')
+        origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/tuo_username/tuo_repository.git')
         origin.push()
         st.text("Commit e push eseguiti con successo")
     except Exception as e:
@@ -463,7 +463,7 @@ def gestione_rosa():
                         commit_message = "Update file"
                         # Impostazioni della funzione
                         # Esegui la funzione
-                        commit_and_push(repo, mister_info['file'], commit_message)
+                        commit_and_push(repo, mister_info['file'], commit_message, credentials)
                         # commit_and_push(repo, commit_message)       
                         #st.rerun()
                     
