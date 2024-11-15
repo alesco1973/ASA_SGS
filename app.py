@@ -68,7 +68,7 @@ def commit_and_push(repo_url, repo_path, commit_file, commit_message, branch='ma
         origin = repo.remote(name='origin')
         origin.push()
         
-        st.text("Commit e push eseguiti con successo!")
+        st.text("Commit e push eseguiti cun successo!")
     except Exception as e:
         st.text(f"Errore durante il commit e push: {e}")
 
