@@ -91,10 +91,10 @@ def access_repository(repo_url, local_dir):
         st.text(f"Errore durante l'accesso alla repository: {e}")
         return None
 
-def commit_and_push(repo, file_commit, commit_message, token):
+def commit_and_push(repo, commit_message, token, credentials_path):
     # Configura Git per usare il token
     subprocess.run(["git", "config", "--global", "credential.helper", "store"], check=True)
-    with open("~/.git-credentials", "w") as cred_file:
+    with open(credentials_path, "w") as cred_file:
         cred_file.write(repo_url)
     # Aggiungi i file al commit
     try:
@@ -326,7 +326,8 @@ local_dir = "c:/asa_sgs"
 credentials = load_credentials('config.json')
 token = "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"
 repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
-
+# Percorso assoluto per il file .git-credentials
+credentials_path = os.path.expanduser("~/.git-credentials")
 
 # usr = credentials['username']
 # pwd = credentials['password']
@@ -476,7 +477,7 @@ def gestione_rosa():
                         commit_message = "Update file"
                         # Impostazioni della funzione
                         # Esegui la funzione
-                        commit_and_push(repo, mister_info['file'], commit_message, credentials)
+                        commit_and_push(repo_url, commit_message, token, credentials_path)
                         # commit_and_push(repo, commit_message)       
                         #st.rerun()
                     
