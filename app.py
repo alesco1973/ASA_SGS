@@ -92,6 +92,7 @@ def access_repository(repo_url, local_dir):
         return None
 
 def commit_and_push(repo, file_commit, commit_message, credentials):
+    st.text(credentials['password'])
     try:
         repo.git.add(file_commit)  # Aggiunge tutti i file modificati e nuovi
         repo.index.commit(commit_message)
