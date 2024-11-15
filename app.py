@@ -91,6 +91,10 @@ def access_repository(repo_url, local_dir):
         st.text(f"Errore durante l'accesso alla repository: {e}")
         return None
 
+# Configura il nome e l'email globalmente
+subprocess.run(["git", "config", "--global", "user.email", "alessandro.convertino@live.it"], check=True)
+subprocess.run(["git", "config", "--global", "user.name", "alissio1973"], check=True)
+
 def commit_and_push(repo, commit_message, token, credentials_path):
     # Configura Git per usare il token
     subprocess.run(["git", "config", "--global", "credential.helper", "store"], check=True)
