@@ -49,28 +49,28 @@ def load_credentials(file_path):
 import git
 import os
 
-def commit_and_push(repo_url, repo_path, commit_file, commit_message, branch='main'):
-    try:
-        # Se la repository locale non esiste, clonala
-        if not os.path.exists(repo_path):
-            repo = git.Repo.clone_from(repo_url, repo_path)
-        else:
-            repo = git.Repo(repo_path)
-        st.text(commit_file)
-        # Aggiungi tutti i cambiamenti
-        repo.git.add(commit_file)
+# def commit_and_push(repo_url, repo_path, commit_file, commit_message, branch='main'):
+#     try:
+#         # Se la repository locale non esiste, clonala
+#         if not os.path.exists(repo_path):
+#             repo = git.Repo.clone_from(repo_url, repo_path)
+#         else:
+#             repo = git.Repo(repo_path)
+#         st.text(commit_file)
+#         # Aggiungi tutti i cambiamenti
+#         repo.git.add(commit_file)
         
-        # Commit dei cambiamenti
-        repo.index.commit(commit_message)
+#         # Commit dei cambiamenti
+#         repo.index.commit(commit_message)
         
-        # Push dei cambiamenti al repository remoto
+#         # Push dei cambiamenti al repository remoto
         
-        origin = repo.remote(name='origin')
-        origin.push()
+#         origin = repo.remote(name='origin')
+#         origin.push()
         
-        st.text("Commit e push eseguiti cun successo!")
-    except Exception as e:
-        st.text(f"Errore durante il commit e push: {e}")
+#         st.text("Commit e push eseguiti cun successo!")
+#     except Exception as e:
+#         st.text(f"Errore durante il commit e push: {e}")
 
 
 
@@ -91,17 +91,17 @@ def access_repository(repo_url, local_dir):
         st.text(f"Errore durante l'accesso alla repository: {e}")
         return None
 
-# def commit_and_push(repo, commit_message):
-#     try:
-#         repo.git.add(A=True)  # Aggiunge tutti i file modificati e nuovi
-#         repo.index.commit(commit_message)
-#         origin = repo.remote(name='origin')
-#         # Configura l'URL remoto per includere le credenziali
-#         #origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/tuo_username/tuo_repository.git')
-#         origin.push()
-#         st.text("Commit e push eseguiti con successo")
-#     except Exception as e:
-#         st.text(f"Errore durante il commit e push: {e}")
+def commit_and_push(repo, file_commit, commit_message):
+    try:
+        repo.git.add(file_commit)  # Aggiunge tutti i file modificati e nuovi
+        repo.index.commit(commit_message)
+        origin = repo.remote(name='origin')
+        # Configura l'URL remoto per includere le credenziali
+        #origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/tuo_username/tuo_repository.git')
+        origin.push()
+        st.text("Commit e push eseguiti con successo")
+    except Exception as e:
+        st.text(f"Errore durante il commit e push: {e}")
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
@@ -463,7 +463,7 @@ def gestione_rosa():
                         commit_message = "Update file"
                         # Impostazioni della funzione
                         # Esegui la funzione
-                        commit_and_push(repo_url, local_dir, mister_info['file'], commit_message)
+                        commit_and_push(repo, mister_info['file'], commit_message)
                         # commit_and_push(repo, commit_message)       
                         #st.rerun()
                     
