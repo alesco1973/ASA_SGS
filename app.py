@@ -91,15 +91,23 @@ def access_repository(repo_url, local_dir):
         st.text(f"Errore durante l'accesso alla repository: {e}")
         return None
 
-def commit_and_push(repo, file_commit, commit_message, credentials):
-    st.text(credentials['password'])
+def commit_and_push(repo, file_commit, commit_message, token):
+    # Configura Git per usare il token
+    subprocess.run(["git", "config", "--global", "credential.helper", "store"], check=True)
+    with open("~/.git-credentials", "w") as cred_file:
+        cred_file.write(repo_url)
+    # Aggiungi i file al commit
     try:
-        repo.git.add(file_commit)  # Aggiunge tutti i file modificati e nuovi
-        repo.index.commit(commit_message)
-        origin = repo.remote(name='origin')
+        subprocess.run(["git", "add", "."], check=True)
+        subprocess.run(["git", "commit", "-m", commit_message], check=True)
+        #repo.git.add(file_commit)  # Aggiunge tutti i file modificati e nuovi
+        #repo.index.commit(commit_message)
+        # origin = repo.remote(name='origin')
         # Configura l'URL remoto per includere le credenziali
-        origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/alesco1973/ASA_SGS.git')
-        origin.push()
+        # origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/alesco1973/ASA_SGS.git')
+        # origin.push()
+        # Effettua il push
+        subprocess.run(["git", "push", "origin", "main"], check=True)
         st.text("Commit e push eseguiti con successo")
     except Exception as e:
         st.text(f"Errore durante il commit e push: {e}")
@@ -313,9 +321,14 @@ def get_mister_info(username, mister_data):
             return allenatore
     return None
 
-repo_url = "https://github.com/alesco1973/ASA_SGS.git"
+#repo_url = "https://github.com/alesco1973/ASA_SGS.git"
 local_dir = "c:/asa_sgs"
 credentials = load_credentials('config.json')
+token = "il_tuo_token"
+repo_url = f"https://{token}@github.com/tuo_username/tuo_repository.git"
+
+
+
 # usr = credentials['username']
 # pwd = credentials['password']
 
