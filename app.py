@@ -100,6 +100,7 @@ def commit_and_push(repo, commit_message, token, credentials_path):
     subprocess.run(["git", "config", "--global", "credential.helper", "store"], check=True)
     with open(credentials_path, "w") as cred_file:
         cred_file.write(repo_url)
+    st.text(cred_file)
     # Aggiungi i file al commit
     try:
         subprocess.run(["git", "add", "."], check=True)
@@ -333,16 +334,9 @@ repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
 
 # Percorso assoluto per il file .git-credentials
 credentials_path = os.path.expanduser("~/.git-credentials")
-st.text(credentials_path)
-
 # usr = credentials['username']
 # pwd = credentials['password']
-
-#repo_url = f"https://{usr}:{pwd}@git/ASA_SGS.it"
-
 repo = access_repository(repo_url, local_dir)
-# url = f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n"
-# st.text(url)
 # Salva le credenziali nel Git Credential Manager
 #subprocess.run(["git", "credential", "approve"], input=f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n", text=True, check=True)
 
