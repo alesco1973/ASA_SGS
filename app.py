@@ -324,9 +324,8 @@ def get_mister_info(username, mister_data):
 #repo_url = "https://github.com/alesco1973/ASA_SGS.git"
 local_dir = "c:/asa_sgs"
 credentials = load_credentials('config.json')
-token = "il_tuo_token"
-repo_url = f"https://{token}@github.com/tuo_username/tuo_repository.git"
-
+token = "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"
+repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
 
 
 # usr = credentials['username']
