@@ -114,6 +114,7 @@ def commit_and_push(repo, commit_message, token, credentials_path):
         # Effettua il push
         subprocess.run(["git", "push", "origin", "main"], check=True)
         st.text("Commit e push eseguiti con successo")
+        
     except Exception as e:
         st.text(f"Errore durante il commit e push: {e}")
 
