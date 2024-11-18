@@ -114,12 +114,11 @@ def commit_and_push(repo, commit_message, token, credentials_path):
         # Effettua il push con opzioni di debug
         result = subprocess.run(["git", "push", "origin", "main"], check=True, capture_output=True, text=True)
         st.text("Commit e push eseguiti con successo")
-        st.text(result.stdout)
+        st.text(result.stdout)      
 
-        st.text("Commit e push eseguiti con successo")
-        
     except subprocess.CalledProcessError as e:
         st.text(f"Errore durante il commit e push: {e}")
+        st.text(e.output)
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
