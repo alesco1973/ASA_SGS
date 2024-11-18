@@ -49,29 +49,23 @@ def load_credentials(file_path):
 import git
 import os
 
-# def commit_and_push(repo_url, repo_path, commit_file, commit_message, branch='main'):
-#     try:
-#         # Se la repository locale non esiste, clonala
-#         if not os.path.exists(repo_path):
-#             repo = git.Repo.clone_from(repo_url, repo_path)
-#         else:
-#             repo = git.Repo(repo_path)
-#         st.text(commit_file)
-#         # Aggiungi tutti i cambiamenti
-#         repo.git.add(commit_file)
-        
-#         # Commit dei cambiamenti
-#         repo.index.commit(commit_message)
-        
-#         # Push dei cambiamenti al repository remoto
-        
-#         origin = repo.remote(name='origin')
-#         origin.push()
-        
-#         st.text("Commit e push eseguiti cun successo!")
-#     except Exception as e:
-#         st.text(f"Errore durante il commit e push: {e}")
 
+def crea_file(index, percorso_file, messaggio_commit):
+
+    index.add([percorso_file])
+    index.commit(messaggio_commit)
+    st.text(f"File {percorso_file} creato con successo.")
+
+def modifica_file(index, percorso_file, messaggio_commit):
+    index.add([percorso_file])
+    index.commit(messaggio_commit)
+    st.text(f"File {percorso_file} modificato con successo.")
+
+def elimina_file(index, percorso_file, messaggio_commit):
+    os.remove(percorso_file)
+    index.remove([percorso_file])
+    index.commit(messaggio_commit)
+    st.text(f"File {percorso_file} eliminato con successo.")
 
 
 def access_repository(repo_url, local_dir):
@@ -342,6 +336,7 @@ credentials_path = os.path.expanduser("~/.git-credentials")
 # usr = credentials['username']
 # pwd = credentials['password']
 repo = access_repository(repo_url, local_dir)
+index = repo.index
 # Salva le credenziali nel Git Credential Manager
 #subprocess.run(["git", "credential", "approve"], input=f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n", text=True, check=True)
 
@@ -482,7 +477,9 @@ def gestione_rosa():
                         commit_message = "Update file"
                         # Impostazioni della funzione
                         # Esegui la funzione
-                        commit_and_push(repo_url, commit_message, token, credentials_path)
+                        lista = f"{mister_info['file']}.csv"
+                        modifica_file(index, lista, commit_message)    
+                        # commit_and_push(repo_url, commit_message, token, credentials_path)
                         # commit_and_push(repo, commit_message)       
                         #st.rerun()
                     
