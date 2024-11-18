@@ -69,9 +69,9 @@ def access_repository(repo_url, local_dir):
 subprocess.run(["git", "config", "--global", "user.email", "alessandro.convertino@live.it"], check=True)
 subprocess.run(["git", "config", "--global", "user.name", "alissio1973"], check=True)
 
-def commit_and_push(repo_path, commit_message, token, credentials_path):
+def commit_and_push(repo, commit_message, token, credentials_path):
     # Configura Git per usare il token
-    repo = git.Repo(repo_path)
+    # repo = git.Repo(repo_path)
     origin = repo.remote(name='origin')
     origin.set_url(f'https://{token}@github.com/{repo.remotes.origin.url.split("github.com/")[1]}')
 
@@ -474,7 +474,7 @@ def gestione_rosa():
                         commit_message = "Update file"
                         # Impostazioni della funzione
                         # Esegui la funzione
-                        commit_and_push(repo_url, commit_message, token, credentials_path)
+                        commit_and_push(repo, commit_message, token, credentials_path)
                         # commit_and_push(repo, commit_message)       
                         #st.rerun()
                     
@@ -529,7 +529,7 @@ def gestione_rosa():
                                     json.dump(new_data, file, indent=4)
 
                             commit_message = "Update file"
-                            commit_and_push(repo_url, commit_message, token, credentials_path)
+                            commit_and_push(repo, commit_message, token, credentials_path)
                             st.success("Presenze salvate con successo!")
                     except Exception as e:
                         st.error(f"Errore durante la lettura del file CSV: {e}") 
