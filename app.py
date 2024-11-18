@@ -747,6 +747,7 @@ def gestione_rosa():
                                 #     pdf_buffer = BytesIO(f.read())
                                 # download_link_html = download_link(pdf_buffer.getvalue(), pdf_file_name, 'Clicca qui per scaricare il file PDF')
                                 # st.markdown(download_link_html, unsafe_allow_html=True)
+                                commit_and_push(repo_url, commit_message, token, credentials_path)
 
                             else:
                                 st.error("Per favore, inserisci un nome per il file.")
