@@ -98,9 +98,6 @@ subprocess.run(["git", "config", "--global", "user.name", "alissio1973"], check=
 def commit_and_push(repo, commit_message, token, credentials_path):
     # Configura Git per usare il token
     subprocess.run(["git", "config", "--global", "credential.helper", "store"], check=True)
-    with open(credentials_path, "w") as cred_file:
-        cred_file.write(repo_url)
-    st.text(cred_file)
     # Aggiungi i file al commit
     try:
         subprocess.run(["git", "add", "."], check=True)
@@ -531,6 +528,7 @@ def gestione_rosa():
                             else:
                                 with open(filename, 'w') as file:
                                     json.dump(new_data, file, indent=4)
+
                             commit_message = "Update file"
                             commit_and_push(repo_url, commit_message, token, credentials_path)
                             st.success("Presenze salvate con successo!")
