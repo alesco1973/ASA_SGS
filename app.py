@@ -674,8 +674,9 @@ def gestione_rosa():
                                 nomefile = acronimo + nome_file
                                 with open(f'{nomefile}.json', 'w') as file:
                                     json.dump(convocazione, file, indent=4)
+                                commit_and_push(repo_url, commit_message, token, credentials_path)
                                 st.success("Convocazione salvata con successo!")
-
+                                
                                 #Esporta la convocazione in excel
                                 #Carica il file Excel esistente o creane uno nuovo
                                 try:
@@ -747,7 +748,7 @@ def gestione_rosa():
                                 #     pdf_buffer = BytesIO(f.read())
                                 # download_link_html = download_link(pdf_buffer.getvalue(), pdf_file_name, 'Clicca qui per scaricare il file PDF')
                                 # st.markdown(download_link_html, unsafe_allow_html=True)
-                                commit_and_push(repo_url, commit_message, token, credentials_path)
+                                
 
                             else:
                                 st.error("Per favore, inserisci un nome per il file.")
