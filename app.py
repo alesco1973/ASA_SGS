@@ -72,8 +72,12 @@ subprocess.run(["git", "config", "--global", "user.name", "alissio1973"], check=
 def commit_and_push(repo, commit_message, token, credentials_path):
     # Configura Git per usare il token
     # repo = git.Repo(repo_path)
-    subprocess.run(["git", "config", "--global", "credential.helper", "store"], check=True)
-    st.text("Credential helper configurato con successo.")
+    try:
+        subprocess.run(["git", "config", "--global", "credential.helper", "store"], check=True)
+        st.text("Credential helper configurato con successo.")
+    except subprocess.CalledProcessError as e:
+        print(f"Errore durante la configurazione del credential helper: {e}")
+        
     origin = repo.remote(name='origin')
     origin.set_url(f'https://{token}@github.com/{repo.remotes.origin.url.split("github.com/")[1]}')
 
