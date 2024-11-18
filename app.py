@@ -114,7 +114,7 @@ def commit_and_push(repo, commit_message, token, credentials_path):
         st.text("Commit e push eseguiti con successo")
         
     except subprocess.CalledProcessError as e:
-        st.text(f"Errore durante il commit e push: {e}")
+        st.text(f"Error durante il commit e push: {e}")
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
