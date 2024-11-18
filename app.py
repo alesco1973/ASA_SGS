@@ -88,7 +88,7 @@ def commit_and_push(repo, commit_message, token, credentials_path):
         # Effettua il push
         #subprocess.run(["git", "push", "origin", "main"], check=True)
         # Effettua il push con opzioni di debug
-        result = subprocess.run(["git", "push", "origin", "main"], shell=True, capture_output=True, text=True)
+        result = subprocess.run(["git", "push", "origin", "main"], check=True, capture_output=True, text=True)
         st.text("Commit e push eseguiti con successo")
         st.text(result.stdout)      
 
