@@ -108,6 +108,7 @@ def commit_and_push(repo, commit_message, token, credentials_path):
         # Configura l'URL remoto per includere le credenziali
         # origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/alesco1973/ASA_SGS.git')
         # origin.push()
+        subprocess.run(["git", "remote", "set-url", "origin", repo], check=True)
         # Effettua il push
         subprocess.run(["git", "push", "origin", "main"], check=True)
         st.text("Commit e push eseguiti con successo")
