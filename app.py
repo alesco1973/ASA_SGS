@@ -69,30 +69,49 @@ def access_repository(repo_url, local_dir):
 subprocess.run(["git", "config", "--global", "user.email", "alessandro.convertino@live.it"], check=True)
 subprocess.run(["git", "config", "--global", "user.name", "alissio1973"], check=True)
 
-def commit_and_push(repo, commit_message, token, credentials_path):
+def commit_and_push(repo_path, commit_message, token, credentials_path):
     # Configura Git per usare il token
-    subprocess.run(["git", "config", "--global", "credential.helper", "store"], check=True)
-    # Aggiungi i file al commit
-    try:
-        subprocess.run(["git", "add", "."], check=True)
-        subprocess.run(["git", "commit", "-m", commit_message], check=True)
-        #repo.git.add(file_commit)  # Aggiunge tutti i file modificati e nuovi
-        #repo.index.commit(commit_message)
-        # origin = repo.remote(name='origin')
-        # Configura l'URL remoto per includere le credenziali
-        # origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/alesco1973/ASA_SGS.git')
-        # origin.push()
-        subprocess.run(["git", "remote", "set-url", "origin", repo], check=True)
-        # Effettua il push
-        #subprocess.run(["git", "push", "origin", "main"], check=True)
-        # Effettua il push con opzioni di debug
-        result = subprocess.run(["git", "push", "origin", "main"], check=True, capture_output=True, text=True)
-        st.text("Commit e push eseguiti con successo")
-        st.text(result.stdout)      
+    repo = git.Repo(repo_path)
+    origin = repo.remote(name='origin')
+    origin.set_url(f'https://{token}@github.com/{repo.remotes.origin.url.split("github.com/")[1]}')
 
-    except subprocess.CalledProcessError as e:
+    try:
+        # Aggiungi i file al commit
+        repo.git.add(A=True)
+        repo.index.commit(commit_message)
+        
+        # Effettua il push
+        origin.push()
+        
+        st.text("Commit e push eseguiti con successo")
+    except Exception as e:
         st.text(f"Errore durante il commit e push: {e}")
-        st.text(e.output)
+
+
+# def commit_and_push(repo, commit_message, token, credentials_path):
+#     # Configura Git per usare il token
+#     subprocess.run(["git", "config", "--global", "credential.helper", "store"], check=True)
+#     # Aggiungi i file al commit
+#     try:
+#         subprocess.run(["git", "add", "."], check=True)
+#         subprocess.run(["git", "commit", "-m", commit_message], check=True)
+#         #repo.git.add(file_commit)  # Aggiunge tutti i file modificati e nuovi
+#         #repo.index.commit(commit_message)
+#         # origin = repo.remote(name='origin')
+#         # Configura l'URL remoto per includere le credenziali
+#         # origin.set_url(f'https://{credentials["username"]}:{credentials["password"]}@github.com/alesco1973/ASA_SGS.git')
+#         # origin.push()
+#         subprocess.run(["git", "remote", "set-url", "origin", repo], check=True)
+#         # Effettua il push
+#         #subprocess.run(["git", "push", "origin", "main"], check=True)
+#         # Effettua il push con opzioni di debug
+#         result = subprocess.run(["git", "push", "origin", "main"], check=True, capture_output=True, text=True)
+#         st.text("Commit e push eseguiti con successo")
+#         st.text(result.stdout)      
+
+#     except subprocess.CalledProcessError as e:
+#         st.text(f"Errore durante il commit e push: {e}")
+#         st.text(e.output)
 
 #locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
 def converti_data(data_string):
@@ -258,7 +277,6 @@ def mostra_e_modifica_json(file_path, directory, cat):
             # workbook_spire.Dispose()
             commit_message = "Update file"
             commit_and_push(repo_url, commit_message, token, credentials_path)
-
             # Genera il link di download per il excel
             with open(name_xlsx, 'rb') as f:
                 excel_buffer = BytesIO(f.read())
@@ -305,11 +323,11 @@ def get_mister_info(username, mister_data):
             return allenatore
     return None
 
-#repo_url = "https://github.com/alesco1973/ASA_SGS.git"
+repo_url = "https://github.com/alesco1973/ASA_SGS.git"
 local_dir = "./asa_sgs"
 credentials = load_credentials('config.json')
 token = "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"
-repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
+#repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
 
 # Percorso assoluto per il file .git-credentials
 credentials_path = os.path.expanduser("~/.git-credentials")
