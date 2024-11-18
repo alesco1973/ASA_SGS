@@ -69,9 +69,9 @@ def access_repository(repo_url, local_dir):
 subprocess.run(["git", "config", "--global", "user.email", "alessandro.convertino@live.it"], check=True)
 subprocess.run(["git", "config", "--global", "user.name", "alissio1973"], check=True)
 
-def commit_and_push(repo_path, commit_message, token, credentials_path):
+def commit_and_push(repo, commit_message, token, credentials_path):
     # Configura Git per usare il token
-    repos = git.Repo(repo_path)
+    # repo = git.Repo(repo_path)
     try:
         subprocess.run(["git", "config", "--global", "credential.helper", "store"], check=True)
         st.text("Credential helper configurato con successo.")
@@ -86,8 +86,8 @@ def commit_and_push(repo_path, commit_message, token, credentials_path):
 
     try:
         # Aggiungi i file al commit
-        repos.git.add(A=True)
-        repos.index.commit(commit_message)
+        repo.git.add(A=True)
+        repo.index.commit(commit_message)
         
         # Effettua il push
         origin.push()
@@ -285,7 +285,7 @@ def mostra_e_modifica_json(file_path, directory, cat):
             # workbook_spire.SaveToFile(pdf_file_name, FileFormat.PDF)
             # workbook_spire.Dispose()
             commit_message = "Update file"
-            commit_and_push(repo_url, commit_message, token, credentials_path)
+            commit_and_push(repo, commit_message, token, credentials_path)
             # Genera il link di download per il excel
             with open(name_xlsx, 'rb') as f:
                 excel_buffer = BytesIO(f.read())
@@ -538,7 +538,7 @@ def gestione_rosa():
                                     json.dump(new_data, file, indent=4)
 
                             commit_message = "Update file"
-                            commit_and_push(repo_url, commit_message, token, credentials_path)
+                            commit_and_push(repo, commit_message, token, credentials_path)
                             st.success("Presenze salvate con successo!")
                     except Exception as e:
                         st.error(f"Errore durante la lettura del file CSV: {e}") 
