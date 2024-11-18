@@ -5,4 +5,4 @@ streamlit_modal
 openpyxl
 Spire.Xls
 GitPython
-PyDriller
+PyDriller==2.7
