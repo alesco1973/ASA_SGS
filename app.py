@@ -335,10 +335,18 @@ repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
 
 # Percorso assoluto per il file .git-credentials
 credentials_path = os.path.expanduser("~/.git-credentials")
-with open(credentials_path, 'r') as file:
-    credit = file.read()
-    st.text(credit)
-    
+# Verifica se il file esiste
+if os.path.exists(credentials_path):
+    try:
+        with open(credentials_path, 'r') as file:
+            credit = file.read()
+            st.text(credit)
+    except Exception as e:
+        st.text(f"Si è verificato un errore durante la lettura del file: {e}")
+else:
+    st.text(f"Il file {credentials_path} non esiste.")
+
+
 # usr = credentials['username']
 # pwd = credentials['password']
 repo = access_repository(repo_url, local_dir)
