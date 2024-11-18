@@ -531,6 +531,8 @@ def gestione_rosa():
                             else:
                                 with open(filename, 'w') as file:
                                     json.dump(new_data, file, indent=4)
+                            commit_message = "Update file"
+                            commit_and_push(repo_url, commit_message, token, credentials_path)
                             st.success("Presenze salvate con successo!")
                     except Exception as e:
                         st.error(f"Errore durante la lettura del file CSV: {e}") 
@@ -674,6 +676,7 @@ def gestione_rosa():
                                 nomefile = acronimo + nome_file
                                 with open(f'{nomefile}.json', 'w') as file:
                                     json.dump(convocazione, file, indent=4)
+                                commit_message = "Update file"
                                 commit_and_push(repo_url, commit_message, token, credentials_path)
                                 st.success("Convocazione salvata con successo!")
                                 
