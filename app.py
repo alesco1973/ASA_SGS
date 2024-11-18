@@ -282,6 +282,8 @@ def mostra_e_modifica_json(file_path, directory, cat):
             # workbook_spire.ConverterSetting.SheetFitToPage = True
             # workbook_spire.SaveToFile(pdf_file_name, FileFormat.PDF)
             # workbook_spire.Dispose()
+            commit_message = "Update file"
+            commit_and_push(repo_url, commit_message, token, credentials_path)
 
             # Genera il link di download per il excel
             with open(name_xlsx, 'rb') as f:
