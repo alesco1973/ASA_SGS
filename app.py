@@ -78,7 +78,6 @@ def commit_and_push(repo, commit_message, token, credentials_path):
         credentials_path = os.path.expanduser("~/.git-credentials")
         with open(credentials_path, 'w') as cred_file:
             cred_file.write(f"https://{token}:@github.com\n")
-            
     except subprocess.CalledProcessError as e:
         print(f"Errore durante la configurazione del credential helper: {e}")
     
