@@ -23,7 +23,6 @@ from spire.xls.common import *
 import git
 import subprocess    
 
-from pydriller import Repository
 
 #Questo è il file su cui lavorare
 st.set_page_config(
@@ -48,18 +47,6 @@ def load_credentials(file_path):
         return json.load(file)
     
 
-import git
-import os
-
-
-def commit_push(repository):
-    for commit in Repository(repository).traverse_commits():
-        st.text(commit.hash)
-        st.text(commit.msg)
-        st.text(commit.author.name)
-
-        for file in commit.modified_files:
-            st.text(file.filename, ' has changed')
 
 def access_repository(repo_url, local_dir):
 
@@ -270,7 +257,7 @@ def mostra_e_modifica_json(file_path, directory, cat):
             # workbook_spire.SaveToFile(pdf_file_name, FileFormat.PDF)
             # workbook_spire.Dispose()
             commit_message = "Update file"
-            # commit_and_push(repo_url, commit_message, token, credentials_path)
+            commit_and_push(repo_url, commit_message, token, credentials_path)
 
             # Genera il link di download per il excel
             with open(name_xlsx, 'rb') as f:
@@ -469,7 +456,7 @@ def gestione_rosa():
                         commit_message = "Update file"
                         # Impostazioni della funzione
                         # Esegui la funzione
-                        # commit_and_push(repo_url, commit_message, token, credentials_path)
+                        commit_and_push(repo_url, commit_message, token, credentials_path)
                         # commit_and_push(repo, commit_message)       
                         #st.rerun()
                     
@@ -524,7 +511,7 @@ def gestione_rosa():
                                     json.dump(new_data, file, indent=4)
 
                             commit_message = "Update file"
-                            # commit_and_push(repo_url, commit_message, token, credentials_path)
+                            commit_and_push(repo_url, commit_message, token, credentials_path)
                             st.success("Presenze salvate con successo!")
                     except Exception as e:
                         st.error(f"Errore durante la lettura del file CSV: {e}") 
@@ -1250,7 +1237,6 @@ def gestione_rosa():
                     else:
                         st.write("Seleziona almeno un giocatore per visualizzare il grafico.")
 
-        commit_push(repo_url)    
 def impostazioni():
     # Esempio di impostazioni
     tema = st.selectbox("Seleziona il tema", ["Chiaro", "Scuro"])
