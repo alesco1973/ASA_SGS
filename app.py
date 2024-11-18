@@ -327,17 +327,18 @@ def get_mister_info(username, mister_data):
             return allenatore
     return None
 
-#repo_url = "https://github.com/alesco1973/ASA_SGS.git"
+repo_path = "https://github.com/alesco1973/ASA_SGS.git"
 local_dir = "./asa_sgs"
 credentials = load_credentials('config.json')
 token = "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"
 repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
 credentials_content = f"https://<{credentials['username']}<:<{credentials['password']}<@github.com"
+
 # Funzione per creare il file .git-credentials
 def create_git_credentials(repo_url):
     try:
         # Cambia directory alla repository locale
-        os.chdir(repo_url)
+        os.chdir(path_repo)
         
         # Crea il file .git-credentials con le credenziali
         with open(credentials_path, 'w') as file:
@@ -367,7 +368,7 @@ if os.path.exists(credentials_path):
     except Exception as e:
         st.text(f"Si è verificato un errore durante la lettura del file: {e}")
 else:
-    create_git_credentials(repo_url)
+    create_git_credentials(repo_path)
 
 
 # usr = credentials['username']
