@@ -335,10 +335,10 @@ repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
 credentials_content = f"https://<{credentials['username']}<:<{credentials['password']}<@github.com"
 
 # Funzione per creare il file .git-credentials
-def create_git_credentials(repo_url):
+def create_git_credentials(p_repo):
     try:
         # Cambia directory alla repository locale
-        os.chdir(path_repo)
+        os.chdir(p_repo)
         
         # Crea il file .git-credentials con le credenziali
         with open(credentials_path, 'w') as file:
