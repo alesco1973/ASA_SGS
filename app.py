@@ -335,7 +335,8 @@ repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
 credentials_path = os.path.expanduser("~/.git-credentials")
 # usr = credentials['username']
 # pwd = credentials['password']
-repo = access_repository(repo_url, local_dir)
+repo = git.Repo(repo_url)
+# repo = access_repository(repo_url, local_dir)
 index = repo.index
 # Salva le credenziali nel Git Credential Manager
 #subprocess.run(["git", "credential", "approve"], input=f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n", text=True, check=True)
