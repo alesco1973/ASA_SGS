@@ -50,24 +50,6 @@ import git
 import os
 
 
-def crea_file(index, percorso_file, messaggio_commit):
-
-    index.add([percorso_file])
-    index.commit(messaggio_commit)
-    st.text(f"File {percorso_file} creato con successo.")
-
-def modifica_file(index, percorso_file, messaggio_commit):
-    index.add([percorso_file])
-    index.commit(messaggio_commit)
-    st.text(f"File {percorso_file} modificato con successo.")
-
-def elimina_file(index, percorso_file, messaggio_commit):
-    os.remove(percorso_file)
-    index.remove([percorso_file])
-    index.commit(messaggio_commit)
-    st.text(f"File {percorso_file} eliminato con successo.")
-
-
 def access_repository(repo_url, local_dir):
 
     try:
@@ -325,19 +307,17 @@ def get_mister_info(username, mister_data):
             return allenatore
     return None
 
-repo_url = "https://github.com/alesco1973/ASA_SGS.git"
+#repo_url = "https://github.com/alesco1973/ASA_SGS.git"
 local_dir = "./asa_sgs"
 credentials = load_credentials('config.json')
 token = "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"
-# repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
+repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
 
 # Percorso assoluto per il file .git-credentials
 credentials_path = os.path.expanduser("~/.git-credentials")
 # usr = credentials['username']
 # pwd = credentials['password']
-repo = git.Repo(repo_url)
-# repo = access_repository(repo_url, local_dir)
-index = repo.index
+repo = access_repository(repo_url, local_dir)
 # Salva le credenziali nel Git Credential Manager
 #subprocess.run(["git", "credential", "approve"], input=f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n", text=True, check=True)
 
@@ -478,9 +458,7 @@ def gestione_rosa():
                         commit_message = "Update file"
                         # Impostazioni della funzione
                         # Esegui la funzione
-                        lista = f"{mister_info['file']}.csv"
-                        modifica_file(index, lista, commit_message)    
-                        # commit_and_push(repo_url, commit_message, token, credentials_path)
+                        commit_and_push(repo_url, commit_message, token, credentials_path)
                         # commit_and_push(repo, commit_message)       
                         #st.rerun()
                     
