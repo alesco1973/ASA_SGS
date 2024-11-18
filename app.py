@@ -332,6 +332,29 @@ local_dir = "./asa_sgs"
 credentials = load_credentials('config.json')
 token = "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"
 repo_url = f"https://{token}@github.com/alesco1973/ASA_SGS.git"
+credentials_content = f"https://<{credentials['username']}<:<{credentials['password']}<@github.com"
+# Funzione per creare il file .git-credentials
+def create_git_credentials(repo_url):
+    try:
+        # Cambia directory alla repository locale
+        os.chdir(repo_url)
+        
+        # Crea il file .git-credentials con le credenziali
+        with open(credentials_path, 'w') as file:
+            file.write(credentials_content)
+        
+        # Aggiungi il file alla repository
+        subprocess.run(["git", "add", credentials_path], check=True)
+        
+        # Commit delle modifiche
+        subprocess.run(["git", "commit", "-m", "Aggiungi file .git-credentials"], check=True)
+        
+        # Pusha le modifiche al repository remoto
+        subprocess.run(["git", "push", "origin", "main"], check=True)
+        
+        st.text("File .git-credentials creato e pushato con successo.")
+    except Exception as e:
+        st.text(f"Si è verificato un errore: {e}")
 
 # Percorso assoluto per il file .git-credentials
 credentials_path = os.path.expanduser("~/.git-credentials")
@@ -344,7 +367,7 @@ if os.path.exists(credentials_path):
     except Exception as e:
         st.text(f"Si è verificato un errore durante la lettura del file: {e}")
 else:
-    st.text(f"Il file {credentials_path} non esiste.")
+    create_git_credentials(repo_url)
 
 
 # usr = credentials['username']
