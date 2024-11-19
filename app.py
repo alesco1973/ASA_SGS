@@ -483,7 +483,7 @@ def gestione_rosa():
                         commit_message = "Update file"
                         # Impostazioni della funzione
                         # Esegui la funzione
-                        commit_and_push(repo, commit_message, token, credentials_path)
+                        # commit_and_push(repo, commit_message, token, credentials_path)
                         # commit_and_push(repo, commit_message)       
                         #st.rerun()
                     
@@ -538,7 +538,7 @@ def gestione_rosa():
                                     json.dump(new_data, file, indent=4)
 
                             commit_message = "Update file"
-                            commit_and_push(repo, commit_message, token, credentials_path)
+                            # commit_and_push(repo, commit_message, token, credentials_path)
                             st.success("Presenze salvate con successo!")
                     except Exception as e:
                         st.error(f"Errore durante la lettura del file CSV: {e}") 
