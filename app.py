@@ -1268,8 +1268,8 @@ def gestione_rosa():
 
                     # Salva il file Excel nella cartella convocazioni
                     fname = reportistica + 'reportistica_' +  mister_info['acronimo'] + '.xlsx'
-                    with open(fname, 'wb') as f:
-                        f.write(buffer.getvalue())
+                    df_report.to_excel(fname)
+
 
 
                         # Converti il file Excel in PDF
