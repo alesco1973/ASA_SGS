@@ -1268,7 +1268,7 @@ def gestione_rosa():
 
                     # Salva il file Excel nella cartella convocazioni
                     fname = reportistica + 'reportistica_' +  mister_info['acronimo'] + '.xlsx'
-                    df_report.to_excel(fname)
+                    convert_df_to_excel(df_report, fname)
 
 
 
