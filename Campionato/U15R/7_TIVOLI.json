@@ -1,0 +1,90 @@
+{
+    "giornata": 7,
+    "squadra": "TIVOLI",
+    "home_away": "Casa",
+    "risultato": "3-5",
+    "recupero": 5,
+    "formazione": [
+        "DIEGO PERFETTO ",
+        "VALERIO CAGNUCCI ",
+        "LORENZO GRASSO",
+        "GIORDANO PERCONTI",
+        "MATTIA AGOSTINI",
+        "GIANMARIA PASQUALI ",
+        "SIMONE GIRALDA",
+        "FLAVIO PIDALA'",
+        "FRANCESCO BOCCHINO",
+        "MATTEO TEMPERINI",
+        "SEBASTIANO GAZZELLA ",
+        "ARON PABINIAK",
+        "MIRKO BARONE ",
+        "FLAVIO CECCHINI ",
+        "MAYO DE FEO ",
+        "ALESSIO IGLIOZZI",
+        "PIERO PUGLIATTI",
+        "GIANMARCO RUSSI",
+        "",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "VALERIO CAGNUCCI ",
+            "sub_out": "MIRKO BARONE ",
+            "time_sub": 48
+        },
+        {
+            "sub_in": "LORENZO GRASSO",
+            "sub_out": "PIERO PUGLIATTI",
+            "time_sub": 53
+        },
+        {
+            "sub_in": "GIORDANO PERCONTI",
+            "sub_out": "FLAVIO CECCHINI ",
+            "time_sub": 41
+        },
+        {
+            "sub_in": "GIANMARIA PASQUALI ",
+            "sub_out": "ALESSIO IGLIOZZI",
+            "time_sub": 53
+        },
+        {
+            "sub_in": "MATTEO TEMPERINI",
+            "sub_out": "GIANMARCO RUSSI",
+            "time_sub": 53
+        },
+        {
+            "sub_in": "SEBASTIANO GAZZELLA ",
+            "sub_out": "MAYO DE FEO ",
+            "time_sub": 60
+        }
+    ],
+    "ammonizioni": [],
+    "espulsioni": [],
+    "goal": [
+        "FRANCESCO BOCCHINO",
+        "FRANCESCO BOCCHINO",
+        "FRANCESCO BOCCHINO"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "MIRKO DI OTTAVIO ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "DAVIDE SAUTARIELLO",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "MATTEO SPLENDORI ",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "FLAVIO MOZZI",
+            "motivo": "NON DISPONIBILE"
+        },
+        {
+            "giocatore": "LORENZO CAU",
+            "motivo": "NON DISPONIBILE"
+        }
+    ]
+}

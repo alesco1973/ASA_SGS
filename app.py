@@ -1264,7 +1264,21 @@ def gestione_rosa():
                     st.dataframe(df_report.reset_index(drop=True), use_container_width=True)
 
                     # Salvataggio del dataframe in formato csv
-                    file_path = reportistica + 'reportistica_' + mister_info['acronimo'] + '.csv'
+                    # file_path = reportistica + 'reportistica_' + mister_info['acronimo'] + '.csv'
+
+                    # Salva il file Excel nella cartella convocazioni
+                    fname = reportistica + 'reportistica_' +  mister_info['acronimo'] + '.xlsx'
+                    convert_df_to_excel(df_report, fname)
+
+                    # Genera il link di download per il file Excel
+                    with open(fname, 'rb') as f:
+                        excel_buffer = BytesIO(f.read())
+                        download_link_html = download_link(excel_buffer.getvalue(), fname, 'Clicca qui per scaricare il file Excel')
+                        commit_message = "Update file"
+                        # commit_and_push(repo_url, commit_message, token, credentials_path)
+                        st.success("Scarica tabella in Excel")
+
+                        st.markdown(download_link_html, unsafe_allow_html=True)
 
                     # Creazione dei grafici
                     # Seleziona la statistica da visualizzare
