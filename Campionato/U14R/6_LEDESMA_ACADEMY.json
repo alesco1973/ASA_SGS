@@ -1,0 +1,64 @@
+{
+    "giornata": 6,
+    "squadra": "LEDESMA ACADEMY",
+    "home_away": "Fuori Casa",
+    "risultato": "1-1",
+    "recupero": 5,
+    "formazione": [
+        "MATTIA RICKELMY",
+        "LORENZO STARA",
+        "MARTINO DAVOLI",
+        "DIEGO ADOLINI",
+        "FRANCESCO FOCHETTI",
+        "FRANCESCO PARADISI",
+        "GIULIO CENCIONI",
+        "ALESSANDRO PRITELLI",
+        "LEONARDO MANCINI",
+        "DIEGO FERRERI",
+        "VALERIO CATAPANO",
+        "ALESSIO SPOGNARDI",
+        "GIACOMO CECI",
+        "ENRICO ZOPPI",
+        "DANIELE CONTE",
+        "MASSIMO SEVERINI ",
+        "GABRIELE PETRUNGARO",
+        "MASSIMO MARCELLO C.",
+        "FGABRIELE GAZZULLI",
+        "EDOARDO TROIA"
+    ],
+    "substitutions": [
+        {
+            "sub_in": "LORENZO STARA",
+            "sub_out": "EDOARDO TROIA",
+            "time_sub": 52
+        },
+        {
+            "sub_in": "FRANCESCO FOCHETTI",
+            "sub_out": "ENRICO ZOPPI",
+            "time_sub": 39
+        },
+        {
+            "sub_in": "VALERIO CATAPANO",
+            "sub_out": "FGABRIELE GAZZULLI",
+            "time_sub": 59
+        }
+    ],
+    "ammonizioni": [
+        "MARTINO DAVOLI",
+        "FRANCESCO FOCHETTI"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "LORENZO STARA"
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "GABRIELE LENZA ",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "MATTEO COLOMBINI",
+            "motivo": "INFORTUNATO"
+        }
+    ]
+}

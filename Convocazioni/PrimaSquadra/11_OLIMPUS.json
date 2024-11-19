@@ -1,0 +1,32 @@
+{
+    "giornata": 11,
+    "squadra": "OLIMPUS",
+    "data_ora_incontro": "\"2024-11-17T09:00:00\"",
+    "denominazione_campo": "",
+    "ora_raduno": "09:00:00",
+    "componenti_squadra": [
+        "ALESSANDRO BARONE",
+        "LORENZO CATERINOZZI",
+        "SIMONE DOMENICI",
+        "GIUSEPPE D'IGNAZIO",
+        "LORENZO FORTUNATO",
+        "DANIELE BARILARO",
+        "GIGI MICCICHE'",
+        "FEDERICO TEMPESTILLI",
+        "ANDREA RUSSO",
+        "MANUEL GUIDARELLI",
+        "ANGELO BELFIORI",
+        "KAJLJ BARBARA",
+        "LUCA DI CARLO",
+        "STEFANO PICCONI",
+        "VALERIO PERINI",
+        "FEDERICO BROCATO",
+        "FLAVIO COSTANTINI",
+        "PAOLO D'ALESSANDRO",
+        "JORDI DE LUCA",
+        "RICCARDO GIANSERRA"
+    ],
+    "non_convocati": "ANDREA ABRUZZETTI, LORENZO BECCHETTI, GIORGIO BIANCONI, MATTEO BORGIA, EDOARDO BRACCI, EDOARDO CICCANTI, LUCA COLAGROSSI, EMANUELE COMMODOARI, ALESSIO CRISPOLDI, ANGELO FEDELE, FILIPPO NESTONNI, DAVIDE OLEARI, DIEGO LUCIANI, MANUEL GIORDANO",
+    "nome_mister": "LUIGI MICCIO",
+    "nome_dirigente": ""
+}

@@ -1,0 +1,88 @@
+{
+    "giornata": 4,
+    "squadra": "ACADEMY GRIFONE",
+    "home_away": "Casa",
+    "risultato": "3-4",
+    "recupero": 0,
+    "formazione": [
+        "CRISTIAN DE VINCENTIS",
+        "GIACOMO CICCARELLA ",
+        "JACOPO PANTINI",
+        "DAVID MATASEL ",
+        "VALERIO CONTI",
+        "ADRIANO VENAFRA",
+        "ALESSIO VEGLIANTI",
+        "MATTIA SCOPEL ",
+        "ALEXANDRU MOISE",
+        "SEBASTIANO LAI",
+        "MASSIMO      CIMARELLI",
+        "TITO AL HAVARI",
+        "CHRISTIAN BELLAROSA",
+        "EDOARDO D'AULERIO",
+        "CRISTIANO MIGENI",
+        "LORENZO MIGENI",
+        "GIULIO POGGIOLI",
+        "ARTHUR ROBLES",
+        "",
+        ""
+    ],
+    "substitutions": [
+        {
+            "sub_in": "JACOPO PANTINI",
+            "sub_out": "CHRISTIAN BELLAROSA",
+            "time_sub": 74
+        },
+        {
+            "sub_in": "VALERIO CONTI",
+            "sub_out": "LORENZO MIGENI",
+            "time_sub": 53
+        },
+        {
+            "sub_in": "LORENZO MIGENI",
+            "sub_out": "CRISTIANO MIGENI",
+            "time_sub": 61
+        },
+        {
+            "sub_in": "ALEXANDRU MOISE",
+            "sub_out": "EDOARDO D'AULERIO",
+            "time_sub": 53
+        },
+        {
+            "sub_in": "SEBASTIANO LAI",
+            "sub_out": "ARTHUR ROBLES",
+            "time_sub": 50
+        },
+        {
+            "sub_in": "ARTHUR ROBLES",
+            "sub_out": "GIULIO POGGIOLI",
+            "time_sub": 64
+        }
+    ],
+    "ammonizioni": [
+        "EDOARDO D'AULERIO"
+    ],
+    "espulsioni": [],
+    "goal": [
+        "MASSIMO      CIMARELLI",
+        "DAVID MATASEL ",
+        "DAVID MATASEL "
+    ],
+    "non_convocati": [
+        {
+            "giocatore": "MATTIA PATASCE",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "JOSEPH MARCHETTA",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "GIOVANNI BOCCIA",
+            "motivo": "INFORTUNATO"
+        },
+        {
+            "giocatore": "DIEGO PERFETTO",
+            "motivo": "INFORTUNATO"
+        }
+    ]
+}
