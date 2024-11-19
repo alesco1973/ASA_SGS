@@ -1290,7 +1290,7 @@ def gestione_rosa():
                     df_report['presenze_p'] = ((df_report['presenze'])*100/(df_report['presenze']) * 100).apply(lambda x: f"{x:,.2f}".replace('.', ','))
                     # Crea il grafico a barre per la statistica selezionata
                     create_bar_chart(df_report, stat, n_file, minuti)
-                    df_report.to_csv(file_path, sep=";",  index=False)
+                    # df_report.to_csv(file_path, sep=";",  index=False)
 
                     # Seleziona i giocatori da confrontare
                     statistica = st.selectbox('Seleziona la statistica da visualizzare', 
