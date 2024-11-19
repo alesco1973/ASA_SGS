@@ -1286,7 +1286,7 @@ def gestione_rosa():
                         excel_buffer = BytesIO(f.read())
                         download_link_html = download_link(excel_buffer.getvalue(), fname, 'Clicca qui per scaricare il file Excel')
                         commit_message = "Update file"
-                        commit_and_push(repo_url, commit_message, token, credentials_path)
+                        # commit_and_push(repo_url, commit_message, token, credentials_path)
                         st.success("Scarica tabella in Excel")
 
                         st.markdown(download_link_html, unsafe_allow_html=True)
