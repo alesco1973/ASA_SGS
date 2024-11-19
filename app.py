@@ -1285,26 +1285,6 @@ def gestione_rosa():
                     convert_df_to_excel(df_report, fname)
 
 
-
-                        # Converti il file Excel in PDF
-
-                        # pdf_file_name = f'{fname}.pdf'
-                        # workbook_spire = Workbook()
-                        # workbook_spire.LoadFromFile(fname)
-                        # workbook_spire.ConverterSetting.SheetFitToPage = True
-                        # workbook_spire.SaveToFile(pdf_file_name, FileFormat.PDF)
-                        # workbook_spire.Dispose()
-
-                    # Genera il link di download per il file Excel
-                    with open(fname, 'rb') as f:
-                        excel_buffer = BytesIO(f.read())
-                        download_link_html = download_link(excel_buffer.getvalue(), fname, 'Clicca qui per scaricare il file Excel')
-                        commit_message = "Update file"
-                        # commit_and_push(repo_url, commit_message, token, credentials_path)
-                        st.success("Scarica tabella in Excel")
-
-                        st.markdown(download_link_html, unsafe_allow_html=True)
-
                     # Creazione dei grafici
                     # Seleziona la statistica da visualizzare
                     
