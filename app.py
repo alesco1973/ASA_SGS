@@ -1267,7 +1267,7 @@ def gestione_rosa():
                     # file_path = reportistica + 'reportistica_' + mister_info['acronimo'] + '.csv'
 
                     # Salva il file Excel nella cartella convocazioni
-                    fname = reportistica + 'reportistica_' +  mister_info['acronimo'] + '.xlsx'
+                    fname = reportistica + 'reportistica.xlsx'
                     convert_df_to_excel(df_report, fname)
 
                     # Genera il link di download per il file Excel
