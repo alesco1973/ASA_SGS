@@ -1246,9 +1246,43 @@ def gestione_rosa():
                     # Salvataggio del dataframe in formato csv
                     # file_path = reportistica + 'reportistica_' + mister_info['acronimo'] + '.csv'
 
-                    # Salva il file Excel nella cartella convocazioni
+                    #Esporta la convocazione in excel
+                    #Carica il file Excel esistente o creane uno nuovo
+                    try:
+                        workbook = openpyxl.load_workbook('report_squadra.xlsx')
+                        writer = pd.ExcelWriter(file_path, engine='openpyxl')
+                        writer.book = workbook
+                    except FileNotFoundError:
+                        workbook = openpyxl.Workbook()
+                    # Rimuovi eventuali fogli di lavoro vuoti
+                    for sheet in workbook.sheetnames:
+                        if workbook[sheet].max_row == 1 and workbook[sheet].max_column == 1:
+                            del workbook[sheet]
+                    txt_cell = f"REPORT SQUADRA: {mister_info['mister']}"
+                                
+                    sheet = workbook.active
+                    sheet['B1'] = txt_cell
+                    df_report.to_excel(writer, sheet_name='Sheet1', startrow=6, index=False, header=False)    
+
+                                
+                    # Salva il file in un oggetto BytesIO
                     fname = reportistica + 'reportistica.xlsx'
-                    convert_df_to_excel(df_report, fname)
+                    st.write(fname)
+                    buffer = BytesIO()
+                    workbook.save(buffer)
+                    buffer.seek(0)
+
+
+                                
+                    # Salva il file Excel nella cartella Campionato
+                    with open(fname, 'wb') as f:
+                        f.write(buffer.getvalue())
+
+
+
+                    # Salva il file Excel nella cartella convocazioni
+                    # fname = reportistica + 'reportistica.xlsx'
+                    # convert_df_to_excel(df_report, fname)
 
                     # Genera il link di download per il file Excel
                     with open(fname, 'rb') as f:
@@ -1259,10 +1293,6 @@ def gestione_rosa():
                         st.success("Scarica tabella in Excel")
 
                         st.markdown(download_link_html, unsafe_allow_html=True)
-
-                    # Salva il file Excel nella cartella convocazioni
-                    fname = reportistica + 'reportistica_' +  mister_info['acronimo'] + '.xlsx'
-                    convert_df_to_excel(df_report, fname)
 
 
                     # Creazione dei grafici
