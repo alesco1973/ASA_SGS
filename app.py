@@ -1098,7 +1098,7 @@ def gestione_rosa():
                                     data[player]["minuti giocati"] += time_play
                                     data[player]["presenze"] += 1
                                     data[player]["titolare"] += 1
-                                    data[player]["sub_in"] += 1
+                                    data[player]["sub_out"] += 1
                             else:
                                 if player not in data:
                                     time_play = minuti + recupero
@@ -1161,7 +1161,7 @@ def gestione_rosa():
                                     time_play = minuti - time_sub[sub_out.index(player)] + recupero
                                     data[player]["minuti giocati"] += time_play
                                     data[player]["presenze"] += 1
-                                    data[player]["sub_out"] += 1
+                                    data[player]["sub_in"] += 1
                             else:
                                 if player not in data:
                                     data[player] = {
