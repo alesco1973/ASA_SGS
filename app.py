@@ -1123,7 +1123,7 @@ def gestione_rosa():
                         # Aggiungi i giocatori dalla panchina
                         for player in next_9:
                             if player in sub_out and player in sub_in:
-                                time_play = time_sub[sub_in.index(player)] - time_sub[sub_out.index(player)] + recupero
+                                time_play = time_sub[sub_in.index(player)] - time_sub[sub_out.index(player)]
                                 if player not in data:
                                     data[player] = {
                                         "presenze": 1,
@@ -1159,26 +1159,6 @@ def gestione_rosa():
                                     }
                                 else:
                                     time_play = minuti - time_sub[sub_out.index(player)] + recupero
-                                    data[player]["minuti giocati"] += time_play
-                                    data[player]["presenze"] += 1
-                                    data[player]["sub_out"] += 1
-                            elif player in sub_in:
-                                if player not in data:
-                                    time_play = time_sub[sub_in.index(player)] + recupero
-                                    data[player] = {
-                                        "presenze": 1,
-                                        "giocatore": player,
-                                        "titolare": 0,
-                                        "sub_out": 1,
-                                        "sub_in": 0,
-                                        "minuti giocati": time_play,
-                                        "ammonizioni": 0,
-                                        "espulsioni": 0,
-                                        "goal": 0,
-                                        "non convocazione": 0
-                                    }
-                                else:
-                                    time_play = time_sub[sub_in.index(player)] + recupero
                                     data[player]["minuti giocati"] += time_play
                                     data[player]["presenze"] += 1
                                     data[player]["sub_in"] += 1
