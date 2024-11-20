@@ -1250,7 +1250,7 @@ def gestione_rosa():
                     #Carica il file Excel esistente o creane uno nuovo
                     try:
                         workbook = openpyxl.load_workbook('report_squadra.xlsx')
-                        writer = pd.ExcelWriter(file_path, engine='openpyxl')
+                        writer = pd.ExcelWriter('report_squadra.xlsx', engine='openpyxl')
                         writer.book = workbook
                     except FileNotFoundError:
                         workbook = openpyxl.Workbook()
