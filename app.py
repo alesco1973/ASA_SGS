@@ -1021,7 +1021,7 @@ def gestione_rosa():
                             st.bar_chart(chart_data, x="giocatore", y=["presenze", "titolare", "sub_out", "sub_in"], x_label="Informazioni presenze", color="partite", horizontal=True)
                         elif column == 'minuti giocati/convocazioni':
                             st.warning("⬅️ Visualizza il rapporto tra i minuti giocabili, basato sul numero di partite in cui è stato convocato, e i minuti effettivi giocati.")
-                            if df['presenze'] > 0:
+                            if df['presenze'].sum() > 0:
                                 convocazioni = df['partite'] - df['non convocazione']
                                 minutaggio = minuti*convocazioni
                                 df['rapporto'] = (df['minuti giocati'])*100/minutaggio
