@@ -1026,7 +1026,7 @@ def gestione_rosa():
                             minutaggio = minuti * convocazioni
 
                             # Calcolo del rapporto
-                            df['rapporto'] = df.apply(lambda row: (row['minuti giocati'] * 100) / minutaggio if row['presenze'] > 0 else 0, axis=1)
+                            df['rapporto'] = df.apply(lambda row: (row['minuti giocati'] * 100) / minutaggio.sum() if row['presenze'] > 0 else 0, axis=1)
                             
                             # if df['presenze'].sum() > 0:
                                 # convocazioni = df['partite'] - df['non convocazione']
