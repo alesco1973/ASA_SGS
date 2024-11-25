@@ -66,8 +66,8 @@ def access_repository(repo_url, local_dir):
         return None
 
 # Configura il nome e l'email globalmente
-subprocess.run(["git", "config", "--global", "user.email", "alessandro.convertino@live.it"], check=True)
-subprocess.run(["git", "config", "--global", "user.name", "alissio1973"], check=True)
+# subprocess.run(["git", "config", "--global", "user.email", "alessandro.convertino@live.it"], check=True)
+# subprocess.run(["git", "config", "--global", "user.name", "alissio1973"], check=True)
 
 def commit_and_push(repo, commit_message, token, credentials_path):
     # Configura Git per usare il token
@@ -285,7 +285,7 @@ def mostra_e_modifica_json(file_path, directory, cat):
             # workbook_spire.SaveToFile(pdf_file_name, FileFormat.PDF)
             # workbook_spire.Dispose()
             commit_message = "Update file"
-            commit_and_push(repo, commit_message, token, credentials_path)
+            # commit_and_push(repo, commit_message, token, credentials_path)
             # Genera il link di download per il excel
             with open(name_xlsx, 'rb') as f:
                 excel_buffer = BytesIO(f.read())
@@ -342,7 +342,8 @@ token = "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"
 credentials_path = os.path.expanduser("~/.git-credentials")
 # usr = credentials['username']
 # pwd = credentials['password']
-repo = access_repository(repo_url, local_dir)
+#repo = access_repository(repo_url, local_dir)
+repo = 0
 # Salva le credenziali nel Git Credential Manager
 #subprocess.run(["git", "credential", "approve"], input=f"url=https://{usr}:{pwd}@github.com\nusername={usr}\npassword={pwd}\n", text=True, check=True)
 
@@ -352,7 +353,7 @@ def gestione_rosa():
     # Accesso a github
 
 
-    if repo:
+    if repo==0:
         # Form di login
         if "logged_in" not in st.session_state:
             st.session_state.logged_in = False
@@ -403,7 +404,7 @@ def gestione_rosa():
                 }
             )
 
-            if repo:
+            if repo==0:
                 if selected == "Lista":
 
 
@@ -537,7 +538,7 @@ def gestione_rosa():
                                 with open(filename, 'w') as file:
                                     json.dump(new_data, file, indent=4)
 
-                            commit_message = "Update file"
+                            # commit_message = "Update file"
                             # commit_and_push(repo, commit_message, token, credentials_path)
                             st.success("Presenze salvate con successo!")
                     except Exception as e:
@@ -748,7 +749,7 @@ def gestione_rosa():
                                     excel_buffer = BytesIO(f.read())
                                 download_link_html = download_link(excel_buffer.getvalue(), fname, 'Clicca qui per scaricare il file Excel')
                                 commit_message = "Update file"
-                                commit_and_push(repo_url, commit_message, token, credentials_path)
+                                # commit_and_push(repo_url, commit_message, token, credentials_path)
                                 st.success("Convocazione salvata con successo!")
 
                                 st.markdown(download_link_html, unsafe_allow_html=True)
@@ -1021,26 +1022,15 @@ def gestione_rosa():
                             st.bar_chart(chart_data, x="giocatore", y=["presenze", "titolare", "sub_out", "sub_in"], x_label="Informazioni presenze", color="partite", horizontal=True)
                         elif column == 'minuti giocati/convocazioni':
                             st.warning("⬅️ Visualizza il rapporto tra i minuti giocabili, basato sul numero di partite in cui è stato convocato, e i minuti effettivi giocati.")
-                            df['non convocazione'] = df['partite'] - df['presenze']
                             convocazioni = df['partite'] - df['non convocazione']
-                            minutaggio = minuti * convocazioni
-
-                            # Calcolo del rapporto
-                            df['rapporto'] = df.apply(lambda row: (row['minuti giocati']*100) / minutaggio.sum() if row['presenze'] > 0 else 0, axis=1)
-                            
-                            # if df['presenze'].sum() > 0:
-                                # convocazioni = df['partite'] - df['non convocazione']
-                                # minutaggio = minuti*convocazioni
-                                # df['rapporto'] = (df['minuti giocati'])*100/minutaggio
-                            # else:
-                                # df['rapporto'] = 0
-                                
+                            minutaggio = minuti*convocazioni
+                            df['rapporto'] = (df['minuti giocati'])*100/minutaggio
                             chart_data = pd.DataFrame(
                                 {
                                     "giocatore": df['giocatore'],
                                     "convocazioni": convocazioni,
                                     "minutaggio": minutaggio,
-                                    "Rapporto": df['minuti giocati']
+                                    "Rapporto": df['rapporto']
                                 }
                             )
                             st.bar_chart(chart_data, x="giocatore", y=["convocazioni", "minutaggio", "Rapporto"], x_label="Rapporto minuti giocati/totali convocazione", color="convocazioni")
@@ -1062,7 +1052,40 @@ def gestione_rosa():
                         """, unsafe_allow_html=True)
                         st.text(title)  
                         st.bar_chart(comparison_df.set_index('giocatore')[column])
+
+
+                    def copy_df_to_xlsx(df_report, save_file, xlsx_file_path='report.xlsx'):
+                        # Carica il file XLSX
+                        workbook = openpyxl.load_workbook(xlsx_file_path)
+                        sheet = workbook.active
                         
+                        # Mappa delle colonne dal DataFrame all'XLSX
+                        column_mapping = {
+                            'giocatore': 'A',
+                            'partite': 'B',
+                            'presenze': 'C',
+                            'titolare': 'D',
+                            'sub_out': 'E',
+                            'sub_in': 'F',
+                            'minuti giocati': 'G',
+                            'ammonizioni': 'I',
+                            'espulsioni': 'J',
+                            'goal': 'K',
+                            'non convocazione': 'L'
+                        }
+                       
+                        
+                        # Inizia a scrivere i dati dalla riga 7
+                        start_row = 7
+                        for index, row in df_report.iterrows():
+                            for df_col, xlsx_col in column_mapping.items():
+                                cell_position = f"{xlsx_col}{str(start_row)}"
+                                sheet[cell_position] = row[df_col]
+                            start_row += 1
+                        
+                        # Salva il file XLSX
+                        workbook.save(save_file)
+
 
                     giocatori = [f"{row['NOME']} {row['COGNOME']}" for index, row in df.iterrows()]
 
@@ -1257,10 +1280,14 @@ def gestione_rosa():
                     # Salvataggio del dataframe in formato csv
                     # file_path = reportistica + 'reportistica_' + mister_info['acronimo'] + '.csv'
 
-                                
-                    # Salva il file Excel nella cartella convocazioni
+                    #Esporta la reportistica in excel
                     fname = reportistica + 'reportistica.xlsx'
-                    convert_df_to_excel(df_report, fname)
+                    copy_df_to_xlsx(df_report, fname)
+
+
+                    # Salva il file Excel nella cartella convocazioni
+                    
+                    # convert_df_to_excel(df_report, fname)
 
                     # Genera il link di download per il file Excel
                     with open(fname, 'rb') as f:
